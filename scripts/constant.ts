@@ -78,7 +78,7 @@ const DEFINITION_SECTION_MAP = {
  * The `User-Agent` header used when deploying
  */
 const DEPLOY_USER_AGENT =
-	'AnYiEE/AwesomeGadgets (https://github.com/AnYiEE/AwesomeGadgets; i@anyi.in)' satisfies string;
+	'FurWiki/1.0 FurryWikiGadgets (https://github.com/FurryWiki/FurryWikiGadgets)' satisfies string;
 
 /**
  * 启用此选项以自动转换`MediaWiki:Gadget-${gadgetName}`和`MediaWiki:Gadget-section-${DEFAULT_DEFINITION.section}`页面的语言变体
@@ -89,7 +89,7 @@ const DEPLOY_USER_AGENT =
  *
  * The target MediaWiki site needs to have the NoteTA template and the IT and MediaWiki public conversion group
  */
-const CONVERT_VARIANT = false satisfies boolean;
+const CONVERT_VARIANT = true satisfies boolean;
 
 /**
  * 语言变体列表

@@ -3,8 +3,8 @@
  * _addText: '{{Gadget Header|license=CC-BY-SA-4.0}}'
  *
  * @base {@link https://zh.wikipedia.org/wiki/User:Xiplus/js/TranslateVariants}
- * @source {@link https://github.com/TopRealm/YsArchives-Gadgets/tree/master/src/TranslateVariants}
- * @license CC-BY-SA-4.0 {@link https://youshou.wiki/wiki/H:CC-BY-SA-4.0}
+ * @source {@link https://github.com/FurryWiki/FurryWikiGadgets/tree/master/src/TranslateVariants}
+ * @license CC-BY-SA-4.0 {@link https://furrywiki.org.cn/wiki/H:CC-BY-SA-4.0}
  */
 /**
  * +------------------------------------------------------------+
