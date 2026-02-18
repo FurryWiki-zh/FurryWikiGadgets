@@ -4,11 +4,9 @@
 * 若需要设置您所需启用或关闭的小工具，请前往[[Special:参数设置#mw-prefsection-gadgets|参数设置]]。
 </div>
 
-== appear ==
-* JSX[ResourceLoader|requiresES6]|JSX.js
-
 == compatibility ==
 * i18n[ResourceLoader|dependencies=ext.gadget.Util|hidden|requiresES6]|i18n.js
+* JSX[ResourceLoader|hidden|requiresES6]|JSX.js
 * Util[ResourceLoader|dependencies=ext.gadget.JSX,jquery.textSelection,mediawiki.storage|hidden|requiresES6]|Util.js
 
 == sysop ==

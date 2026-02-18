@@ -1,0 +1,22 @@
+@import (reference) './modules/textIndent.less';
+
+@body_not_selector: ~'.ext-discussiontools-replytool-enabled, .ext-discussiontools-newtopictool-enabled';
+@hansect_selector: ~'.hansect';
+
+body.ns-subject:not(@{body_not_selector}) .ve-ui-surface-source .mw-parser-output > p,
+body.skin-citizen.ns-subject:not(@{body_not_selector}) .ve-ui-surface-source .mw-parser-output > section > p {
+	text-indent: unset !important;
+	line-height: unset !important;
+}
+
+body.ns-subject:not(@{body_not_selector}) .mw-parser-output,
+body.skin-citizen.ns-subject:not(@{body_not_selector}) .mw-parser-output > section,
+@{hansect_selector} {
+	.p_textIndent_2em();
+	.ul_ol_marginLeft();
+}
+
+/* TemplateData */
+.mw-templatedata-doc-wrap p.mw-templatedata-doc-desc {
+	.p_textIndent_2em();
+}
