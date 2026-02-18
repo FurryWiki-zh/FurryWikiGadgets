@@ -5,4 +5,11 @@
 </div>
 
 == appear ==
-* JSX[ResourceLoader]|JSX.js
+* JSX[ResourceLoader|requiresES6]|JSX.js
+
+== compatibility ==
+* i18n[ResourceLoader|dependencies=ext.gadget.Util|hidden|requiresES6]|i18n.js
+* Util[ResourceLoader|dependencies=ext.gadget.JSX,jquery.textSelection,mediawiki.storage|hidden|requiresES6]|Util.js
+
+== sysop ==
+* TranslateVariants[ResourceLoader|dependencies=ext.gadget.i18n,ext.gadget.JSX,ext.gadget.Util,mediawiki.api,mediawiki.diff.styles,mediawiki.util|rights=editinterface|requiresES6]|TranslateVariants.js|TranslateVariants.css

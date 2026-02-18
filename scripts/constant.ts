@@ -128,14 +128,14 @@ const VARIANTS = [
  * Note: By default, Gadget extensions do not support gadgets that have both the `default` and `requiresES6` flags. If you need to bypass server-side syntax validation for gadgets with the `default` flag, you should [modify the Gadget extension yourself](https://git.qiuwen.net.cn/Fork/mediawiki-extensions-Gadgets/commit/21e2b34). Otherwise, **DO NOT** set this option to true
  *
  */
-const GLOBAL_REQUIRES_ES6 = false satisfies boolean;
+const GLOBAL_REQUIRES_ES6 = true satisfies boolean;
 
 /**
  * 部署时请求目标 MediaWiki 网站 API 的最大并发数，上限为 256
  *
  * The maximum concurrency number of requests to the API during deployment, the upper limit is 256
  */
-const MAX_CONCURRENCY = 16 satisfies number;
+const MAX_CONCURRENCY = 4 satisfies number;
 
 /**
  * 启用此选项会为全部小工具生成内联源映射
