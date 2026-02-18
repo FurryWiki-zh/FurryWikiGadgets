@@ -4,9 +4,25 @@
 * 若需要设置您所需启用或关闭的小工具，请前往[[Special:参数设置#mw-prefsection-gadgets|参数设置]]。
 </div>
 
+== appear ==
+* HanSect[ResourceLoader|default|requiresES6]|HanSect.css
+
+== browser ==
+* PurgePageCache[ResourceLoader|dependencies=ext.gadget.i18n,ext.gadget.Toastify,ext.gadget.Util,mediawiki.api,mediawiki.util|rights=edit|requiresES6]|PurgePageCache.js
+* UTCLiveClock[ResourceLoader|dependencies=ext.gadget.i18n,ext.gadget.PurgePageCache,ext.gadget.Toastify,ext.gadget.Util,mediawiki.api,mediawiki.util|requiresES6]|UTCLiveClock.js|UTCLiveClock.css
+
 == compatibility ==
 * i18n[ResourceLoader|dependencies=ext.gadget.Util|hidden|requiresES6]|i18n.js
 * JSX[ResourceLoader|hidden|requiresES6]|JSX.js
+* SiteCommon[ResourceLoader|default|hidden|peers=SiteCommon_Filepage,SiteCommon_Print,SiteCommon_SpecialInterface,SiteCommon_Talkpage,SiteCommon_Templates|requiresES6]|SiteCommon.css
+* SiteCommon_Filepage[ResourceLoader|default|hidden|requiresES6]|SiteCommon_Filepage.css
+* SiteCommon_JS[ResourceLoader|default|dependencies=ext.gadget.i18n,ext.gadget.JSX,ext.gadget.Tippy,ext.gadget.Util,mediawiki.Title,mediawiki.util|hidden|peers=SiteCommon|requiresES6]|SiteCommon_JS.js
+* SiteCommon_Print[ResourceLoader|default|hidden|requiresES6]|SiteCommon_Print.css
+* SiteCommon_SpecialInterface[ResourceLoader|default|hidden|requiresES6]|SiteCommon_SpecialInterface.css
+* SiteCommon_Talkpage[ResourceLoader|default|hidden|requiresES6]|SiteCommon_Talkpage.css
+* SiteCommon_Templates[ResourceLoader|default|hidden|requiresES6]|SiteCommon_Templates.css
+* Tippy[ResourceLoader|hidden|requiresES6]|Tippy.js|Tippy.css
+* Toastify[ResourceLoader|hidden|requiresES6]|Toastify.js|Toastify.css
 * Util[ResourceLoader|dependencies=ext.gadget.JSX,jquery.textSelection,mediawiki.storage|hidden|requiresES6]|Util.js
 
 == sysop ==

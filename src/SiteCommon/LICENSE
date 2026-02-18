@@ -1,0 +1,12 @@
+/**
+ * SPDX-License-Identifier: CC-BY-SA-4.0
+ * _addText: '{{Gadget Header|license=CC-BY-SA-4.0}}'
+ *
+ * @base {@link https://zh.wikipedia.org/wiki/MediaWiki:Common.css}
+ * @base {@link https://zh.wikipedia.org/wiki/MediaWiki:Gadget-fontsize.css}
+ * @base {@link https://en.wikipedia.org/wiki/MediaWiki:Common.css}
+ * @base {@link https://en.wikipedia.org/wiki/MediaWiki:Gadget-responsiveContentBase.css}
+ * @base {@link https://www.mediawiki.org/wiki/Snippets/Horizontal_lists}
+ * @source {@link https://github.com/FurryWiki/FurryWikiGadgets/tree/master/src/SiteCommon}
+ * @license CC-BY-SA-4.0 {@link https://furrywiki.org.cn/wiki/H:CC-BY-SA-4.0}
+ */
