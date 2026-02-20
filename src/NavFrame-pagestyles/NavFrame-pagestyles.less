@@ -1,0 +1,67 @@
+@import (reference) '../variables.less';
+
+div {
+	&.Boxmerge,
+	&.NavFrame {
+		padding: 4px;
+		border: 1px solid #aaa;
+		margin: 0;
+		border-collapse: collapse;
+		font-size: 95%;
+		text-align: center;
+
+		&,
+		div.NavContent {
+			p {
+				font-size: 100%;
+			}
+		}
+
+		.client-js & {
+			&.collapsed > div.NavContent {
+				display: none;
+			}
+		}
+	}
+
+	&.NavHead {
+		position: relative;
+		background-color: #ccf;
+		font-weight: bold;
+		line-height: 1.6em;
+	}
+
+	&.NavPic {
+		padding: 2px;
+		margin: 0;
+		background-color: @const-color-white;
+		float: left;
+	}
+
+	&.NavContent {
+		text-align: left;
+	}
+
+	&.NavEnd {
+		padding: 0;
+		margin: 0;
+		clear: both;
+		line-height: 0.0625rem;
+	}
+}
+
+div.Boxmerge,
+div.NavFrame,
+table.collapsible {
+	& + & {
+		border-top-style: hidden;
+	}
+}
+
+span.NavToggle {
+	padding-right: 1.125em;
+	float: right;
+	font-size: 90%;
+	font-weight: normal;
+	user-select: none;
+}

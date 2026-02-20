@@ -1,0 +1,8 @@
+{
+	"enable": true,
+	"description": "<span id=\"Gadget-PreviewWithVariant\"></span> 在源代码编辑器下，以用户指定的语言变体显示预览",
+	"section": "edit",
+	"default": true,
+	"dependencies": ["ext.gadget.i18n", "ext.gadget.Util", "oojs-ui", "oojs-ui-core", "user.options"],
+	"rights": ["edit"]
+}
