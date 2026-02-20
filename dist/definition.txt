@@ -6,6 +6,7 @@
 
 == appear ==
 * HanSect[ResourceLoader|default|requiresES6]|HanSect.css
+* NavboxCSS[ResourceLoader|default|hidden|requiresES6]|NavboxCSS.css
 
 == browser ==
 * PurgePageCache[ResourceLoader|dependencies=ext.gadget.i18n,ext.gadget.Toastify,ext.gadget.Util,mediawiki.api,mediawiki.util|rights=edit|requiresES6]|PurgePageCache.js
@@ -14,6 +15,7 @@
 == compatibility ==
 * i18n[ResourceLoader|dependencies=ext.gadget.Util|hidden|requiresES6]|i18n.js
 * JSX[ResourceLoader|hidden|requiresES6]|JSX.js
+* NavFrame-pagestyles[ResourceLoader|hidden|requiresES6]|NavFrame-pagestyles.css
 * SiteCommon[ResourceLoader|default|hidden|peers=SiteCommon_Filepage,SiteCommon_Print,SiteCommon_SpecialInterface,SiteCommon_Talkpage,SiteCommon_Templates|requiresES6]|SiteCommon.css
 * SiteCommon_Filepage[ResourceLoader|default|hidden|requiresES6]|SiteCommon_Filepage.css
 * SiteCommon_JS[ResourceLoader|default|dependencies=ext.gadget.i18n,ext.gadget.JSX,ext.gadget.Tippy,ext.gadget.Util,mediawiki.Title,mediawiki.util|hidden|peers=SiteCommon|requiresES6]|SiteCommon_JS.js
@@ -26,6 +28,9 @@
 * Util[ResourceLoader|dependencies=ext.gadget.JSX,jquery.textSelection,mediawiki.storage|hidden|requiresES6]|Util.js
 
 == edit ==
+* Navigation_popups[ResourceLoader|dependencies=ext.gadget.i18n,ext.gadget.Util,mediawiki.api,mediawiki.jqueryMsg,mediawiki.user,mediawiki.util,user.options|requiresES6]|Navigation_popups.js|Navigation_popups.css
+* PreviewWithVariant[ResourceLoader|default|dependencies=ext.gadget.i18n,ext.gadget.Util,oojs-ui,oojs-ui-core,user.options|rights=edit|requiresES6]|PreviewWithVariant.js|PreviewWithVariant.css
+* PreviewWithVariant2017[ResourceLoader|default|dependencies=ext.gadget.i18n,ext.gadget.Util,mediawiki.jqueryMsg,oojs-ui,oojs-ui-core,user.options|rights=edit|requiresES6]|PreviewWithVariant2017.js|PreviewWithVariant2017.css
 * QuickImport[ResourceLoader|dependencies=ext.gadget.Toastify,ext.gadget.Util,mediawiki.api,mediawiki.util|rights=import|requiresES6]|QuickImport.js
 * QuickImportAllMedia[ResourceLoader|dependencies=ext.gadget.QuickImport,ext.gadget.Toastify,ext.gadget.Util,mediawiki.api,mediawiki.util|rights=import|requiresES6]|QuickImportAllMedia.js
 
