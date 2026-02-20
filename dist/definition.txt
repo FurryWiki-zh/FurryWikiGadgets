@@ -25,6 +25,10 @@
 * Toastify[ResourceLoader|hidden|requiresES6]|Toastify.js|Toastify.css
 * Util[ResourceLoader|dependencies=ext.gadget.JSX,jquery.textSelection,mediawiki.storage|hidden|requiresES6]|Util.js
 
+== edit ==
+* QuickImport[ResourceLoader|dependencies=ext.gadget.Toastify,ext.gadget.Util,mediawiki.api,mediawiki.util|rights=import|requiresES6]|QuickImport.js
+* QuickImportAllMedia[ResourceLoader|dependencies=ext.gadget.QuickImport,ext.gadget.Toastify,ext.gadget.Util,mediawiki.api,mediawiki.util|rights=import|requiresES6]|QuickImportAllMedia.js
+
 == sysop ==
 * TranslateVariants[ResourceLoader|dependencies=ext.gadget.i18n,ext.gadget.JSX,ext.gadget.Util,mediawiki.api,mediawiki.diff.styles,mediawiki.util|rights=editinterface|requiresES6]|TranslateVariants.js|TranslateVariants.css
 
