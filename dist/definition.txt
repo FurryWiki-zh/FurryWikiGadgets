@@ -31,7 +31,7 @@
 == edit ==
 * DefaultSummaries[ResourceLoader|default|dependencies=ext.gadget.i18n,ext.gadget.Util,oojs-ui-core|rights=edit|requiresES6]|DefaultSummaries.js
 * EditConflict[ResourceLoader|actions=edit|default|dependencies=ext.gadget.i18n,ext.gadget.JSX,ext.gadget.Toastify,ext.gadget.Util,mediawiki.api|rights=edit|requiresES6]|EditConflict.js
-* EditCount[ResourceLoader|rights=edit|skins=vector,vector-2022,timeless|requiresES6]|EditCount.js
+* EditCount[ResourceLoader|rights=edit|skins=timeless,vector,vector-2022|requiresES6]|EditCount.js
 * EditForm[ResourceLoader|hidden|rights=edit|requiresES6]|EditForm.css
 * Editform_AiAssisted[ResourceLoader|default|dependencies=ext.gadget.i18n,ext.gadget.Util,oojs-ui-core|rights=edit|requiresES6]|Editform_AiAssisted.js
 * EditForm_JS[ResourceLoader|dependencies=ext.gadget.i18n,ext.gadget.Util,mediawiki.util,oojs-ui-core|hidden|peers=EditForm|rights=edit|requiresES6]|EditForm_JS.js

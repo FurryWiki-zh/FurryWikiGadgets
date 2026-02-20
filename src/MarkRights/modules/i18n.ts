@@ -49,7 +49,7 @@ const getI18nMessages = () => {
 		}),
 		autopatrolled: localize({
 			en: 'Good Editor',
-			'zh-hans': '优秀编辑者',
+			'zh-hans': '优质编辑者',
 			'zh-hant': '優秀編輯者',
 		}),
 		eventsponsor: localize({
