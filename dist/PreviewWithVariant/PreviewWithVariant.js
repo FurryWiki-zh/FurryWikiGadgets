@@ -4,9 +4,9 @@
  * _addText: '{{Gadget Header|license=MIT|attribution=Diskdance, Lt2818}}'
  *
  * @base {@link https://zh.wikipedia.org/wiki/MediaWiki:Gadget-PreviewWithVariant.js}
- * @source {@link https://github.com/TopRealm/YsArchives-Gadgets/tree/master/src/PreviewWithVariant}
+ * @source {@link https://github.com/FurryWiki/FurryWikiGadgets/tree/master/src/PreviewWithVariant}
  * @license MIT {@link https://zh.wikipedia.org/wiki/MediaWiki:Gadget-PreviewWithVariant.js}
- * @license CC-BY-SA-4.0 {@link https://youshou.wiki/wiki/H:CC-BY-SA-4.0}
+ * @license CC-BY-SA-4.0 {@link https://furrywiki.org.cn/wiki/H:CC-BY-SA-4.0}
  */
 
 /**

@@ -5,6 +5,7 @@
 </div>
 
 == appear ==
+* GadgetsDefinition[ResourceLoader|actions=view|default|dependencies=ext.gadget.Util,mediawiki.util|requiresES6]|GadgetsDefinition.js|GadgetsDefinition.css
 * HanSect[ResourceLoader|default|requiresES6]|HanSect.css
 * NavboxCSS[ResourceLoader|default|hidden|requiresES6]|NavboxCSS.css
 
@@ -28,6 +29,18 @@
 * Util[ResourceLoader|dependencies=ext.gadget.JSX,jquery.textSelection,mediawiki.storage|hidden|requiresES6]|Util.js
 
 == edit ==
+* DefaultSummaries[ResourceLoader|default|dependencies=ext.gadget.i18n,ext.gadget.Util,oojs-ui-core|rights=edit|requiresES6]|DefaultSummaries.js
+* EditConflict[ResourceLoader|actions=edit|default|dependencies=ext.gadget.i18n,ext.gadget.JSX,ext.gadget.Toastify,ext.gadget.Util,mediawiki.api|rights=edit|requiresES6]|EditConflict.js
+* EditCount[ResourceLoader|rights=edit|skins=vector,vector-2022,timeless|requiresES6]|EditCount.js
+* EditForm[ResourceLoader|hidden|rights=edit|requiresES6]|EditForm.css
+* Editform_AiAssisted[ResourceLoader|default|dependencies=ext.gadget.i18n,ext.gadget.Util,oojs-ui-core|rights=edit|requiresES6]|Editform_AiAssisted.js
+* EditForm_JS[ResourceLoader|dependencies=ext.gadget.i18n,ext.gadget.Util,mediawiki.util,oojs-ui-core|hidden|peers=EditForm|rights=edit|requiresES6]|EditForm_JS.js
+* Editform_Patch2017[ResourceLoader|default|dependencies=ext.gadget.i18n,ext.gadget.Util,mediawiki.jqueryMsg|hidden|rights=edit|requiresES6]|Editform_Patch2017.js
+* Edittools-customizeToolbar[ResourceLoader|actions=edit|dependencies=ext.gadget.Util,ext.wikiEditor,user.options|hidden|requiresES6]|Edittools-customizeToolbar.js
+* Edittools-delh[ResourceLoader|actions=edit|dependencies=ext.gadget.Edittools-customizeToolbar,ext.gadget.i18n|rights=skipcaptcha|requiresES6]|Edittools-delh.js
+* Edittools-refToolbar[ResourceLoader|actions=edit|default|dependencies=ext.gadget.Util,ext.wikiEditor,mediawiki.jqueryMsg,mediawiki.util,user.options|rights=edit|requiresES6]|Edittools-refToolbar.js|Edittools-refToolbar.css
+* Edittools-vector[ResourceLoader|actions=edit|default|dependencies=ext.gadget.Edittools-customizeToolbar|rights=edit|requiresES6]|Edittools-vector.js
+* Edittools-vplus[ResourceLoader|actions=edit|default|dependencies=ext.gadget.Edittools-customizeToolbar,ext.gadget.i18n|rights=edit|requiresES6]|Edittools-vplus.js
 * Navigation_popups[ResourceLoader|dependencies=ext.gadget.i18n,ext.gadget.Util,mediawiki.api,mediawiki.jqueryMsg,mediawiki.user,mediawiki.util,user.options|requiresES6]|Navigation_popups.js|Navigation_popups.css
 * PreviewWithVariant[ResourceLoader|default|dependencies=ext.gadget.i18n,ext.gadget.Util,oojs-ui,oojs-ui-core,user.options|rights=edit|requiresES6]|PreviewWithVariant.js|PreviewWithVariant.css
 * PreviewWithVariant2017[ResourceLoader|default|dependencies=ext.gadget.i18n,ext.gadget.Util,mediawiki.jqueryMsg,oojs-ui,oojs-ui-core,user.options|rights=edit|requiresES6]|PreviewWithVariant2017.js|PreviewWithVariant2017.css
@@ -35,8 +48,24 @@
 * QuickImportAllMedia[ResourceLoader|dependencies=ext.gadget.QuickImport,ext.gadget.Toastify,ext.gadget.Util,mediawiki.api,mediawiki.util|rights=import|requiresES6]|QuickImportAllMedia.js
 
 == sysop ==
+* MarkRights[ResourceLoader|dependencies=ext.gadget.i18n,ext.gadget.Util,mediawiki.api,mediawiki.util|peers=MarkRights-pagestyles|requiresES6]|MarkRights.js
+* MarkRights-pagestyles[ResourceLoader|hidden|requiresES6]|MarkRights-pagestyles.css
+* MarkRights-Userpage[ResourceLoader|dependencies=ext.gadget.i18n,ext.gadget.JSX,ext.gadget.MarkRights,ext.gadget.Util,mediawiki.api,mediawiki.Title,mediawiki.util|peers=MarkRights-Userpage-pagestyles|requiresES6]|MarkRights-Userpage.js
+* MarkRights-Userpage-pagestyles[ResourceLoader|hidden|requiresES6]|MarkRights-Userpage-pagestyles.css
+* OnlineAdmins[ResourceLoader|dependencies=ext.gadget.i18n,ext.gadget.JSX,ext.gadget.Util,mediawiki.api,mediawiki.util|requiresES6]|OnlineAdmins.js|OnlineAdmins.css
 * TranslateVariants[ResourceLoader|dependencies=ext.gadget.i18n,ext.gadget.JSX,ext.gadget.Util,mediawiki.api,mediawiki.diff.styles,mediawiki.util|rights=editinterface|requiresES6]|TranslateVariants.js|TranslateVariants.css
 
 == usergroup ==
+* Group-autopatrolled[ResourceLoader|default|hidden|rights=autopatrol|requiresES6]|Group-autopatrolled.css
+* Group-confirmed[ResourceLoader|default|hidden|rights=skipcaptcha|requiresES6]|Group-confirmed.css
+* Group-eventsponsor[ResourceLoader|default|hidden|rights=override-antispoof|requiresES6]|Group-eventsponsor.css
 * Group-importer[ResourceLoader|default|hidden|rights=import|requiresES6]|Group-importer.css
 * Group-importer_JS[ResourceLoader|default|dependencies=oojs-ui-windows|hidden|peers=Group-importer|rights=import|requiresES6]|Group-importer_JS.js
+* Group-interface-admin[ResourceLoader|default|hidden|rights=editsitecss|requiresES6]|Group-interface-admin.css
+* Group-massmessage-sender[ResourceLoader|default|hidden|rights=massmessage|requiresES6]|Group-massmessage-sender.css
+* Group-patroller[ResourceLoader|default|hidden|rights=patrol|requiresES6]|Group-patroller.css
+* Group-steward[ResourceLoader|default|hidden|rights=officialprotected|requiresES6]|Group-steward.css
+* Group-sysop[ResourceLoader|default|hidden|rights=editprotected|requiresES6]|Group-sysop.css
+* Group-templateeditor[ResourceLoader|default|hidden|rights=templateeditor|requiresES6]|Group-templateeditor.css
+* Group-user[ResourceLoader|default|hidden|rights=edit|requiresES6]|Group-user.css
+* Group-user_JS[ResourceLoader|default|dependencies=ext.gadget.i18n,ext.gadget.Util,mediawiki.util,user.options|hidden|peers=Group-user|rights=edit|requiresES6]|Group-user_JS.js

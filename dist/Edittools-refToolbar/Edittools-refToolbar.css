@@ -1,0 +1,209 @@
+/**
+ * SPDX-License-Identifier: CC-BY-SA-4.0
+ * _addText: '{{Gadget Header|title1=RefToolbar.js|license1=CC-BY-SA-4.0}}'
+ *
+ * @base {@link https://zh.wikipedia.org/wiki/MediaWiki:Gadget-refToolbar.js}
+ * @source {@link https://github.com/FurryWiki/FurryWikiGadgets/tree/master/src/Edittools-refToolbar}
+ * @license CC-BY-SA-4.0 {@link https://furrywiki.org.cn/wiki/H:CC-BY-SA-4.0}
+ */
+
+/**
+ * SPDX-License-Identifier: CC-BY-SA-4.0
+ * _addText: '{{Gadget Header|title2=RefToolbarBase.js|license2=CC-BY-SA-4.0}}'
+ *
+ * @base {@link https://zh.wikipedia.org/wiki/MediaWiki:Gadget-refToolbarBase.js}
+ * @source {@link https://github.com/FurryWiki/FurryWikiGadgets/tree/master/src/Edittools-refToolbar}
+ * @license CC-BY-SA-4.0 {@link https://furrywiki.org.cn/wiki/H:CC-BY-SA-4.0}
+ */
+
+/**
+ * SPDX-License-Identifier: CC-BY-SA-4.0
+ * _addText: '{{Gadget Header|title3=RefToolbar.js (RefToolbar 2.0)|license3=CC-BY-SA-4.0}}'
+ *
+ * @base {@link https://zh.wikipedia.org/wiki/MediaWiki:RefToolbar.js}
+ * @source {@link https://github.com/FurryWiki/FurryWikiGadgets/tree/master/src/Edittools-refToolbar}
+ * @license CC-BY-SA-4.0 {@link https://furrywiki.org.cn/wiki/H:CC-BY-SA-4.0}
+ */
+
+/**
+ * SPDX-License-Identifier: CC-BY-SA-4.0
+ * _addText: '{{Gadget Header|title3=RefToolBar messages|license3=CC-BY-SA-4.0}}'
+ *
+ * @base {@link https://zh.wikipedia.org/wiki/MediaWiki:RefToolbarMessages-zh-hans.js}
+ * @base {@link https://zh.wikipedia.org/wiki/MediaWiki:RefToolbarMessages-zh-hant.js}
+ * @source {@link https://github.com/FurryWiki/FurryWikiGadgets/tree/master/src/Edittools-refToolbar}
+ * @license CC-BY-SA-4.0 {@link https://furrywiki.org.cn/wiki/H:CC-BY-SA-4.0}
+ */
+
+/**
+ * SPDX-License-Identifier: CC-BY-SA-4.0
+ * _addText: '{{Gadget Header|title3=RefToolBar Config|license3=CC-BY-SA-4.0}}'
+ *
+ * @base {@link https://zh.wikipedia.org/wiki/MediaWiki:RefToolbarConfig.js}
+ * @source {@link https://github.com/FurryWiki/FurryWikiGadgets/tree/master/src/Edittools-refToolbar}
+ * @license CC-BY-SA-4.0 {@link https://furrywiki.org.cn/wiki/H:CC-BY-SA-4.0}
+ */
+
+/**
+ * Ajax-loader
+ *
+ * @base {@link https://www.qiuwenbaike.cn/wiki/File:Ajax-loader.gif}
+ * @source {@link https://github.com/FurryWiki/FurryWikiGadgets/tree/master/src/Edittools-refToolbar}
+ * @license Public Domain
+ */
+
+/**
+ * SPDX-License-Identifier: MIT
+ *
+ * search-ltr-progressive Icon from OOjs UI
+ *
+ * @base {@link https://www.qiuwenbaike.cn/wiki/File:OOjs_UI_icon_search-ltr-progressive.svg}
+ * @source {@link https://github.com/FurryWiki/FurryWikiGadgets/tree/master/src/Edittools-refToolbar}
+ * @license MIT {@link https://github.com/wikimedia/oojs-ui/blob/master/LICENSE-MIT}
+ */
+
+/**
+ * Copyright 2011-2022 OOUI Team and other contributors.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining
+ * a copy of this software and associated documentation files (the
+ * "Software"), to deal in the Software without restriction, including
+ * without limitation the rights to use, copy, modify, merge, publish,
+ * distribute, sublicense, and/or sell copies of the Software, and to
+ * permit persons to whom the Software is furnished to do so, subject to
+ * the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be
+ * included in all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+ * LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+ * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+ * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+
+/**
+ * SPDX-License-Identifier: MIT
+ *
+ * add-constructive Icon from OOjs UI
+ * Modified from add-progressive Icon from OOjs UI by WaitSpring
+ *
+ * @base {@link https://www.qiuwenbaike.cn/wiki/File:OOjs_UI_icon_add-progressive.svg}
+ * @source {@link https://github.com/FurryWiki/FurryWikiGadgets/tree/master/src/Edittools-refToolbar}
+ * @license MIT {@link https://github.com/wikimedia/oojs-ui/blob/master/LICENSE-MIT}
+ */
+
+/**
+ * Copyright 2011-2022 OOUI Team and other contributors.
+ * Copyright 2024 WaitSpring.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining
+ * a copy of this software and associated documentation files (the
+ * "Software"), to deal in the Software without restriction, including
+ * without limitation the rights to use, copy, modify, merge, publish,
+ * distribute, sublicense, and/or sell copies of the Software, and to
+ * permit persons to whom the Software is furnished to do so, subject to
+ * the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be
+ * included in all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+ * LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+ * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+ * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+
+/**
+ * SPDX-License-Identifier: MIT
+ *
+ * calendar-ltr-progressive Icon from OOjs UI
+ *
+ * @base {@link https://www.qiuwenbaike.cn/wiki/File:OOjs_UI_icon_calendar-ltr-progressive.svg}
+ * @source {@link https://github.com/FurryWiki/FurryWikiGadgets/tree/master/src/Edittools-refToolbar}
+ * @license MIT {@link https://github.com/wikimedia/oojs-ui/blob/master/LICENSE-MIT}
+ */
+
+/**
+ * Copyright 2011-2022 OOUI Team and other contributors.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining
+ * a copy of this software and associated documentation files (the
+ * "Software"), to deal in the Software without restriction, including
+ * without limitation the rights to use, copy, modify, merge, publish,
+ * distribute, sublicense, and/or sell copies of the Software, and to
+ * permit persons to whom the Software is furnished to do so, subject to
+ * the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be
+ * included in all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+ * LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+ * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+ * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+
+ /**
+ * SPDX-License-Identifier: MIT
+ *
+ * citeArticle-ltr-progressive Icon from OOjs UI
+ *
+ * @base {@link https://www.qiuwenbaike.cn/wiki/File:OOjs_UI_icon_citeArticle-ltr-progressive.svg}
+ * @source {@link https://github.com/FurryWiki/FurryWikiGadgets/tree/master/src/Edittools-refToolbar}
+ * @license MIT {@link https://github.com/wikimedia/oojs-ui/blob/master/LICENSE-MIT}
+ */
+
+/**
+ * Copyright 2011-2022 OOUI Team and other contributors.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining
+ * a copy of this software and associated documentation files (the
+ * "Software"), to deal in the Software without restriction, including
+ * without limitation the rights to use, copy, modify, merge, publish,
+ * distribute, sublicense, and/or sell copies of the Software, and to
+ * permit persons to whom the Software is furnished to do so, subject to
+ * the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be
+ * included in all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+ * LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+ * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+ * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+/**
+ * +------------------------------------------------------------+
+ * |            === WARNING: GLOBAL GADGET FILE ===             |
+ * +------------------------------------------------------------+
+ * |       All changes should be made in the repository,        |
+ * |                otherwise they will be lost.                |
+ * +------------------------------------------------------------+
+ * |        Changes to this page may affect many users.         |
+ * | Please discuss changes by opening an issue before editing. |
+ * +------------------------------------------------------------+
+ */
+/* <nowiki> */
+
+/* esbuild-css-modules-plugin-ns-css:src/Edittools-refToolbar/Edittools-refToolbar.module.less */
+.Edittools-refToolbar-module__citeFormTd_tYurZa__4100 {
+  height: 0 !important;
+  padding: .1em !important;
+}
+
+/* </nowiki> */
+
+/*# sourceMappingURL=data:application/json;base64,ewogICJ2ZXJzaW9uIjogMywKICAic291cmNlcyI6IFsiZXNidWlsZC1jc3MtbW9kdWxlcy1wbHVnaW4tbnMtY3NzOnNyYy9FZGl0dG9vbHMtcmVmVG9vbGJhci9FZGl0dG9vbHMtcmVmVG9vbGJhci5tb2R1bGUubGVzcyJdLAogICJzb3VyY2VzQ29udGVudCI6IFsiLyogPHN0ZGluPiAqL1xuLkVkaXR0b29scy1yZWZUb29sYmFyLW1vZHVsZV9fY2l0ZUZvcm1UZF90WXVyWmFfXzQxMDAge1xuICBoZWlnaHQ6IDAgIWltcG9ydGFudDtcbiAgcGFkZGluZzogLjFlbSAhaW1wb3J0YW50O1xufVxuIl0sCiAgIm1hcHBpbmdzIjogIjs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FBQ0EsQ0FBQztBQUNDLFVBQVE7QUFDUixXQUFTO0FBQ1g7IiwKICAibmFtZXMiOiBbXQp9Cg== */
