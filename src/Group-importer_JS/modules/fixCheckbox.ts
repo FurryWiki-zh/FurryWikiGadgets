@@ -16,7 +16,7 @@ const fixCheckbox = () => {
 		interwikiTemplates.checked = false;
 	}
 
-	if (wgWikiID === 'zhysy') {
+	if (wgWikiID === 'furwiki') {
 		if (interwikiHistory) {
 			interwikiHistory.disabled = true;
 		}

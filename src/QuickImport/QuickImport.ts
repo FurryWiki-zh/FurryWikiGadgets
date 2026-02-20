@@ -1,10 +1,10 @@
 import {detectIfFileRedirect, refreshPage} from './modules/core';
 
 (function quickImport(): void {
-	const {wgNamespaceNumber, wgPageName, wgWikiID} = mw.config.get();
+	const {wgNamespaceNumber, wgPageName} = mw.config.get();
 
 	// 修改检测器，查找指向youshou.wiki的外部链接
-	const redirectTextA = document.querySelector('.redirectText a');
+	const redirectTextA = document.querySelector('.redirectText a[href*="youshou.wiki"]');
 
 	const isFileNS: boolean = wgNamespaceNumber === 6;
 	const hasMwNoarticletext: boolean = !!document.querySelector('#mw-noarticletext');
@@ -21,7 +21,7 @@ import {detectIfFileRedirect, refreshPage} from './modules/core';
 			? '重定向目标'
 			: '页面';
 
-	if ((wgWikiID !== 'zhysy' && isFileNS) || wgNamespaceNumber < 0) {
+	if (wgNamespaceNumber < 0) {
 		return;
 	}
 
