@@ -1,5 +1,33 @@
 @import (reference) '../variables.less';
 
+.mixin-darkmode-colors(@border, @bg) {
+	.client-darkmode &,
+	html.skin-theme-clientpref-night & {
+		border-color: @border;
+		background: @bg;
+	}
+
+	@media screen and (prefers-color-scheme: dark) {
+		html.skin-theme-clientpref-os & {
+			border-color: @border;
+			background: @bg;
+		}
+	}
+}
+
+.mixin-darkmode-bg(@bg) {
+	.client-darkmode &,
+	html.skin-theme-clientpref-night & {
+		background: @bg;
+	}
+
+	@media screen and (prefers-color-scheme: dark) {
+		html.skin-theme-clientpref-os & {
+			background: @bg;
+		}
+	}
+}
+
 /* Styles for all mboxes */
 
 .mbox {
@@ -69,6 +97,8 @@
 	&-notice {
 		border-color: @const-color-blue;
 		background: #def;
+
+		.mixin-darkmode-colors(#5b9fd9, #0d2f52);
 	}
 
 	&-speedy,
@@ -76,18 +106,24 @@
 	&.red {
 		border-color: #b22; /* Red */
 		background: #fee; /* Pink */
+
+		.mixin-darkmode-colors(#ff6b6b, #4a1a1a);
 	}
 
 	&-delete,
 	&.tawny {
 		border-color: #a97; /* tawny */
 		background: #f0f0d8; /* light tawny */
+
+		.mixin-darkmode-colors(#d4a76a, #3d3a2a);
 	}
 
 	&-content,
 	&.orange {
 		border-color: #f28500; /* Orange */
 		background: #fed; /* Light Orange */
+
+		.mixin-darkmode-colors(#ff9d3d, #4a3220);
 	}
 
 	&-style,
@@ -96,6 +132,8 @@
 	&.yellow {
 		border-color: #fb3; /* Yellow */
 		background: #ffc; /* Light yellow */
+
+		.mixin-darkmode-colors(#ffcc33, #4a4a1a);
 	}
 
 	&-move,
@@ -103,6 +141,8 @@
 	&.purple {
 		border-color: #93c; /* Purple */
 		background: #fef; /* Light purple */
+
+		.mixin-darkmode-colors(#d9b3ff, #3a2a4a);
 	}
 
 	&-protection,
@@ -111,24 +151,32 @@
 	&.grey {
 		border-color: #606060; /* Dark gray */
 		background: #eee; /* Light gray */
+
+		.mixin-darkmode-colors(#999, #2a2a2a);
 	}
 
 	&-featured,
 	&.brown {
 		border-color: #cba135; /* Brown-gold */
 		background: #fec; /* light brown */
+
+		.mixin-darkmode-colors(#e6b852, #4a3a1a);
 	}
 
 	&-policy,
 	&.green {
 		border-color: #181; /* Green */
 		background: #cfc; /* Light green */
+
+		.mixin-darkmode-colors(#66dd66, #1a4a1a);
 	}
 
 	&-guideline,
 	&.blue {
 		border-color: #36c;
 		background: #def;
+
+		.mixin-darkmode-colors(#5b9fd9, #0d2f52);
 	}
 
 	&-license {
@@ -140,45 +188,37 @@
 	&.license-pd {
 		background: #f7f8ff; /* Very light gray with blue */
 
-		.client-darkmode & {
-			background: #d9ddff; /* light blue */
-		}
+		.mixin-darkmode-colors(#6b7ba6, #1a1f3a);
 	}
 
 	&.license-cc {
 		background: #f9f9f9; /* Very light gray */
 
-		.client-darkmode & {
-			background: #d9d9d9; /* light gray */
-		}
+		.mixin-darkmode-colors(#999, #262626);
 	}
 
 	&.license-other {
 		background: #ffe; /* Very light gray with yellow */
 
-		.client-darkmode & {
-			background: #ff0; /* Yellow */
-		}
+		.mixin-darkmode-colors(#ccaa00, #4a4a1a);
 	}
 
 	&.license-free {
 		background: #f3ffee; /* Very light green */
 
-		.client-darkmode & {
-			background: #b8ff99; /* Light green */
-		}
+		.mixin-darkmode-colors(#66dd66, #1a4a1a);
 	}
 
 	&.license-nonfree {
 		background: #fff9f9; /* Very light red */
 
-		.client-darkmode & {
-			background: #fcc; /* Light red */
-		}
+		.mixin-darkmode-colors(#ff6b6b, #4a1a1a);
 	}
 
 	&.license-self {
 		background: #f8f9fa; /* Very light gray */
+
+		.mixin-darkmode-bg(#1f1f1f); /* very dark gray */
 	}
 
 	/* Disambig and set index box styles */
@@ -186,6 +226,8 @@
 	&-setindex {
 		border-color: #999;
 		background: #fefefe;
+
+		.mixin-darkmode-colors(#666, #1a1a1a);
 	}
 
 	.mbox .mbox-text & {
@@ -253,6 +295,8 @@
 .tmbox {
 	background: #f8eaba;
 
+	.mixin-darkmode-colors(#cc9933, #3a3a1f);
+
 	.mbox-inside & {
 		&.mbox-small {
 			/* set in "mbox-small" above. */
@@ -279,9 +323,13 @@
 	background: #f8f9fa; /* Default "system" gray */
 	clear: both;
 
+	.mixin-darkmode-colors(#666, #262626); /* dark system gray */
+
 	&-warning {
 		border-color: #bb7070; /* Dark pink */
 		background: #ffdbdb; /* Pink */
+
+		.mixin-darkmode-colors(#ff6b6b, #4a1a1a); /* dark red */
 	}
 
 	/* Div based "system" style fmbox messages. */
@@ -291,6 +339,8 @@
 		margin: 0.2em 0;
 		background: #f8f9fa;
 		clear: both;
+
+		.mixin-darkmode-colors(#666, #262626); /* dark system gray */
 	}
 }
 
@@ -304,6 +354,8 @@
 	background: #ffdbdb;
 	margin: 0.2em 0;
 	clear: both;
+
+	.mixin-darkmode-colors(#ff6b6b, #4a1a1a); /* dark red */
 }
 
 /* These mbox-small classes must be placed after all other
@@ -388,6 +440,17 @@ body.mediawiki .mbox-small {
 /* For permissionerror area */
 .permissions-errors {
 	border: 1px solid #a2a9b1;
+
+	.client-darkmode &,
+	html.skin-theme-clientpref-night & {
+		border-color: #666;
+	}
+
+	@media screen and (prefers-color-scheme: dark) {
+		html.skin-theme-clientpref-os & {
+			border-color: #666;
+		}
+	}
 
 	.fmbox {
 		border: 0;

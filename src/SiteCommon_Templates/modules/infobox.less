@@ -13,10 +13,10 @@
 	max-width: 100% !important;
 	box-sizing: border-box;
 	padding: 0.2em;
-	border: 1px solid #a2a9b1;
+	border: 1px solid var(--border-color-base, #a2a9b1);
 	margin: 0.5em 0;
-	background-color: #f8f9fa;
-	color: @const-color-black;
+	background-color: var(--background-color-interactive-subtle, #f8f9fa);
+	color: var(--color-base, @const-color-black);
 	float: none !important;
 	font-size: 90%;
 	// 修复溢出
@@ -91,7 +91,7 @@
 
 		td,
 		th {
-			border: 1px solid #a2a9b1;
+			border: 1px solid var(--border-color-base, #a2a9b1);
 		}
 
 		.borderless {
@@ -104,7 +104,7 @@
 		tr:last-child {
 			td,
 			th {
-				border: 1px solid #a2a9b1;
+				border: 1px solid var(--border-color-base, #a2a9b1);
 			}
 		}
 
@@ -113,8 +113,8 @@
 			td,
 			th {
 				border: 0;
-				border-top: 1px solid #a2a9b1;
-				border-right: 1px solid #a2a9b1;
+				border-top: 1px solid var(--border-color-base, #a2a9b1);
+				border-right: 1px solid var(--border-color-base, #a2a9b1);
 			}
 		}
 
@@ -122,7 +122,7 @@
 			td,
 			th {
 				border: 0;
-				border-right: 1px solid #a2a9b1;
+				border-right: 1px solid var(--border-color-base, #a2a9b1);
 			}
 		}
 	}
