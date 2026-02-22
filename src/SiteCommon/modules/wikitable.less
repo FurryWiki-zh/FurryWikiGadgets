@@ -1,5 +1,15 @@
 /* Lists in wikitable data cells are always left-aligned */
+// Override wikitable headers to respect dark mode variables (overriding inline styles)
+@wikitable-header-bg: var(--background-color-interactive-subtle, #eaecf0);
+@wikitable-header-color: var(--color-base, #202122);
+
 .wikitable {
+	> tr > th,
+	> * > tr > th {
+		background-color: @wikitable-header-bg !important;
+		color: @wikitable-header-color;
+	}
+
 	td {
 		ul,
 		ol,
