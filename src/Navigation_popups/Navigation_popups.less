@@ -9,10 +9,32 @@
 .popupDiff {
 	ins& {
 		background: #afe;
+
+		.client-darkmode &,
+		html.skin-theme-clientpref-night & {
+			background: #1a4a3a;
+		}
+
+		@media screen and (prefers-color-scheme: dark) {
+			html.skin-theme-clientpref-os & {
+				background: #1a4a3a;
+			}
+		}
 	}
 
 	del& {
 		background: #ffe6e6;
+
+		.client-darkmode &,
+		html.skin-theme-clientpref-night & {
+			background: #4a1a1a;
+		}
+
+		@media screen and (prefers-color-scheme: dark) {
+			html.skin-theme-clientpref-os & {
+				background: #4a1a1a;
+			}
+		}
 	}
 }
 
@@ -20,6 +42,19 @@
 	padding: 6px;
 	border: 2px solid #ddd;
 	background-color: #eef;
+
+	.client-darkmode &,
+	html.skin-theme-clientpref-night & {
+		border-color: #444;
+		background-color: #1a1a2a;
+	}
+
+	@media screen and (prefers-color-scheme: dark) {
+		html.skin-theme-clientpref-os & {
+			border-color: #444;
+			background-color: #1a1a2a;
+		}
+	}
 }
 
 .navpopup {
@@ -31,9 +66,37 @@
 	font-size: 0.785em;
 	word-wrap: break-word;
 
+	.client-darkmode &,
+	html.skin-theme-clientpref-night & {
+		border-color: #555;
+		background-color: #222;
+		box-shadow: 0 3px 8px rgba(0, 0, 0, 0.7);
+	}
+
+	@media screen and (prefers-color-scheme: dark) {
+		html.skin-theme-clientpref-os & {
+			border-color: #555;
+			background-color: #222;
+			box-shadow: 0 3px 8px rgba(0, 0, 0, 0.7);
+		}
+	}
+
 	hr {
 		background-color: #aaa !important;
 		color: #aaa !important;
+
+		.client-darkmode &,
+		html.skin-theme-clientpref-night & {
+			background-color: #555 !important;
+			color: #555 !important;
+		}
+
+		@media screen and (prefers-color-scheme: dark) {
+			html.skin-theme-clientpref-os & {
+				background-color: #555 !important;
+				color: #555 !important;
+			}
+		}
 	}
 }
 
@@ -65,6 +128,19 @@
 	background: @const-color-white;
 	line-height: 1.25em;
 
+	.client-darkmode &,
+	html.skin-theme-clientpref-night & {
+		border-color: #555;
+		background: #222;
+	}
+
+	@media screen and (prefers-color-scheme: dark) {
+		html.skin-theme-clientpref-os & {
+			border-color: #555;
+			background: #222;
+		}
+	}
+
 	li {
 		padding: 0;
 		margin: 0;
@@ -76,15 +152,50 @@
 		padding: 3px;
 		color: #555;
 
+		.client-darkmode &,
+		html.skin-theme-clientpref-night & {
+			color: #aaa;
+		}
+
+		@media screen and (prefers-color-scheme: dark) {
+			html.skin-theme-clientpref-os & {
+				color: #aaa;
+			}
+		}
+
 		&:hover {
 			background: #888;
 			color: @const-color-white;
 			text-decoration: none;
+
+			.client-darkmode &,
+			html.skin-theme-clientpref-night & {
+				background: #555;
+				color: @const-color-white;
+			}
+
+			@media screen and (prefers-color-scheme: dark) {
+				html.skin-theme-clientpref-os & {
+					background: #555;
+					color: @const-color-white;
+				}
+			}
 		}
 	}
 
 	&_row {
 		color: #aaa;
+
+		.client-darkmode &,
+		html.skin-theme-clientpref-night & {
+			color: #666;
+		}
+
+		@media screen and (prefers-color-scheme: dark) {
+			html.skin-theme-clientpref-os & {
+				color: #666;
+			}
+		}
 
 		a {
 			display: inline-block;
@@ -110,11 +221,37 @@
 		padding: 2px;
 		background: @const-color-white;
 		color: #555;
+
+		.client-darkmode &,
+		html.skin-theme-clientpref-night & {
+			background: #222;
+			color: #aaa;
+		}
+
+		@media screen and (prefers-color-scheme: dark) {
+			html.skin-theme-clientpref-os & {
+				background: #222;
+				color: #aaa;
+			}
+		}
 	}
 
 	&:hover {
 		background: #ccf;
 		color: #44f;
+
+		.client-darkmode &,
+		html.skin-theme-clientpref-night & {
+			background: #2a2a5a;
+			color: #88f;
+		}
+
+		@media screen and (prefers-color-scheme: dark) {
+			html.skin-theme-clientpref-os & {
+				background: #2a2a5a;
+				color: #88f;
+			}
+		}
 	}
 }
 
@@ -124,6 +261,17 @@
 
 	a {
 		color: @const-color-black;
+
+		.client-darkmode &,
+		html.skin-theme-clientpref-night & {
+			color: @const-color-white;
+		}
+
+		@media screen and (prefers-color-scheme: dark) {
+			html.skin-theme-clientpref-os & {
+				color: @const-color-white;
+			}
+		}
 	}
 }
 
@@ -143,6 +291,17 @@ a.popup_change_title_link {
 .popup_history {
 	&_row_even {
 		background: #eee;
+
+		.client-darkmode &,
+		html.skin-theme-clientpref-night & {
+			background: #333;
+		}
+
+		@media screen and (prefers-color-scheme: dark) {
+			html.skin-theme-clientpref-os & {
+				background: #333;
+			}
+		}
 	}
 
 	&_date {

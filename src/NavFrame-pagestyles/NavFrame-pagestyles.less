@@ -10,6 +10,17 @@ div {
 		font-size: 95%;
 		text-align: center;
 
+		.client-darkmode &,
+		html.skin-theme-clientpref-night & {
+			border-color: #555;
+		}
+
+		@media screen and (prefers-color-scheme: dark) {
+			html.skin-theme-clientpref-os & {
+				border-color: #555;
+			}
+		}
+
 		&,
 		div.NavContent {
 			p {
@@ -29,6 +40,17 @@ div {
 		background-color: #ccf;
 		font-weight: bold;
 		line-height: 1.6em;
+
+		.client-darkmode &,
+		html.skin-theme-clientpref-night & {
+			background-color: #2a2a5a;
+		}
+
+		@media screen and (prefers-color-scheme: dark) {
+			html.skin-theme-clientpref-os & {
+				background-color: #2a2a5a;
+			}
+		}
 	}
 
 	&.NavPic {
@@ -36,6 +58,17 @@ div {
 		margin: 0;
 		background-color: @const-color-white;
 		float: left;
+
+		.client-darkmode &,
+		html.skin-theme-clientpref-night & {
+			background-color: @const-color-black;
+		}
+
+		@media screen and (prefers-color-scheme: dark) {
+			html.skin-theme-clientpref-os & {
+				background-color: @const-color-black;
+			}
+		}
 	}
 
 	&.NavContent {
