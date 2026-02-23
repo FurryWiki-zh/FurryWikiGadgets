@@ -3,7 +3,7 @@
  * _addText: '{{Gadget Header|license=BSD|attribution=proteriax}}'
  *
  * @base {@link https://github.com/alex-kinokon/jsx-dom}
- * @source {@link https://github.com/FurryWiki/FurryWikiGadgets/tree/master/src/JSX}
+ * @source {@link https://github.com/FurryWiki-zh/FurryWikiGadgets/tree/master/src/JSX}
  * @license BSD-3-Clause {@link https://github.com/alex-kinokon/jsx-dom/blob/master/LICENSE}
  */
 

@@ -3,7 +3,7 @@
  * _addText: '{{Gadget Header|license=MIT}}'
  *
  * @base {@link https://github.com/fregante/filter-altered-clicks}
- * @source {@link https://github.com/FurryWiki/FurryWikiGadgets/tree/master/src/FilterAlteredClicks}
+ * @source {@link https://github.com/FurryWiki-zh/FurryWikiGadgets/tree/master/src/FilterAlteredClicks}
  * @license MIT {@link https://github.com/fregante/filter-altered-clicks/blob/main/license}
  */
 

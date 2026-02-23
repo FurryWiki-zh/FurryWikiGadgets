@@ -3,7 +3,7 @@
  * _addText: '{{Gadget Header|license=GPL-2.0-only}}'
  *
  * @base {@link https://github.com/wikimedia-gadgets/VariantAlly}
- * @source {@link https://github.com/FurryWiki/FurryWikiGadgets/tree/master/src/VariantAlly}
+ * @source {@link https://github.com/FurryWiki-zh/FurryWikiGadgets/tree/master/src/VariantAlly}
  * @license GPL-2.0 {@link https://youshou.wiki/wiki/H:GPLV2}
  */
 

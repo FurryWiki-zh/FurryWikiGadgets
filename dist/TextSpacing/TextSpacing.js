@@ -3,7 +3,7 @@
  * _addText: '{{Gadget Header|license=BSD}}'
  *
  * @base {@link https://github.com/diskdance/gadget-text-spacing}
- * @source {@link https://github.com/FurryWiki/FurryWikiGadgets/tree/master/src/TextSpacing}
+ * @source {@link https://github.com/FurryWiki-zh/FurryWikiGadgets/tree/master/src/TextSpacing}
  * @license BSD-3-Clause {@link https://github.com/diskdance/gadget-text-spacing/blob/main/LICENSE}
  */
 

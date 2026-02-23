@@ -3,7 +3,7 @@
  * _addText: '{{Gadget Header|license=CC-BY-SA-4.0}}'
  *
  * @base {@link https://zh.wikipedia.org/wiki/User:Vanished_user_1929210/js/OnlineAdmins.js}
- * @source {@link https://github.com/FurryWiki/FurryWikiGadgets/tree/master/src/OnlineAdmins}
+ * @source {@link https://github.com/FurryWiki-zh/FurryWikiGadgets/tree/master/src/OnlineAdmins}
  * @license CC-BY-SA-4.0 {@link https://furrywiki.org.cn/wiki/H:CC-BY-SA-4.0}
  */
 /**

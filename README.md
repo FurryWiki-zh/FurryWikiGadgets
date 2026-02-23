@@ -1,5 +1,5 @@
 \*[![NPM version](https://img.shields.io/npm/v/awesome-gadgets.svg)](https://www.npmjs.com/package/awesome-gadgets)
-[![Linter](https://github.com/FurryWiki/FurryWikiGadgets/actions/workflows/lint.yml/badge.svg)](https://github.com/FurryWiki/FurryWikiGadgets/actions/workflows/lint.yml)
+[![Linter](https://github.com/FurryWiki-zh/FurryWikiGadgets/actions/workflows/lint.yml/badge.svg)](https://github.com/FurryWiki-zh/FurryWikiGadgets/actions/workflows/lint.yml)
 
 # 福瑞百科代码库
 
@@ -9,7 +9,7 @@
 
 ## 如何贡献 Contributing
 
-请阅读[**文档部分**](https://github.com/FurryWiki/FurryWikiGadgets/blob/master/docs/how-to-build-or-deploy.md) ，获取技术细节。
+请阅读[**文档部分**](https://github.com/FurryWiki-zh/FurryWikiGadgets/blob/master/docs/how-to-build-or-deploy.md) ，获取技术细节。
 
 > [!IMPORTANT]
 > 开发者注意：

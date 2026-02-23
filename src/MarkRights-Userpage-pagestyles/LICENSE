@@ -3,7 +3,7 @@
  * _addText: '{{Gadget Header|license=CC-BY-SA-4.0}}'
  *
  * @base {@link https://www.mediawiki.org/wiki/MediaWiki:Gadget-whoisactive.css}
- * @base {@link https://github.com/FurryWiki/FurryWikiGadgets/tree/master/src/GeoLocationReader}
- * @source {@link https://github.com/FurryWiki/FurryWikiGadgets/tree/master/src/MarkRights-Userpage-pagestyles}
+ * @base {@link https://github.com/FurryWiki-zh/FurryWikiGadgets/tree/master/src/GeoLocationReader}
+ * @source {@link https://github.com/FurryWiki-zh/FurryWikiGadgets/tree/master/src/MarkRights-Userpage-pagestyles}
  * @license CC-BY-SA-4.0 {@link https://furrywiki.org.cn/wiki/H:CC-BY-SA-4.0}
  */

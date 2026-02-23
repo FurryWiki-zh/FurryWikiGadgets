@@ -4,7 +4,7 @@
  *
  * @base {@link https://rs.miraheze.org/wiki/MediaWiki:Gadget-collapsible.js}
  * @base {@link https://rs.miraheze.org/wiki/MediaWiki:Gadget-collapsible.css}
- * @source {@link https://github.com/FurryWiki/FurryWikiGadgets/tree/master/src/Collapsible}
+ * @source {@link https://github.com/FurryWiki-zh/FurryWikiGadgets/tree/master/src/Collapsible}
  * @author SolidBlock
  * @license CC-BY-SA-4.0 {@link https://furrywiki.org.cn/wiki/H:CC-BY-SA-4.0}
  */

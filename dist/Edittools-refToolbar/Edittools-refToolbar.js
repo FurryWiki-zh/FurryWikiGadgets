@@ -3,7 +3,7 @@
  * _addText: '{{Gadget Header|title1=RefToolbar.js|license1=CC-BY-SA-4.0}}'
  *
  * @base {@link https://zh.wikipedia.org/wiki/MediaWiki:Gadget-refToolbar.js}
- * @source {@link https://github.com/FurryWiki/FurryWikiGadgets/tree/master/src/Edittools-refToolbar}
+ * @source {@link https://github.com/FurryWiki-zh/FurryWikiGadgets/tree/master/src/Edittools-refToolbar}
  * @license CC-BY-SA-4.0 {@link https://furrywiki.org.cn/wiki/H:CC-BY-SA-4.0}
  */
 
@@ -12,7 +12,7 @@
  * _addText: '{{Gadget Header|title2=RefToolbarBase.js|license2=CC-BY-SA-4.0}}'
  *
  * @base {@link https://zh.wikipedia.org/wiki/MediaWiki:Gadget-refToolbarBase.js}
- * @source {@link https://github.com/FurryWiki/FurryWikiGadgets/tree/master/src/Edittools-refToolbar}
+ * @source {@link https://github.com/FurryWiki-zh/FurryWikiGadgets/tree/master/src/Edittools-refToolbar}
  * @license CC-BY-SA-4.0 {@link https://furrywiki.org.cn/wiki/H:CC-BY-SA-4.0}
  */
 
@@ -21,7 +21,7 @@
  * _addText: '{{Gadget Header|title3=RefToolbar.js (RefToolbar 2.0)|license3=CC-BY-SA-4.0}}'
  *
  * @base {@link https://zh.wikipedia.org/wiki/MediaWiki:RefToolbar.js}
- * @source {@link https://github.com/FurryWiki/FurryWikiGadgets/tree/master/src/Edittools-refToolbar}
+ * @source {@link https://github.com/FurryWiki-zh/FurryWikiGadgets/tree/master/src/Edittools-refToolbar}
  * @license CC-BY-SA-4.0 {@link https://furrywiki.org.cn/wiki/H:CC-BY-SA-4.0}
  */
 
@@ -31,7 +31,7 @@
  *
  * @base {@link https://zh.wikipedia.org/wiki/MediaWiki:RefToolbarMessages-zh-hans.js}
  * @base {@link https://zh.wikipedia.org/wiki/MediaWiki:RefToolbarMessages-zh-hant.js}
- * @source {@link https://github.com/FurryWiki/FurryWikiGadgets/tree/master/src/Edittools-refToolbar}
+ * @source {@link https://github.com/FurryWiki-zh/FurryWikiGadgets/tree/master/src/Edittools-refToolbar}
  * @license CC-BY-SA-4.0 {@link https://furrywiki.org.cn/wiki/H:CC-BY-SA-4.0}
  */
 
@@ -40,7 +40,7 @@
  * _addText: '{{Gadget Header|title3=RefToolBar Config|license3=CC-BY-SA-4.0}}'
  *
  * @base {@link https://zh.wikipedia.org/wiki/MediaWiki:RefToolbarConfig.js}
- * @source {@link https://github.com/FurryWiki/FurryWikiGadgets/tree/master/src/Edittools-refToolbar}
+ * @source {@link https://github.com/FurryWiki-zh/FurryWikiGadgets/tree/master/src/Edittools-refToolbar}
  * @license CC-BY-SA-4.0 {@link https://furrywiki.org.cn/wiki/H:CC-BY-SA-4.0}
  */
 
@@ -48,7 +48,7 @@
  * Ajax-loader
  *
  * @base {@link https://www.qiuwenbaike.cn/wiki/File:Ajax-loader.gif}
- * @source {@link https://github.com/FurryWiki/FurryWikiGadgets/tree/master/src/Edittools-refToolbar}
+ * @source {@link https://github.com/FurryWiki-zh/FurryWikiGadgets/tree/master/src/Edittools-refToolbar}
  * @license Public Domain
  */
 
@@ -58,7 +58,7 @@
  * search-ltr-progressive Icon from OOjs UI
  *
  * @base {@link https://www.qiuwenbaike.cn/wiki/File:OOjs_UI_icon_search-ltr-progressive.svg}
- * @source {@link https://github.com/FurryWiki/FurryWikiGadgets/tree/master/src/Edittools-refToolbar}
+ * @source {@link https://github.com/FurryWiki-zh/FurryWikiGadgets/tree/master/src/Edittools-refToolbar}
  * @license MIT {@link https://github.com/wikimedia/oojs-ui/blob/master/LICENSE-MIT}
  */
 
@@ -92,7 +92,7 @@
  * Modified from add-progressive Icon from OOjs UI by WaitSpring
  *
  * @base {@link https://www.qiuwenbaike.cn/wiki/File:OOjs_UI_icon_add-progressive.svg}
- * @source {@link https://github.com/FurryWiki/FurryWikiGadgets/tree/master/src/Edittools-refToolbar}
+ * @source {@link https://github.com/FurryWiki-zh/FurryWikiGadgets/tree/master/src/Edittools-refToolbar}
  * @license MIT {@link https://github.com/wikimedia/oojs-ui/blob/master/LICENSE-MIT}
  */
 
@@ -126,7 +126,7 @@
  * calendar-ltr-progressive Icon from OOjs UI
  *
  * @base {@link https://www.qiuwenbaike.cn/wiki/File:OOjs_UI_icon_calendar-ltr-progressive.svg}
- * @source {@link https://github.com/FurryWiki/FurryWikiGadgets/tree/master/src/Edittools-refToolbar}
+ * @source {@link https://github.com/FurryWiki-zh/FurryWikiGadgets/tree/master/src/Edittools-refToolbar}
  * @license MIT {@link https://github.com/wikimedia/oojs-ui/blob/master/LICENSE-MIT}
  */
 
@@ -159,7 +159,7 @@
  * citeArticle-ltr-progressive Icon from OOjs UI
  *
  * @base {@link https://www.qiuwenbaike.cn/wiki/File:OOjs_UI_icon_citeArticle-ltr-progressive.svg}
- * @source {@link https://github.com/FurryWiki/FurryWikiGadgets/tree/master/src/Edittools-refToolbar}
+ * @source {@link https://github.com/FurryWiki-zh/FurryWikiGadgets/tree/master/src/Edittools-refToolbar}
  * @license MIT {@link https://github.com/wikimedia/oojs-ui/blob/master/LICENSE-MIT}
  */
 

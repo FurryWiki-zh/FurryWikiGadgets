@@ -2,7 +2,7 @@
  * SPDX-License-Identifier: CC-BY-SA-4.0
  * _addText: '{{Gadget Header|license=CC-BY-SA-4.0}}'
  *
- * @source {@link https://github.com/FurryWiki/FurryWikiGadgets/tree/master/src/Editform_Patch2017}
+ * @source {@link https://github.com/FurryWiki-zh/FurryWikiGadgets/tree/master/src/Editform_Patch2017}
  * @license CC-BY-SA-4.0 {@link https://furrywiki.org.cn/wiki/H:CC-BY-SA-4.0}
  */
 /**

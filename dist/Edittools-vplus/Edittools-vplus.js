@@ -3,7 +3,7 @@
  * _addText: '{{Gadget Header|license=CC-BY-SA-4.0}}'
  *
  * @base {@link https://zh.wikipedia.org/wiki/MediaWiki:Gadget-Edittools-vplus.js}
- * @source {@link https://github.com/FurryWiki/FurryWikiGadgets/tree/master/src/Edittools-vplus}
+ * @source {@link https://github.com/FurryWiki-zh/FurryWikiGadgets/tree/master/src/Edittools-vplus}
  * @license CC-BY-SA-4.0 {@link https://furrywiki.org.cn/wiki/H:CC-BY-SA-4.0}
  */
 /**

@@ -3,7 +3,7 @@
  * _addText: '{{Gadget Header|license=MIT|attribution=2018 apvarun}}'
  *
  * @base {@link https://github.com/apvarun/toastify-js}
- * @source {@link https://github.com/FurryWiki/FurryWikiGadgets/tree/master/src/Toastify}
+ * @source {@link https://github.com/FurryWiki-zh/FurryWikiGadgets/tree/master/src/Toastify}
  * @license MIT {@link https://github.com/apvarun/toastify-js/blob/master/LICENSE}
  */
 

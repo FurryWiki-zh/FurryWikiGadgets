@@ -5,7 +5,7 @@
  * @base {@link https://en.wikipedia.org/wiki/MediaWiki:Gadget-popups.js}
  * @base {@link https://zh.wikipedia.org/w/index.php?title=User:Lupin/strings-draft&oldid=579996170}
  * @base {@link https://zh.wikipedia.org/wiki/MediaWiki:Gadget-navpop.css}
- * @source {@link https://github.com/FurryWiki/FurryWikiGadgets/tree/master/src/Navigation_popups}
+ * @source {@link https://github.com/FurryWiki-zh/FurryWikiGadgets/tree/master/src/Navigation_popups}
  * @license CC-BY-SA-4.0 {@link https://furrywiki.org.cn/wiki/H:CC-BY-SA-4.0}
  */
 /**

@@ -3,7 +3,7 @@
  * _addText: '{{Gadget Header|license=MIT}}'
  *
  * @base {@link https://github.com/atomiks/tippyjs}
- * @source {@link https://github.com/FurryWiki/FurryWikiGadgets/tree/master/src/Tippy}
+ * @source {@link https://github.com/FurryWiki-zh/FurryWikiGadgets/tree/master/src/Tippy}
  * @license MIT {@link https://github.com/atomiks/tippyjs/blob/master/LICENSE}
  */
 

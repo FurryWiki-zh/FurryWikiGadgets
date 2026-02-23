@@ -3,7 +3,7 @@
  * _addText: '{{Gadget Header|license=MIT}}'
  *
  * @base {@link https://github.com/zenorocha/clipboard.js}
- * @source {@link https://github.com/FurryWiki/FurryWikiGadgets/tree/master/src/Clipboard}
+ * @source {@link https://github.com/FurryWiki-zh/FurryWikiGadgets/tree/master/src/Clipboard}
  * @license MIT {@link https://github.com/zenorocha/clipboard.js/blob/master/LICENSE}
  */
 

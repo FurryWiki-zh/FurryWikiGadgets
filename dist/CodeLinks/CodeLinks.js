@@ -4,7 +4,7 @@
  *
  * @base {@link https://en.wiktionary.org/wiki/MediaWiki:Gadget-CodeLinks.js}
  * @base {@link https://zh.wiktionary.org/wiki/MediaWiki:Gadget-CodeLinks.js}
- * @source {@link https://github.com/FurryWiki/FurryWikiGadgets/tree/master/src/CodeLinks}
+ * @source {@link https://github.com/FurryWiki-zh/FurryWikiGadgets/tree/master/src/CodeLinks}
  * @license CC-BY-SA-4.0 {@link https://furrywiki.org.cn/wiki/H:CC-BY-SA-4.0}
  */
 /**

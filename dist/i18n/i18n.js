@@ -2,7 +2,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  * _addText: '{{Gadget Header|license=GPL-3.0-or-later}}'
  *
- * @source {@link https://github.com/FurryWiki/FurryWikiGadgets/tree/master/src/i18n}
+ * @source {@link https://github.com/FurryWiki-zh/FurryWikiGadgets/tree/master/src/i18n}
  * @author 安忆 <i@anyi.in>
  * @license GPL-3.0-or-later {@link https://furrywiki.org.cn/wiki/H:GPLV3}
  */

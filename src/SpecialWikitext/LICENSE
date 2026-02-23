@@ -3,7 +3,7 @@
  * _addText: '{{Gadget Header|license=CC-BY-SA-4.0}}'
  *
  * @base {@link https://zh.wikipedia.org/wiki/MediaWiki:Gadget-SpecialWikitext.js}
- * @source {@link https://github.com/FurryWiki/FurryWikiGadgets/tree/master/src/SpecialWikitext}
+ * @source {@link https://github.com/FurryWiki-zh/FurryWikiGadgets/tree/master/src/SpecialWikitext}
  * @license CC-BY-SA-4.0 {@link https://furrywiki.org.cn/wiki/H:CC-BY-SA-4.0}
  */
 
@@ -13,6 +13,6 @@
  * Alert Mark (Orange)
  *
  * @base {@link https://www.qiuwenbaike.cn/wiki/File:Alert_Mark_%28Orange%29.svg}
- * @source {@link https://github.com/FurryWiki/FurryWikiGadgets/tree/master/src/SpecialWikitext}
+ * @source {@link https://github.com/FurryWiki-zh/FurryWikiGadgets/tree/master/src/SpecialWikitext}
  * @license CC-BY-SA-4.0 {@link https://furrywiki.org.cn/wiki/H:CC-BY-SA-4.0}
  */
