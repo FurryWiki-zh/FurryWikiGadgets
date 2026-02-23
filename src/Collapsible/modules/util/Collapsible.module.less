@@ -2,6 +2,16 @@
 	font-weight: normal;
 	user-select: none;
 
+	a {
+		cursor: pointer;
+		color: var(--color-link, #0645ad);
+
+		&:hover,
+		&:focus {
+			text-decoration: underline;
+		}
+	}
+
 	:global(.mw-content-ltr) & {
 		margin-right: 0;
 		margin-left: 0.5em;
