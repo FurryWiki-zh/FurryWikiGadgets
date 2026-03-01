@@ -1,5 +1,31 @@
 @import (reference) '../variables.less';
 
+.mixin-infobox-darkmode(@rules) {
+	.client-darkmode &,
+	html.skin-theme-clientpref-night & {
+		@rules();
+	}
+
+	@media screen and (prefers-color-scheme: dark) {
+		html.skin-theme-clientpref-os & {
+			@rules();
+		}
+	}
+}
+
+.mixin-infobox-darkmode-root(@rules) {
+	.client-darkmode,
+	html.skin-theme-clientpref-night {
+		@rules();
+	}
+
+	@media screen and (prefers-color-scheme: dark) {
+		html.skin-theme-clientpref-os {
+			@rules();
+		}
+	}
+}
+
 /**
  * Infobox template style
  * Including Vertical Navbox
@@ -18,11 +44,11 @@
 	background-color: var(--background-color-interactive-subtle, #f8f9fa);
 	color: var(--color-base, @const-color-black);
 
-	.client-darkmode & {
+	.mixin-infobox-darkmode({
 		background-color: var(--background-color-interactive-subtle, #202122);
 		border-color: var(--border-color-base, #54595d);
 		color: var(--color-base, #f8f9fa);
-	}
+	});
 	float: none !important;
 	font-size: 90%;
 	// 修复溢出
@@ -99,9 +125,9 @@
 		th {
 			border: 1px solid var(--border-color-base, #a2a9b1);
 
-			.client-darkmode & {
+			.mixin-infobox-darkmode({
 				border-color: var(--border-color-base, #54595d);
-			}
+			});
 		}
 
 		.borderless {
@@ -115,6 +141,9 @@
 			td,
 			th {
 				border: 1px solid var(--border-color-base, #a2a9b1);
+				.mixin-infobox-darkmode({
+					border-color: var(--border-color-base, #54595d);
+				});
 			}
 		}
 
@@ -125,6 +154,10 @@
 				border: 0;
 				border-top: 1px solid var(--border-color-base, #a2a9b1);
 				border-right: 1px solid var(--border-color-base, #a2a9b1);
+				.mixin-infobox-darkmode({
+					border-top-color: var(--border-color-base, #54595d);
+					border-right-color: var(--border-color-base, #54595d);
+				});
 			}
 		}
 
@@ -133,33 +166,18 @@
 			th {
 				border: 0;
 				border-right: 1px solid var(--border-color-base, #a2a9b1);
+				.mixin-infobox-darkmode({
+					border-right-color: var(--border-color-base, #54595d);
+				});
 			}
 		}
 	}
 
-	/* Dark mode overrides for infoboxes - explicit selectors ensure correct specificity */
+	/* Remove old darkmode overrides */
+	/*
 	.client-darkmode .infobox,
-	.client-darkmode .vertical-navbox {
-		background-color: var(--background-color-interactive-subtle, #202122);
-		border-color: var(--border-color-base, #54595d);
-		color: var(--color-base, #f8f9fa);
-	}
-
-	.client-darkmode .infobox a,
-	.client-darkmode .vertical-navbox a {
-		color: var(--link-color, #9ecbff);
-	}
-
-	.client-darkmode .infobox.bordered td,
-	.client-darkmode .infobox.bordered th,
-	.client-darkmode .infobox.bordered tr:last-child td,
-	.client-darkmode .infobox.bordered tr:last-child th,
-	.client-darkmode .infobox.bordered .mergedtoprow td,
-	.client-darkmode .infobox.bordered .mergedtoprow th,
-	.client-darkmode .infobox.bordered .mergedrow td,
-	.client-darkmode .infobox.bordered .mergedrow th {
-		border-color: var(--border-color-base, #54595d);
-	}
+	.client-darkmode .vertical-navbox { ... }
+	*/
 
 	&.sisterproject {
 		width: 20em;
@@ -225,3 +243,33 @@
 		line-height: 1.5em;
 	}
 }
+
+/* Dark mode specific robust overrides out of block scope */
+.mixin-infobox-darkmode-root({
+	/* 1. Ensure links have correct contrast */
+	.infobox a,
+	.vertical-navbox a {
+		color: var(--link-color, #9ecbff);
+	}
+
+	/* 2. Handle cells with inline background styles (like style="background:#ccf")
+	   We blend a dark gray layer over the original color to keep its semantic meaning
+	   but make it dark-mode safe, and enforce readability of the text. */
+	.infobox th[style*='background'],
+	.infobox td[style*='background'],
+	.vertical-navbox th[style*='background'],
+	.vertical-navbox td[style*='background'] {
+		background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)) !important;
+		color: var(--color-base, #f8f9fa) !important;
+
+		a {
+			color: #9ecbff; // Explicitly set link color on dark backgrounds
+		}
+	}
+
+	/* 3. Also force non-styled th cells to have readable text since some templates don't inherit well */
+	.infobox th,
+	.vertical-navbox th {
+		color: var(--color-base, #f8f9fa);
+	}
+});
