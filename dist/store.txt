@@ -110,6 +110,7 @@
 		"MediaWiki:Gadget-Editform_AiAssisted/zh-hk",
 		"MediaWiki:Gadget-Editform_AiAssisted/zh-mo",
 		"MediaWiki:Gadget-Editform_AiAssisted/zh-my",
+		"MediaWiki:Gadget-Editform_AiAssisted/zh-sg",
 		"MediaWiki:Gadget-Editform_AiAssisted/zh-tw",
 		"MediaWiki:Gadget-EditForm_JS",
 		"MediaWiki:Gadget-EditForm_JS.js",

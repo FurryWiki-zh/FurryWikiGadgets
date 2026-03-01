@@ -247,9 +247,14 @@
 /* Dark mode specific robust overrides out of block scope */
 .mixin-infobox-darkmode-root({
 	/* 1. Ensure links have correct contrast */
-	.infobox a,
-	.vertical-navbox a {
-		color: var(--link-color, #9ecbff);
+	.infobox a:not(.new),
+	.vertical-navbox a:not(.new) {
+		color: var(--color-link, #80b5ff);
+	}
+
+	.infobox a.new,
+	.vertical-navbox a.new {
+		color: var(--color-link-red, #ff6e6e);
 	}
 
 	/* 2. Handle cells with inline background styles (like style="background:#ccf")
@@ -259,17 +264,28 @@
 	.infobox td[style*='background'],
 	.vertical-navbox th[style*='background'],
 	.vertical-navbox td[style*='background'] {
-		background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)) !important;
+		/* Use a softer overlay to keep more of the original color */
+		background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)) !important;
 		color: var(--color-base, #f8f9fa) !important;
 
-		a {
-			color: #9ecbff; // Explicitly set link color on dark backgrounds
+		a:not(.new) {
+			color: var(--color-link, #80b5ff);
+		}
+
+		a.new {
+			color: var(--color-link-red, #ff6e6e);
 		}
 	}
 
-	/* 3. Also force non-styled th cells to have readable text since some templates don't inherit well */
+	/* 3. Also force non-styled th cells to have readable text and subtle background */
 	.infobox th,
 	.vertical-navbox th {
 		color: var(--color-base, #f8f9fa);
+	}
+
+	/* Add subtle background for headers without inline style in dark mode */
+	.infobox th:not([style*='background']),
+	.vertical-navbox th:not([style*='background']) {
+		background-color: rgba(255, 255, 255, 0.05);
 	}
 });
