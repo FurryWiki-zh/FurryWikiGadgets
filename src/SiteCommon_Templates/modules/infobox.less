@@ -115,10 +115,6 @@
 			td,
 			th {
 				border: 1px solid var(--border-color-base, #a2a9b1);
-
-				.client-darkmode & {
-					border-color: var(--border-color-base, #54595d);
-				}
 			}
 		}
 
@@ -129,11 +125,6 @@
 				border: 0;
 				border-top: 1px solid var(--border-color-base, #a2a9b1);
 				border-right: 1px solid var(--border-color-base, #a2a9b1);
-
-				.client-darkmode & {
-					border-top-color: var(--border-color-base, #54595d);
-					border-right-color: var(--border-color-base, #54595d);
-				}
 			}
 		}
 
@@ -142,12 +133,32 @@
 			th {
 				border: 0;
 				border-right: 1px solid var(--border-color-base, #a2a9b1);
-
-				.client-darkmode & {
-					border-right-color: var(--border-color-base, #54595d);
-				}
 			}
 		}
+	}
+
+	/* Dark mode overrides for infoboxes - explicit selectors ensure correct specificity */
+	.client-darkmode .infobox,
+	.client-darkmode .vertical-navbox {
+		background-color: var(--background-color-interactive-subtle, #202122);
+		border-color: var(--border-color-base, #54595d);
+		color: var(--color-base, #f8f9fa);
+	}
+
+	.client-darkmode .infobox a,
+	.client-darkmode .vertical-navbox a {
+		color: var(--link-color, #9ecbff);
+	}
+
+	.client-darkmode .infobox.bordered td,
+	.client-darkmode .infobox.bordered th,
+	.client-darkmode .infobox.bordered tr:last-child td,
+	.client-darkmode .infobox.bordered tr:last-child th,
+	.client-darkmode .infobox.bordered .mergedtoprow td,
+	.client-darkmode .infobox.bordered .mergedtoprow th,
+	.client-darkmode .infobox.bordered .mergedrow td,
+	.client-darkmode .infobox.bordered .mergedrow th {
+		border-color: var(--border-color-base, #54595d);
 	}
 
 	&.sisterproject {
