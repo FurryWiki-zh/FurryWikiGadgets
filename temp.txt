@@ -16,13 +16,12 @@
 	border: 1px solid var(--border-color-base, #a2a9b1);
 	margin: 0.5em 0;
 	background-color: var(--background-color-interactive-subtle, #f8f9fa);
-	color: var(--color-base, @const-color-black);
-
 	.client-darkmode & {
 		background-color: var(--background-color-interactive-subtle, #202122);
 		border-color: var(--border-color-base, #54595d);
-		color: var(--color-base, #f8f9fa);
+		color: var(--color-base, #fff);
 	}
+	color: var(--color-base, @const-color-black);
 	float: none !important;
 	font-size: 90%;
 	// 修复溢出
@@ -98,10 +97,6 @@
 		td,
 		th {
 			border: 1px solid var(--border-color-base, #a2a9b1);
-
-			.client-darkmode & {
-				border-color: var(--border-color-base, #54595d);
-			}
 		}
 
 		.borderless {
@@ -115,10 +110,6 @@
 			td,
 			th {
 				border: 1px solid var(--border-color-base, #a2a9b1);
-
-				.client-darkmode & {
-					border-color: var(--border-color-base, #54595d);
-				}
 			}
 		}
 
@@ -129,11 +120,6 @@
 				border: 0;
 				border-top: 1px solid var(--border-color-base, #a2a9b1);
 				border-right: 1px solid var(--border-color-base, #a2a9b1);
-
-				.client-darkmode & {
-					border-top-color: var(--border-color-base, #54595d);
-					border-right-color: var(--border-color-base, #54595d);
-				}
 			}
 		}
 
@@ -142,10 +128,6 @@
 			th {
 				border: 0;
 				border-right: 1px solid var(--border-color-base, #a2a9b1);
-
-				.client-darkmode & {
-					border-right-color: var(--border-color-base, #54595d);
-				}
 			}
 		}
 	}
@@ -214,3 +196,5 @@
 		line-height: 1.5em;
 	}
 }
+
+

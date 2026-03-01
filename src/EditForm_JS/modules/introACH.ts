@@ -3,7 +3,7 @@ import {userIsInGroup} from 'ext.gadget.Util';
 const introACH = (): void => {
 	const {wgAction, wgArticleId, wgWikiID, wgNamespaceNumber} = mw.config.get();
 
-	// Disabled for wikis other than ysarchives
+	// Disabled for wikis other than furrywiki
 	if (wgWikiID !== 'furrywiki') {
 		return;
 	}
@@ -19,7 +19,7 @@ const introACH = (): void => {
 	}
 
 	// Disabled for official users and experienced users
-	if (userIsInGroup(['steward', 'honorary-maintainer', 'bot', 'confirmed', 'autoconfirmed'])) {
+	if (userIsInGroup(['steward', 'bot', 'confirmed', 'autoconfirmed'])) {
 		return;
 	}
 
