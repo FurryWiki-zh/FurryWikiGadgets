@@ -7,6 +7,19 @@
 }
 
 /* 文件信息模板 */
+.mixin-fileinfotpl-darkmode(@rules) {
+	.client-darkmode &,
+	html.skin-theme-clientpref-night & {
+		@rules();
+	}
+
+	@media screen and (prefers-color-scheme: dark) {
+		html.skin-theme-clientpref-os & {
+			@rules();
+		}
+	}
+}
+
 .fileinfotpl {
 	width: 95%;
 	padding: 0.5em;
@@ -18,6 +31,11 @@
 	background-color: #f9f9f9;
 	border-collapse: inherit;
 
+	.mixin-fileinfotpl-darkmode({
+		background-color: #202122;
+		border-color: #72777d;
+	});
+
 	@media (max-width: 768px) {
 		width: 100%;
 		max-width: 100%;
@@ -27,6 +45,10 @@
 		padding: 0.5em;
 		background-color: #f7f8ff;
 		vertical-align: top;
+
+		.mixin-fileinfotpl-darkmode({
+			background-color: #1a1b1e;
+		});
 
 		@media (max-width: 768px) {
 			flex: 1 1 100%;
@@ -38,12 +60,13 @@
 			font-weight: bold;
 			text-align: right;
 
+			.mixin-fileinfotpl-darkmode({
+				background-color: #2a2b2e;
+				color: #eaecf0;
+			});
+
 			@media (max-width: 768px) {
 				text-align: center;
-			}
-
-			.client-darkmode & {
-				filter: invert(1) hue-rotate(180deg);
 			}
 		}
 	}
