@@ -20,11 +20,21 @@
 		gap: 1em;
 		word-break: break-all;
 
-		.client-darkmode & {
-			background: @background-color-primary--light;
+		.client-darkmode &,
+		html.skin-theme-clientpref-night & {
+			background: fade(@const-color-blue, 12.5%);
 			box-shadow:
-				0 1px 2px @background-color-primary--darker,
-				0 -1px 2px @background-color-primary--darker;
+				0 1px 2px fade(@const-color-blue, 50%),
+				0 -1px 2px fade(@const-color-blue, 50%);
+		}
+
+		@media screen and (prefers-color-scheme: dark) {
+			html.skin-theme-clientpref-os & {
+				background: fade(@const-color-blue, 12.5%);
+				box-shadow:
+					0 1px 2px fade(@const-color-blue, 50%),
+					0 -1px 2px fade(@const-color-blue, 50%);
+			}
 		}
 	}
 
@@ -33,7 +43,7 @@
 		display: block !important;
 		flex: 1 1 100%;
 		margin: 0 auto;
-		color: #36c;
+		color: @const-color-blue;
 		text-align: center;
 
 		img {
@@ -79,11 +89,37 @@
 .draftat {
 	border: 1px solid #fc3;
 	background: #fef6e7;
+
+	.client-darkmode &,
+	html.skin-theme-clientpref-night & {
+		border-color: #ca0;
+		background: #4a4a1a;
+	}
+
+	@media screen and (prefers-color-scheme: dark) {
+		html.skin-theme-clientpref-os & {
+			border-color: #ca0;
+			background: #4a4a1a;
+		}
+	}
 }
 
 .nopermissionnotice {
 	border: 1px solid #bb7070;
 	background: #ffdbdb;
+
+	.client-darkmode &,
+	html.skin-theme-clientpref-night & {
+		border-color: #ff6b6b;
+		background: #4a1a1a;
+	}
+
+	@media screen and (prefers-color-scheme: dark) {
+		html.skin-theme-clientpref-os & {
+			border-color: #ff6b6b;
+			background: #4a1a1a;
+		}
+	}
 }
 
 .dymlink {
