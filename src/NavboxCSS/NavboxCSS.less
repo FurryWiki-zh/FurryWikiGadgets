@@ -32,6 +32,29 @@
 	--navbox-subgroup-color: hsl(var(--navbox-hue, 160) var(--navbox-saturation, 45%) 86%);
 	--navbox-sub-subgroup-color: hsl(var(--navbox-hue, 160) var(--navbox-saturation, 45%) 90%);
 
+	.client-darkmode &,
+	html.skin-theme-clientpref-night & {
+		border-color: #555;
+		background: #202122;
+
+		--navbox-title-color: hsl(var(--navbox-hue, 160) var(--navbox-saturation, 45%) 25%);
+		--navbox-group-color: hsl(var(--navbox-hue, 160) var(--navbox-saturation, 45%) 20%);
+		--navbox-subgroup-color: hsl(var(--navbox-hue, 160) var(--navbox-saturation, 45%) 15%);
+		--navbox-sub-subgroup-color: hsl(var(--navbox-hue, 160) var(--navbox-saturation, 45%) 10%);
+	}
+
+	@media screen and (prefers-color-scheme: dark) {
+		html.skin-theme-clientpref-os & {
+			border-color: #555;
+			background: #202122;
+
+			--navbox-title-color: hsl(var(--navbox-hue, 160) var(--navbox-saturation, 45%) 25%);
+			--navbox-group-color: hsl(var(--navbox-hue, 160) var(--navbox-saturation, 45%) 20%);
+			--navbox-subgroup-color: hsl(var(--navbox-hue, 160) var(--navbox-saturation, 45%) 15%);
+			--navbox-sub-subgroup-color: hsl(var(--navbox-hue, 160) var(--navbox-saturation, 45%) 10%);
+		}
+	}
+
 	/* 整个navbox中的所有单元格，包括title、group、list等。 */
 	.navbox-cell {
 		padding: 0.0875em 1em;
@@ -129,6 +152,17 @@
 
 	.navbox-even {
 		background: #f7f7f7;
+
+		.client-darkmode &,
+		html.skin-theme-clientpref-night & {
+			background: #2a2a2e;
+		}
+
+		@media screen and (prefers-color-scheme: dark) {
+			html.skin-theme-clientpref-os & {
+				background: #2a2a2e;
+			}
+		}
 	}
 
 	/* navbar有关功能 */
