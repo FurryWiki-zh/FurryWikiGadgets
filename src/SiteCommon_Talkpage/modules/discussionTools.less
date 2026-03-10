@@ -37,6 +37,21 @@ span[data-mw-comment-start] {
 	}
 }
 
+.ext-discussiontools-init-targetcomment {
+	background-color: hsl(220deg 100% 90.11%);
+
+	.client-darkmode &,
+	html.skin-theme-clientpref-night & {
+		background-color: hsl(220deg 50% 25%);
+	}
+
+	@media screen and (prefers-color-scheme: dark) {
+		html.skin-theme-clientpref-os & {
+			background-color: hsl(220deg 50% 25%);
+		}
+	}
+}
+
 .discussiontools-ui-replyWidget-margin-left(@i, @j) when (@i > 0) {
 	.ext-discussiontools-ui-replyWidget {
 		margin-left: (-10em + @i);
