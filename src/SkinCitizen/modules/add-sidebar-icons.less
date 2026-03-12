@@ -9,6 +9,17 @@
 		width: 20px;
 		height: 20px;
 		vertical-align: middle;
+
+		.client-darkmode &,
+		html.skin-theme-clientpref-night & {
+			filter: invert(1) hue-rotate(180deg);
+		}
+
+		@media screen and (prefers-color-scheme: dark) {
+			html.skin-theme-clientpref-os & {
+				filter: invert(1) hue-rotate(180deg);
+			}
+		}
 	}
 }
 
