@@ -5,9 +5,9 @@
  * Wikiplus-highlight
  *
  * @base {@link https://github.com/bhsd-harry/Wikiplus-highlight/}
- * @source {@link https://github.com/TopRealm/YsArchives-Gadgets/tree/master/src/Wikiplus-highlight}
+ * @source {@link https://github.com/FurryWiki-zh/FurryWikiGadgets/tree/master/src/Wikiplus-highlight}
  * @author Bhsd <https://github.com/bhsd-harry>, 机智的小鱼君 <https://github.com/Dragon-Fish>
- * @license GPL-3.0-or-later {@link https://youshou.wiki/wiki/H:GPL-3.0}
+ * @license GPL-3.0-or-later {@link https://furrywiki.org.cn/wiki/H:GPL-3.0}
  */
 
 /**
