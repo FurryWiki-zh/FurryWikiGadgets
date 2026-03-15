@@ -29,11 +29,6 @@ const smartEditIntro = ($body: JQuery<HTMLBodyElement>): void => {
 				addEditIntro('Template:BLP_editintro');
 			}
 			break;
-		case 4:
-			if (wgCategories.includes('FurryWiki条例完整列表')) {
-				addEditIntro('Template:Policy_editintro');
-			}
-			break;
 		case 8:
 		case 12: {
 			if (wgCategories.includes('CC-BY-NC-SA-4.0')) {
