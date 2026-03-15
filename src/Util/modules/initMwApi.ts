@@ -13,7 +13,7 @@ function initMwApi(userAgent?: string, apiUri?: string): mw.Api | mw.ForeignApi 
 	const apiOptions = {
 		ajax: {
 			headers: {
-				'Api-User-Agent': userAgent ? `YsArchives/1.1 (${userAgent})` : 'YsArchives/1.1',
+				'Api-User-Agent': userAgent ? `FurryWiki/1.1 (${userAgent})` : 'FurryWiki/1.1',
 			},
 		},
 	};

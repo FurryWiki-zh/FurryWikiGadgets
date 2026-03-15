@@ -1,5 +1,5 @@
 {
-	"ysarchives": {
+	"furwiki": {
 		"Citizen.js": {
 			"enable": true,
 			"sourceCode": "mw.loader.using(['ext.gadget.SkinCitizen']);"
