@@ -68,3 +68,35 @@
 	background-color: var(--background-color-base, @const-color-white);
 	color: var(--color-base);
 }
+
+/* 修复 WikiEditor 工具栏在窄屏/由于侧边栏产生挤压时的错位与遮挡问题 */
+.wikiEditor-ui-toolbar {
+	.tabs {
+		/* 允许顶部的“高级”、“特殊字符”等标签换行，避免互相挤压 */
+		display: flex;
+		flex-wrap: wrap;
+		height: auto !important;
+
+		span.tab a {
+			white-space: nowrap; /* 强制不换行，防止文字被拆成竖排 */
+		}
+	}
+
+	.sections .section {
+		/* 去除强加的 display，防止破坏 WikiEditor 控制标签页隐藏的 display: none */
+		/* 但保留自适应高度允许组折行撑开 */
+		padding-bottom: 2px;
+	}
+
+	.group {
+		/* 确保每个组内的图标和文字紧凑对齐，但能在屏幕极窄时折行 */
+		display: inline-flex;
+		flex-wrap: wrap;
+
+		.tool,
+		.tool-select,
+		.tool-select .label {
+			white-space: nowrap; /* 防止如“标题”、“格式”、“插入”等按钮内部文字变竖排 */
+		}
+	}
+}

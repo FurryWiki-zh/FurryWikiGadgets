@@ -1,4 +1,4 @@
-import boldItalicA from './images/Toolbaricon_bolditalic_A.png';
+import boldItalicA from './images/Toolbaricon_bolditalic_A.svg';
 import chineseConversion from './images/Chinese_conversion.png';
 import {customizeToolbar} from 'ext.gadget.Edittools-customizeToolbar';
 
