@@ -1,23 +1,8 @@
-import boldItalicA from './images/Toolbaricon_bolditalic_A.svg';
 import chineseConversion from './images/Chinese_conversion.png';
 import {customizeToolbar} from 'ext.gadget.Edittools-customizeToolbar';
 
 customizeToolbar(function (this: JQuery): void {
 	const self = this as JQuery & {wikiEditor: (method: string, options: Record<string, unknown>) => void};
-
-	// 将你自定义的 SVG 注册为 OOUI 标准图标，以避免触发 WikiEditor 的旧版降级渲染
-	mw.util.addCSS(`
-		.oo-ui-icon-custom-bolditalic.oo-ui-iconElement-icon {
-			background-image: url("${boldItalicA}") !important;
-			background-size: contain;
-			background-position: center center;
-		}
-		/* 支持深色模式反转（仅当你的 SVG 是黑色且没有适配时需要，防止在深色背景下看不见） */
-		.client-darkmode .oo-ui-icon-custom-bolditalic.oo-ui-iconElement-icon,
-		html.skin-theme-clientpref-night .oo-ui-icon-custom-bolditalic.oo-ui-iconElement-icon {
-			filter: invert(1);
-		}
-	`);
 
 	self.wikiEditor('addToToolbar', {
 		section: 'main',
@@ -44,7 +29,7 @@ customizeToolbar(function (this: JQuery): void {
 			bolditalic: {
 				label: '粗斜体',
 				type: 'button',
-				oouiIcon: 'custom-bolditalic',
+				oouiIcon: 'italic' /* 使用你截图所示的官方斜体图标 */,
 				action: {
 					type: 'encapsulate',
 					options: {
