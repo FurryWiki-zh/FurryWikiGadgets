@@ -29,7 +29,7 @@ customizeToolbar(function (this: JQuery): void {
 			bolditalic: {
 				label: '粗斜体',
 				type: 'button',
-				oouiIcon: 'italic' /* 使用你截图所示的官方斜体图标 */,
+				oouiIcon: 'italic',
 				action: {
 					type: 'encapsulate',
 					options: {
