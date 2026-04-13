@@ -5,19 +5,16 @@
 	from {
 		opacity: 0.35;
 		transform: translateY(7px);
-		filter: blur(1.1px);
 	}
 
 	55% {
 		opacity: 1;
 		transform: translateY(0);
-		filter: blur(0);
 	}
 
 	to {
 		opacity: 1;
 		transform: translateY(0);
-		filter: blur(0);
 	}
 }
 
@@ -116,7 +113,7 @@
 			overflow: hidden;
 			word-break: break-word;
 			line-height: 1.45;
-			will-change: opacity, transform, filter;
+			will-change: opacity, transform;
 
 			&::after {
 				content: '';
