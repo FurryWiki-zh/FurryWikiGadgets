@@ -13,7 +13,12 @@ const generateArea = (): JQuery => {
 		<div className={[CLASS_NAME, 'noprint']}>
 			<div className={CLASS_NAME_TITLE}>{getMessage('Title')}</div>
 			<div className={CLASS_NAME_NOTICE}>
-				<div className={[CLASS_NAME_NOTICE_CONTENT, 'center']} />
+				<div
+					className={[CLASS_NAME_NOTICE_CONTENT, 'center']}
+					role="status"
+					aria-live="polite"
+					aria-atomic="true"
+				/>
 			</div>
 			<div className={CLASS_NAME_DISMISS}>
 				<a role="button" aria-label={getMessage('Dismiss')} />

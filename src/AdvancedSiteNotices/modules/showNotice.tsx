@@ -13,15 +13,40 @@ let currentVersion: string = '0';
 const localVersion = mw.storage.get(OPTIONS.storageKey) as string | null;
 
 let timer: ReturnType<typeof setTimeout>;
+let contentRefreshTimer: ReturnType<typeof setTimeout>;
+
+const NOTICE_ROTATE_INTERVAL_MS: number = 10 * 1000;
+const NOTICE_CONTENT_REFRESH_DURATION_MS: number = 700;
+const prefersReducedMotion: boolean =
+	typeof window.matchMedia === 'function' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const fadeOutDuration: number = prefersReducedMotion ? 0 : 140;
+const fadeInDuration: number = prefersReducedMotion ? 0 : 220;
+const noticeContentRefreshClass: string = `${CLASS_NAME_NOTICE_CONTENT}--refresh`;
 
 const $area: JQuery = generateArea();
 const $currentNotice: JQuery = $area.find(`.${CLASS_NAME_NOTICE_CONTENT}`);
 const $dismiss: JQuery<HTMLAnchorElement> = $area.find(`.${CLASS_NAME_DISMISS}`).find('a');
 
+const refreshNoticeContent = (): void => {
+	if (prefersReducedMotion) {
+		return;
+	}
+
+	clearTimeout(contentRefreshTimer);
+	$currentNotice.removeClass(noticeContentRefreshClass);
+	// Force reflow so the animation can be replayed on each refresh.
+	void $currentNotice.get(0)?.offsetWidth;
+	$currentNotice.addClass(noticeContentRefreshClass);
+	contentRefreshTimer = setTimeout((): void => {
+		$currentNotice.removeClass(noticeContentRefreshClass);
+	}, NOTICE_CONTENT_REFRESH_DURATION_MS);
+};
+
 const closeNotices = (): void => {
 	broadcastChannel.postMessage('close');
 	broadcastChannel.close();
 	clearTimeout(timer);
+	clearTimeout(contentRefreshTimer);
 	$area.remove();
 	mw.storage.set(OPTIONS.storageKey, currentVersion, 60 * 60 * 24 * 30);
 };
@@ -84,7 +109,7 @@ const showNotices = ($mountPoint: JQuery, index: number, remoteNotices?: RemoteN
 	const noticeStyleId: number = $notice.data('asn-style-id') as number;
 	const currentNoticeHtml: string = $currentNotice.html();
 	if (currentNoticeHtml && currentNoticeHtml !== noticeHtml) {
-		$currentNotice.stop().fadeOut((): void => {
+		$currentNotice.stop(true, true).fadeOut(fadeOutDuration, (): void => {
 			for (const style of noticeStyles) {
 				style.disabled = true;
 			}
@@ -95,8 +120,12 @@ const showNotices = ($mountPoint: JQuery, index: number, remoteNotices?: RemoteN
 			$currentNotice.html(noticeHtml);
 			// animation try /catched to avoid TypeError: (Animation.tweeners[prop]||[]).concat is not a function error being seen in production
 			try {
-				$currentNotice.fadeIn();
-			} catch {}
+				$currentNotice.fadeIn(fadeInDuration, (): void => {
+					refreshNoticeContent();
+				});
+			} catch {
+				refreshNoticeContent();
+			}
 		});
 	} else if (!currentNoticeHtml) {
 		$mountPoint.append($area);
@@ -104,12 +133,14 @@ const showNotices = ($mountPoint: JQuery, index: number, remoteNotices?: RemoteN
 		if (noticeStyle) {
 			noticeStyle.disabled = false;
 		}
-		$currentNotice.html(noticeHtml).fadeIn();
+		$currentNotice.html(noticeHtml).fadeIn(fadeInDuration, (): void => {
+			refreshNoticeContent();
+		});
 	}
 
 	timer = setTimeout((): void => {
 		showNotices($mountPoint, nextNoticeIndex);
-	}, 7 * 1000);
+	}, NOTICE_ROTATE_INTERVAL_MS);
 };
 
 export {showNotices};
