@@ -16,10 +16,32 @@
 .morebits_status {
 	&_status {
 		color: #4682b4;
+
+		.client-darkmode &,
+		html.skin-theme-clientpref-night & {
+			color: #7bb8e0;
+		}
+
+		@media screen and (prefers-color-scheme: dark) {
+			html.skin-theme-clientpref-os & {
+				color: #7bb8e0;
+			}
+		}
 	}
 
 	&_info {
 		color: #228b22;
+
+		.client-darkmode &,
+		html.skin-theme-clientpref-night & {
+			color: #5cbf5c;
+		}
+
+		@media screen and (prefers-color-scheme: dark) {
+			html.skin-theme-clientpref-os & {
+				color: #5cbf5c;
+			}
+		}
 	}
 
 	&_warn {
@@ -52,6 +74,17 @@ form.quickform {
 	legend {
 		color: #31628f;
 		font-weight: bold;
+
+		.client-darkmode &,
+		html.skin-theme-clientpref-night & {
+			color: #8ab4f8;
+		}
+
+		@media screen and (prefers-color-scheme: dark) {
+			html.skin-theme-clientpref-os & {
+				color: #8ab4f8;
+			}
+		}
 	}
 
 	input[type='text'],
@@ -60,9 +93,41 @@ form.quickform {
 		font-size: 110%;
 	}
 
+	input[type='text'] {
+		.client-darkmode &,
+		html.skin-theme-clientpref-night & {
+			background-color: #333;
+			color: #ddd;
+			border-color: #555;
+		}
+
+		@media screen and (prefers-color-scheme: dark) {
+			html.skin-theme-clientpref-os & {
+				background-color: #333;
+				color: #ddd;
+				border-color: #555;
+			}
+		}
+	}
+
 	select {
 		border: 1px solid #808080;
 		margin-left: 0.2em;
+
+		.client-darkmode &,
+		html.skin-theme-clientpref-night & {
+			border-color: #555;
+			background-color: #333;
+			color: #ddd;
+		}
+
+		@media screen and (prefers-color-scheme: dark) {
+			html.skin-theme-clientpref-os & {
+				border-color: #555;
+				background-color: #333;
+				color: #ddd;
+			}
+		}
 	}
 
 	input[type='checkbox'],
@@ -91,16 +156,53 @@ form.quickform {
 	div + div > h5,
 	h5 + h5 {
 		border-top: 1px solid #88a;
+
+		.client-darkmode &,
+		html.skin-theme-clientpref-night & {
+			border-top-color: #555;
+		}
+
+		@media screen and (prefers-color-scheme: dark) {
+			html.skin-theme-clientpref-os & {
+				border-top-color: #555;
+			}
+		}
 	}
 
 	textarea {
 		width: 100%;
 		height: 4em;
 		font-size: 150%;
+
+		.client-darkmode &,
+		html.skin-theme-clientpref-night & {
+			background-color: #333;
+			color: #ddd;
+			border-color: #555;
+		}
+
+		@media screen and (prefers-color-scheme: dark) {
+			html.skin-theme-clientpref-os & {
+				background-color: #333;
+				color: #ddd;
+				border-color: #555;
+			}
+		}
 	}
 
 	input:disabled + label {
 		color: #808080;
+
+		.client-darkmode &,
+		html.skin-theme-clientpref-night & {
+			color: #999;
+		}
+
+		@media screen and (prefers-color-scheme: dark) {
+			html.skin-theme-clientpref-os & {
+				color: #999;
+			}
+		}
 	}
 
 	/* no italic for quickformDescription */
@@ -115,6 +217,17 @@ form.quickform {
 		color: #0000cd;
 		cursor: help;
 		font-weight: bold;
+
+		.client-darkmode &,
+		html.skin-theme-clientpref-night & {
+			color: #8ab4f8;
+		}
+
+		@media screen and (prefers-color-scheme: dark) {
+			html.skin-theme-clientpref-os & {
+				color: #8ab4f8;
+			}
+		}
 	}
 }
 
@@ -133,6 +246,19 @@ div.morebits-scrollbox {
 	margin-top: 0.6em;
 	margin-bottom: 0.6em;
 	background: @const-color-white;
+
+	.client-darkmode &,
+	html.skin-theme-clientpref-night & {
+		background: #1e1e1e;
+		border-color: #555;
+	}
+
+	@media screen and (prefers-color-scheme: dark) {
+		html.skin-theme-clientpref-os & {
+			background: #1e1e1e;
+			border-color: #555;
+		}
+	}
 
 	> h5:first-child {
 		padding-top: 0;
@@ -154,6 +280,19 @@ div.morebits-previewbox {
 	background: @const-color-white;
 	color: @const-color-black;
 
+	.client-darkmode &,
+	html.skin-theme-clientpref-night & {
+		background: #1e1e1e;
+		color: #ddd;
+	}
+
+	@media screen and (prefers-color-scheme: dark) {
+		html.skin-theme-clientpref-os & {
+			background: #1e1e1e;
+			color: #ddd;
+		}
+	}
+
 	*:not(img) {
 		vertical-align: baseline;
 	}
@@ -168,6 +307,19 @@ div.morebits-usertext {
 	border: 1px solid #a2a9b1;
 	background-color: #f8f9fa;
 	font-size: 95%;
+
+	.client-darkmode &,
+	html.skin-theme-clientpref-night & {
+		background-color: #2a2a2a;
+		border-color: #555;
+	}
+
+	@media screen and (prefers-color-scheme: dark) {
+		html.skin-theme-clientpref-os & {
+			background-color: #2a2a2a;
+			border-color: #555;
+		}
+	}
 }
 
 /* Morebits.simpleWindow */
@@ -177,6 +329,19 @@ div.morebits-usertext {
 	background-color: #f0f8ff;
 	background-image: none;
 	font-family: var(--fonts-sans, sans-serif);
+
+	.client-darkmode &,
+	html.skin-theme-clientpref-night & {
+		background-color: #1c2533;
+		color: var(--color-base, #ddd);
+	}
+
+	@media screen and (prefers-color-scheme: dark) {
+		html.skin-theme-clientpref-os & {
+			background-color: #1c2533;
+			color: var(--color-base, #ddd);
+		}
+	}
 
 	/* px translations in comments are w.r.t standard browser settings,
 	   in other settings, the sizes would be scaled accordingly */
@@ -196,6 +361,19 @@ body .ui-dialog.morebits-dialog .ui-dialog-titlebar {
 	background-image: none !important;
 	font: bold 108% var(--fonts-sans, sans-serif); /* 100% is 12px (from above) → 108% is 12.96px */
 	white-space: nowrap;
+
+	.client-darkmode &,
+	html.skin-theme-clientpref-night & {
+		background-color: #2a3d5c !important;
+		color: #eee;
+	}
+
+	@media screen and (prefers-color-scheme: dark) {
+		html.skin-theme-clientpref-os & {
+			background-color: #2a3d5c !important;
+			color: #eee;
+		}
+	}
 }
 
 .morebits-dialog-scriptname {
@@ -226,6 +404,17 @@ body .ui-dialog.morebits-dialog .ui-dialog-titlebar {
 			margin: 0;
 			background-color: #bccadf;
 
+			.client-darkmode &,
+			html.skin-theme-clientpref-night & {
+				background-color: #2a3d5c;
+			}
+
+			@media screen and (prefers-color-scheme: dark) {
+				html.skin-theme-clientpref-os & {
+					background-color: #2a3d5c;
+				}
+			}
+
 			button {
 				margin: 0.2em 0 -0.1em;
 				cursor: auto;
@@ -247,6 +436,17 @@ body .ui-dialog.morebits-dialog .ui-dialog-titlebar {
 	body .ui-dialog.morebits-dialog & {
 		a {
 			color: #3062ad;
+
+			.client-darkmode &,
+			html.skin-theme-clientpref-night & {
+				color: #8ab4f8;
+			}
+
+			@media screen and (prefers-color-scheme: dark) {
+				html.skin-theme-clientpref-os & {
+					color: #8ab4f8;
+				}
+			}
 		}
 	}
 
@@ -270,6 +470,19 @@ table.morebits-ombox {
 	margin: 4px 10%;
 	background: #f8f9fa;
 	border-collapse: collapse;
+
+	.client-darkmode &,
+	html.skin-theme-clientpref-night & {
+		background: #2a2a2a;
+		border-color: #555;
+	}
+
+	@media screen and (prefers-color-scheme: dark) {
+		html.skin-theme-clientpref-os & {
+			background: #2a2a2a;
+			border-color: #555;
+		}
+	}
 
 	&-content {
 		border: 1px solid #f28500;
