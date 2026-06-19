@@ -5,7 +5,7 @@ const {wgServer, wgPageName, wgNamespaceNumber, wgUserName} = mw.config.get();
 // ---- Citizen 用户菜单头像（全局，已登录用户）----
 if (wgUserName) {
 	const userAvatarSrc = `${wgServer}/extensions/Avatar/avatar.php?user=${encodeURIComponent(wgUserName)}`;
-	document.querySelectorAll('.mw-ui-icon-userAvatar, .mw-ui-icon-wikimedia-userAvatar').forEach((span) => {
+	document.querySelectorAll('.citizen-userMenu .mw-ui-icon-wikimedia-userAvatar').forEach((span) => {
 		const img = document.createElement('img');
 		img.src = userAvatarSrc;
 		img.alt = `${wgUserName}的头像`;
