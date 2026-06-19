@@ -596,11 +596,7 @@ import {api} from './api';
 			selected: true,
 		},
 		{
-			label: window.wgULS('仅允许资深用户', '僅允許資深用戶'),
-			value: 'revisionprotected',
-		},
-		{
-			label: window.wgULS('仅允许裁决委员', '僅允許裁決委員'),
+			label: window.wgULS('仅允许百科理事员', '僅允許百科理事員'),
 			value: 'officialprotected',
 		},
 	];
@@ -1073,10 +1069,6 @@ import {api} from './api';
 							closeparams.type = 'officialprotected';
 							closeparams.expiry = input.editexpiry;
 							break;
-						case 'revisionprotected':
-							closeparams.type = 'revisionprotected';
-							closeparams.expiry = input.editexpiry;
-							break;
 						case 'sysop':
 							closeparams.type = 'full';
 							closeparams.expiry = input.editexpiry;
@@ -1093,7 +1085,7 @@ import {api} from './api';
 					}
 				} else if (
 					input.movemodify &&
-					['officialprotected', 'revisionprotected', 'sysop', 'templateeditor'].includes(input.movelevel)
+					['officialprotected', 'sysop', 'templateeditor'].includes(input.movelevel)
 				) {
 					closeparams.type = 'move';
 					closeparams.expiry = input.moveexpiry;
@@ -1604,11 +1596,8 @@ import {api} from './api';
 				case 'full':
 					summary = window.wgULS('全保护', '全保護');
 					break;
-				case 'revisionprotected':
-					summary = window.wgULS('版本保护', '版本保護');
-					break;
 				case 'officialprotected':
-					summary = window.wgULS('裁委会保护', '裁委會保護');
+					summary = window.wgULS('百科理事员保护', '百科理事員保護');
 					break;
 				case 'move':
 					summary = window.wgULS('移动保护', '移動保護');
@@ -1661,10 +1650,7 @@ import {api} from './api';
 				let level;
 				switch (settings.level) {
 					case 'officialprotected':
-						level = window.wgULS('仅允许裁决委员', '僅允許裁決委員');
-						break;
-					case 'revisionprotected':
-						level = window.wgULS('仅允许资深用户', '僅允許資深用戶');
+						level = window.wgULS('仅允许百科理事员', '僅允許百科理事員');
 						break;
 					case 'autoconfirmed':
 						level = window.wgULS('仅允许自动确认用户', '僅允許自動確認使用者');

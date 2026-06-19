@@ -98,8 +98,7 @@ import {generateArray} from 'ext.gadget.Util';
 	 *
 	 * @type {boolean}
 	 */
-	Morebits.userIsSysop =
-		Morebits.userIsInGroup('sysop') || Morebits.userIsInGroup('steward') || Morebits.userIsInGroup('qiuwen');
+	Morebits.userIsSysop = Morebits.userIsInGroup('sysop') || Morebits.userIsInGroup('steward');
 	/**
 	 * Deprecated as of February 2021, use {@link Morebits.ip.sanitizeIPv6}.
 	 *
