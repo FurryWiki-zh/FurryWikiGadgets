@@ -454,6 +454,9 @@ class UI {
 	 */
 	showSimpleRedirectPanel({onEdit = () => {}, onSuccess = () => {}} = {}) {
 		const input = $('<input>').addClass('Wikiplus-InterBox-Input').attr('id', 'Wikiplus-SR-Title');
+		// Workaround as this function is downstream only
+		const templateTitle = $('<p>').text('在下方输入附加模板（可选，只对wikitext内容模型生效）');
+		const template = $('<input>').addClass('Wikiplus-InterBox-Input').attr('id', 'Wikiplus-SR-Template');
 		const summaryInputTitle = $('<p>').text(i18n.translate('redirect_summary_desc'));
 		const summaryInput = $('<input>').addClass('Wikiplus-InterBox-Input').attr('id', 'Wikiplus-SR-Summary');
 		const applyBtn = $('<div>')
@@ -478,6 +481,7 @@ class UI {
 		const dialog = this.createDialogBox(i18n.translate('redirect_desc'), content, 600);
 		applyBtn.on('click', async () => {
 			const title = $('#Wikiplus-SR-Title').val();
+			const template = $('#Wikiplus-SR-Template').val();
 			const summary = $('#Wikiplus-SR-Summary').val();
 			$('.Wikiplus-InterBox-Content').html(
 				`<div class="Wikiplus-Banner">${i18n.translate('submitting_edit')}</div>`

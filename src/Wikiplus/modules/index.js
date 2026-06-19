@@ -142,6 +142,7 @@ $(async () => {
 		UI.showSimpleRedirectPanel({
 			onEdit: async ({title, summary, forceOverwrite = false}) => {
 				const page = await getPage({title});
+				const template = await getPage({template});
 				const currentPageName = Constants.currentPageName;
 				const contentmodel = page.contentmodel;
 				if (summary == '') {
@@ -169,7 +170,7 @@ $(async () => {
 							break;
 						case 'wikitext':
 						default:
-							content = `#REDIRECT [[${currentPageName}]]`;
+							content = `#REDIRECT [[${currentPageName}]]\n{{${template}}}`;
 							break;
 					}
 					return content;
