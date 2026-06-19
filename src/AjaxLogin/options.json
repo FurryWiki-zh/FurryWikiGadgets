@@ -1,5 +1,5 @@
 {
-	"loginElementSelector": "a:has(.ajaxlogin-mount-point),#pt-login>a,.vector-user-menu-login>a,#user-tools>a[href*=\"Special\"],.citizen-header__button-checkbox.citizen-dropdown-summary>span",
+	"loginElementSelector": "a:has(.ajaxlogin-mount-point),#pt-login>a,.vector-user-menu-login>a,#user-tools>a[href*=\"Special\"],.citizen-header .citizen-dropdown-summary>span,#citizen-personal-menu a[href*=\"UserLogin\"],.citizen-header__button[href*=\"UserLogin\"]",
 	"configKey": "gadget-AjaxLogin__Initialized",
 	"version": "4.0"
 }
