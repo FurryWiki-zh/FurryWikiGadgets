@@ -1,0 +1,169 @@
+@import (reference) '../variables.less';
+
+/*! Twinkle.js - twinkle.css */
+
+/* ============================================================
+   Skin-specific adaptations for Twinkle portlet menu
+   ============================================================ */
+
+/* --- Vector (2010) & Vector 2022 --- */
+
+/* Reserve space for TW menu before it loads (peer gadget).
+   This prevents the top bar from "jumping" when TW appears. */
+.client-js body.skin-vector-legacy:not(.ns-special) #p-cactions,
+.client-js body.skin-vector-legacy.mw-special-Block #p-cactions,
+.client-js body.skin-vector-legacy.mw-special-Contributions #p-cactions,
+.client-js body.skin-vector-legacy.mw-special-IPContributions #p-cactions,
+.client-js body.skin-vector-legacy.mw-special-DeletedContributions #p-cactions,
+.client-js body.skin-vector-legacy.mw-special-Prefixindex #p-cactions {
+	margin-right: 3.24em;
+}
+
+#p-twinkle {
+	/* Vector: set fixed width for TW dropdown menu */
+	.skin-vector-legacy .vector-menu-dropdown &,
+	.skin-vector .vector-menu-dropdown & {
+		/**
+		 * Explicitly set width of TW menu so that we can use a hidden peer gadget
+		 * to add space where the TW menu would go before it loads.
+		 * See twinkle-pagestyles.css
+		 */
+		width: 3.24em;
+	}
+
+	/* Vector 2022: open TW menu on hover (matching p-cactions behavior) */
+	&:hover > .vector-menu-content {
+		/**
+		 * In skin vector-2022, open the TW menu when mouse hovers over it.
+		 * Credit to Nardog for this fix.
+		 */
+		height: auto;
+		opacity: 1;
+		visibility: visible;
+	}
+
+	/* Vector 2022: ensure the dropdown-checkbox label has proper cursor and inline layout */
+	.skin-vector-2022 & .vector-menu-heading {
+		cursor: pointer;
+	}
+}
+
+/* --- Citizen --- */
+
+.skin-citizen {
+	/* TW portlet heading inside Citizen's "more" actions card dropdown */
+	#citizen-page-actions-more__card .citizen-menu__card-content #p-twinkle {
+		/* Citizen menu items are stacked; TW heading acts as a section label */
+		h3 {
+			display: block;
+			padding: 0.75em 1.25em;
+			margin: 0;
+			color: var(--color-subtle, #54595d);
+			font-family: var(--fonts-sans, sans-serif);
+			font-size: 0.875rem;
+			font-weight: var(--font-weight-normal, 400);
+			letter-spacing: 0.05em;
+		}
+
+		/* Style TW menu links to match Citizen menu items */
+		.citizen-menu__content-list {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+
+			li {
+				margin: 0;
+			}
+
+			a {
+				display: block;
+				padding: 0.625em 1.25em;
+				color: var(--color-base, #202122);
+				text-decoration: none;
+				font-family: var(--fonts-sans, sans-serif);
+				font-size: 0.875rem;
+				font-weight: var(--font-weight-normal, 400);
+				line-height: var(--line-height-small, 1.5714285);
+
+				&:hover {
+					background-color: var(--background-color-button-quiet--hover, rgba(0, 24, 73, 0.027));
+					color: var(--color-base--hover, #404244);
+				}
+
+				&:active {
+					background-color: var(--background-color-button-quiet--active, rgba(0, 24, 73, 0.082));
+				}
+			}
+		}
+	}
+
+	/* TW portlet when placed elsewhere (e.g. special pages fallback) */
+	#p-twinkle:not(#citizen-page-actions-more__card .citizen-menu__card-content &) {
+		/* Inherit standard Citizen portlet styling */
+		h3 {
+			display: block;
+			padding: 0.75em 1.25em;
+			margin: 0;
+			color: var(--color-subtle, #54595d);
+			font-family: var(--fonts-sans, sans-serif);
+			font-size: 0.875rem;
+			font-weight: var(--font-weight-normal, 400);
+			letter-spacing: 0.05em;
+		}
+	}
+}
+
+/* --- Timeless --- */
+
+.skin-timeless {
+	/* TW portlet in the sidebar (#column-one) */
+	#column-one #p-cactions,
+	#mw-content-wrapper #p-cactions {
+		/* If TW creates its own portlet, style it consistently with Timeless */
+		h3 {
+			color: var(--color-base, #202122);
+			font-family: var(--fonts-sans, sans-serif);
+			font-size: 0.875rem;
+			font-weight: var(--font-weight-normal, 400);
+			margin: 0.5em 0 0.25em;
+		}
+
+		/* TW links inside the portlet */
+		ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+
+			li {
+				margin: 0;
+				padding: 0;
+			}
+
+			a {
+				display: block;
+				padding: 0.25em 0;
+				color: var(--color-progressive, #36c);
+				text-decoration: none;
+				font-family: var(--fonts-sans, sans-serif);
+				font-size: 0.8125rem;
+				line-height: var(--line-height-xx-small, 1.375);
+
+				&:hover {
+					color: var(--color-progressive--hover, #3056a9);
+					text-decoration: underline;
+				}
+
+				&:visited {
+					color: var(--color-visited, #6a60b0);
+				}
+			}
+		}
+	}
+
+	/* TW links when added to the page actions toolbar (#p-cactions in Timeless's top area) */
+	#page-tools #p-cactions {
+		li a {
+			font-family: var(--fonts-sans, sans-serif);
+		}
+	}
+}

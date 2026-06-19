@@ -86,6 +86,7 @@
 * RollbackSummary[ResourceLoader|default|dependencies=ext.gadget.FilterAlteredClicks,ext.gadget.i18n,mediawiki.util|rights=rollback|requiresES6]|RollbackSummary.js
 * TranslateVariants[ResourceLoader|dependencies=ext.gadget.i18n,ext.gadget.JSX,ext.gadget.Util,mediawiki.api,mediawiki.diff.styles,mediawiki.util|rights=editinterface|requiresES6]|TranslateVariants.js|TranslateVariants.css
 * Twinkle[ResourceLoader|dependencies=ext.gadget.i18n,ext.gadget.morebits,ext.gadget.select2,ext.gadget.Util,mediawiki.api,mediawiki.language,mediawiki.storage,mediawiki.util|peers=Twinkle-pagestyles|rights=skipcaptcha|requiresES6]|Twinkle.js
+* Twinkle-pagestyles[ResourceLoader|hidden|rights=skipcaptcha|requiresES6]|Twinkle-pagestyles.css
 * WhoIsActive[ResourceLoader|dependencies=ext.gadget.i18n,ext.gadget.JSX,ext.gadget.Util,mediawiki.api,mediawiki.Title|peers=WhoIsActive-pagestyles|requiresES6]|WhoIsActive.js
 * WhoIsActive-pagestyles[ResourceLoader|hidden|requiresES6]|WhoIsActive-pagestyles.css
 
