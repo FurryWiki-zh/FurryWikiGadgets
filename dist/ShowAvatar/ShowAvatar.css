@@ -1,0 +1,58 @@
+/**
+ * SPDX-License-Identifier: GPL-3.0
+ * _addText: '{{Gadget Header|license=GPL-3.0}}'
+ *
+ * @base {@link https://github.com/MoegirlPediaInterfaceAdmins/MoegirlPediaInterfaceCodes/blob/master/src/gadgets/ShowAvatar/MediaWiki%3AGadget-ShowAvatar.css}
+ * @source {@link https://github.com/FurryWiki-zh/FurryWikiGadgets/tree/master/src/ShowAvatar}
+ * @license GPL-3.0 {@link https://furrywiki.org.cn/wiki/H:GPLV3}
+ */
+
+/**
+ * Copyright (C)  MoegirlPedia Interface Admins
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
+/**
+ * +------------------------------------------------------------+
+ * |            === WARNING: GLOBAL GADGET FILE ===             |
+ * +------------------------------------------------------------+
+ * |       All changes should be made in the repository,        |
+ * |                otherwise they will be lost.                |
+ * +------------------------------------------------------------+
+ * |        Changes to this page may affect many users.         |
+ * | Please discuss changes by opening an issue before editing. |
+ * +------------------------------------------------------------+
+ */
+/* <nowiki> */
+
+/* src/ShowAvatar/ShowAvatar.less */
+.skin-citizen #user-rootpage-avatar {
+  border-radius: 5px;
+  top: 8px;
+}
+.skin-gongbi #user-rootpage-avatar {
+  border-radius: 10px;
+  padding: 4px;
+}
+#p-personal #pt-notifications-alert,
+#p-personal #pt-notifications-notice {
+  margin-top: 0.8em;
+}
+a[title=查看头像] {
+  vertical-align: bottom;
+}
+
+/* </nowiki> */
+
+/*# sourceMappingURL=data:application/json;base64,ewogICJ2ZXJzaW9uIjogMywKICAic291cmNlcyI6IFsiLi4vLi4vc3JjL1Nob3dBdmF0YXIvU2hvd0F2YXRhci5sZXNzIl0sCiAgInNvdXJjZXNDb250ZW50IjogWyIuc2tpbi1jaXRpemVuICN1c2VyLXJvb3RwYWdlLWF2YXRhciB7XG4gIGJvcmRlci1yYWRpdXM6IDVweDtcbiAgdG9wOiA4cHg7XG59XG4uc2tpbi1nb25nYmkgI3VzZXItcm9vdHBhZ2UtYXZhdGFyIHtcbiAgYm9yZGVyLXJhZGl1czogMTBweDtcbiAgcGFkZGluZzogNHB4O1xufVxuLyogMS4yOCsgRWNobyBmaXggKi9cbiNwLXBlcnNvbmFsICNwdC1ub3RpZmljYXRpb25zLWFsZXJ0LFxuI3AtcGVyc29uYWwgI3B0LW5vdGlmaWNhdGlvbnMtbm90aWNlIHtcbiAgbWFyZ2luLXRvcDogMC44ZW07XG59XG4vKiBmaXg65aS05YOP5L2N572uICovXG5hW3RpdGxlPSfmn6XnnIvlpLTlg48nXSB7XG4gIHZlcnRpY2FsLWFsaWduOiBib3R0b207XG59XG4iXSwKICAibWFwcGluZ3MiOiAiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFBQSxDQUFDLGFBQWEsQ0FBQztBQUNiLGlCQUFlO0FBQ2YsT0FBSztBQUNQO0FBQ0EsQ0FBQyxZQUFZLENBSkU7QUFLYixpQkFBZTtBQUNmLFdBQVM7QUFDWDtBQUVBLENBQUMsV0FBVyxDQUFDO0FBQ2IsQ0FEQyxXQUNXLENBQUM7QUFDWCxjQUFZO0FBQ2Q7QUFFQSxDQUFDLENBQUM7QUFDQSxrQkFBZ0I7QUFDbEI7IiwKICAibmFtZXMiOiBbXQp9Cg== */

@@ -9,7 +9,9 @@
 * HanSect[ResourceLoader|default|requiresES6]|HanSect.css
 * HideConversionTab[ResourceLoader|default|requiresES6]|HideConversionTab.css
 * NavboxCSS[ResourceLoader|default|hidden|requiresES6]|NavboxCSS.css
+* ShowAvatar[ResourceLoader|default|requiresES6]|ShowAvatar.js|ShowAvatar.css
 * StickyTableHeaders[ResourceLoader|dependencies=ext.gadget.Util|skins=gongbi,vector,vector-2022|requiresES6]|StickyTableHeaders.js|StickyTableHeaders.css
+* UserLinkAvatar[ResourceLoader|default|dependencies=user.options|requiresES6]|UserLinkAvatar.js|UserLinkAvatar.css
 * VariantAlly[ResourceLoader|default|dependencies=mediawiki.storage,user.options|requiresES6]|VariantAlly.js
 * VariantAllyDialog[ResourceLoader|dependencies=ext.gadget.VariantAlly,vue|hidden|requiresES6]|VariantAllyDialog.js|VariantAllyDialog.css
 

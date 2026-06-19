@@ -243,7 +243,7 @@ const ajaxLogin = (toastifyInstance: ToastifyInstance, isAgreeTos: boolean = fal
 			<div className="oo-ui-window-foot">{[$inputBox, $forgotPassword, $rememberMe, $agreeTos, $tosLabel]}</div>
 		),
 		title: $(<b className="oo-ui-window-head">{getMessage('Login')}</b>),
-		size: 'small',
+		size: 380,
 	});
 	removeWindowResizeHandler();
 };
