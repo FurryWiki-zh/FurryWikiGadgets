@@ -105,21 +105,25 @@ const getImagesFromElements = (fileLinkElements: HTMLAnchorElement[]) => {
 		let fileName: string | undefined;
 		if (articleRegex.test(href)) {
 			const match: RegExpExecArray = articleRegex.exec(href) as RegExpExecArray;
-			fileName = match[1] as string;
-			fileName = decodeURIComponent(fileName).replace(/((File|Image):)((File|Image):)?/i, 'File:');
-			fileNames[fileNames.length] = fileName;
-			if (fileName.includes('+')) {
-				fileNames[fileNames.length] = fileName.replace('+', ' ');
+			fileName = match[1];
+			if (fileName) {
+				fileName = decodeURIComponent(fileName).replace(/((File|Image):)((File|Image):)?/i, 'File:');
+				fileNames[fileNames.length] = fileName;
+				if (fileName.includes('+')) {
+					fileNames[fileNames.length] = fileName.replace('+', ' ');
+				}
 			}
 		}
 
 		if (scriptRegex.test(href)) {
 			const match: RegExpExecArray = scriptRegex.exec(href) as RegExpExecArray;
-			fileName = match[1] as string;
-			fileName = decodeURIComponent(fileName).replace(/((File|Image):)((File|Image):)?/i, 'File:');
-			fileNames[fileNames.length] = fileName;
-			if (fileName.includes('+')) {
-				fileNames[fileNames.length] = fileName.replace('+', ' ');
+			fileName = match[1];
+			if (fileName) {
+				fileName = decodeURIComponent(fileName).replace(/((File|Image):)((File|Image):)?/i, 'File:');
+				fileNames[fileNames.length] = fileName;
+				if (fileName.includes('+')) {
+					fileNames[fileNames.length] = fileName.replace('+', ' ');
+				}
 			}
 		}
 	}

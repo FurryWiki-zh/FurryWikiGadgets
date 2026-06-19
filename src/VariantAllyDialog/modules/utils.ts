@@ -1,5 +1,5 @@
-import {type ValidVariant} from 'ext.gadget.VariantAlly';
 import {computed, ref} from 'vue';
+import {type ValidVariant} from 'ext.gadget.VariantAlly';
 
 const VALID_VARIANTS = ['zh-cn', 'zh-sg', 'zh-my', 'zh-tw', 'zh-hk', 'zh-mo'] as const;
 
@@ -27,7 +27,7 @@ function getMountPoint(): Element {
 }
 
 const inferredVariant = computed(() => {
-	if ((VALID_VARIANTS as ReadonlyArray<string>).includes(wgUserVariant.value)) {
+	if ((VALID_VARIANTS as readonly string[]).includes(wgUserVariant.value)) {
 		return wgUserVariant.value as ValidVariant;
 	}
 	return null;

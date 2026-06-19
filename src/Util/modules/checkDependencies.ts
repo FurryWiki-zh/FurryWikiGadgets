@@ -21,7 +21,7 @@ async function checkDependencies(gadgetNames: string | string[], option?: Boolea
 			await api.postWithEditToken({
 				action: 'options',
 				change: `gadget-${gadget}=${option}`,
-			} as ApiOptionsParams);
+			});
 			await mw.loader.using(`ext.gadget.${gadget}`);
 		}
 	}
