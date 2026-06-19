@@ -1,17 +1,30 @@
 {
 	"root": true,
-	"plugins": ["@typescript-eslint", "unicorn"],
-	"extends": [
-		"wikimedia/client-common",
-		"wikimedia/language/es2024",
-		"wikimedia/mediawiki",
-		"wikimedia/jquery",
-		"plugin:@typescript-eslint/recommended-type-checked",
-		"plugin:unicorn/all",
-		"prettier"
-	],
+	"plugins": ["@typescript-eslint", "unicorn", "mediawiki"],
+	"extends": ["plugin:@typescript-eslint/recommended-type-checked", "prettier"],
 	"env": {
 		"es2024": true
+	},
+	"globals": {
+		"Twinkle": "writable",
+		"Morebits": "readonly",
+		"wgULS": "readonly",
+		"wgUVS": "readonly",
+		"wgUCS": "readonly",
+		"mw": "readonly",
+		"OO": "readonly",
+		"require": "readonly",
+		"module": "readonly",
+		"exports": "writable",
+		"CiteTB": "writable",
+		"HotCat": "readonly",
+		"UploadForm": "readonly",
+		"jQuery": "readonly",
+		"log": "readonly",
+		"errlog": "readonly",
+		"message": "readonly",
+		"CodeMirror": "readonly",
+		"CodeMirror6": "readonly"
 	},
 	"parser": "@typescript-eslint/parser",
 	"parserOptions": {
@@ -22,6 +35,51 @@
 		{
 			"files": ["*.js", "*.cjs"],
 			"extends": ["plugin:@typescript-eslint/disable-type-checked"]
+		},
+		{
+			"files": ["src/Twinkle/**/*.js", "src/AjaxLogin/**/*.js"],
+			"rules": {
+				"camelcase": "off",
+				"new-cap": "off",
+				"eqeqeq": "off",
+				"no-new-object": "off",
+				"no-new-require": "off",
+				"no-eq-null": "off",
+				"no-sequences": "off",
+				"no-return-assign": "off",
+				"no-shadow": "off",
+				"no-param-reassign": "off",
+				"prefer-const": "off",
+				"no-unused-expressions": "off",
+				"no-new": "off",
+				"@typescript-eslint/no-unused-expressions": "off",
+				"@typescript-eslint/ban-ts-comment": "off",
+				"no-eval": "off",
+				"no-script-url": "off"
+			}
+		},
+		{
+			"files": ["src/Navigation_popups/modules/core.js"],
+			"rules": {
+				"camelcase": "off",
+				"@typescript-eslint/no-unused-vars": "off",
+				"@typescript-eslint/no-this-alias": [
+					"error",
+					{"allowDestructuring": true, "allowedNames": ["self", "navpopup"]}
+				],
+				"jsdoc/check-param-names": "off",
+				"jsdoc/valid-types": "off",
+				"jsdoc/require-returns": "off",
+				"jsdoc/require-returns-type": "off",
+				"new-cap": "off",
+				"no-extend-native": "off",
+				"no-new": "off",
+				"no-shadow": "off",
+				"no-unused-vars": "off",
+				"no-use-before-define": "off",
+				"unicorn/prefer-add-event-listener": "off",
+				"unicorn/prefer-string-slice": "off"
+			}
 		},
 		{
 			"files": ["*.jsx", "*.tsx"],
@@ -44,12 +102,7 @@
 				],
 				"func-style": "off",
 				"@typescript-eslint/no-unsafe-assignment": "off",
-				"@typescript-eslint/no-unused-vars": [
-					"warn",
-					{
-						"varsIgnorePattern": "^_|^React$"
-					}
-				],
+				"@typescript-eslint/no-unused-vars": ["warn", {"varsIgnorePattern": "^_|^React$"}],
 				"react/no-unknown-property": "off"
 			}
 		},
@@ -62,21 +115,12 @@
 				"@vue/eslint-config-prettier"
 			],
 			"parser": "vue-eslint-parser",
-			"parserOptions": {
-				"parser": "@typescript-eslint/parser"
-			},
-			"rules": {
-				"vue/multi-word-component-names": "off"
-			}
+			"parserOptions": {"parser": "@typescript-eslint/parser"},
+			"rules": {"vue/multi-word-component-names": "off"}
 		}
 	],
 	"rules": {
-		"array-callback-return": [
-			"error",
-			{
-				"allowImplicit": true
-			}
-		],
+		"array-callback-return": ["error", {"allowImplicit": true}],
 		"no-await-in-loop": "off",
 		"no-duplicate-imports": "error",
 		"no-new-native-nonconstructor": "error",
@@ -87,7 +131,6 @@
 		"no-unused-private-class-members": "error",
 		"no-use-before-define": "off",
 		"require-atomic-updates": "off",
-
 		"accessor-pairs": "error",
 		"arrow-body-style": ["error", "always"],
 		"capitalized-comments": "off",
@@ -101,7 +144,7 @@
 		"eqeqeq": "error",
 		"func-name-matching": "error",
 		"func-names": "off",
-		"func-style": "error",
+		"func-style": "off",
 		"grouped-accessor-pairs": "error",
 		"guard-for-in": "error",
 		"id-denylist": "error",
@@ -110,13 +153,7 @@
 		"implicit-arrow-linebreak": "off",
 		"init-declarations": "off",
 		"lines-between-class-members": "off",
-		"logical-assignment-operators": [
-			"error",
-			"always",
-			{
-				"enforceForIfStatements": true
-			}
-		],
+		"logical-assignment-operators": ["error", "always", {"enforceForIfStatements": true}],
 		"max-classes-per-file": "off",
 		"max-depth": "off",
 		"max-lines": "off",
@@ -159,21 +196,11 @@
 		"no-useless-constructor": "error",
 		"no-useless-rename": "error",
 		"no-useless-return": "error",
-		"no-void": [
-			"error",
-			{
-				"allowAsStatement": true
-			}
-		],
+		"no-void": ["error", {"allowAsStatement": true}],
 		"no-warning-comments": "off",
 		"object-shorthand": "error",
 		"operator-assignment": "error",
-		"prefer-arrow-callback": [
-			"error",
-			{
-				"allowNamedFunctions": true
-			}
-		],
+		"prefer-arrow-callback": ["error", {"allowNamedFunctions": true}],
 		"prefer-exponentiation-operator": "error",
 		"prefer-named-capture-group": "off",
 		"prefer-object-has-own": "error",
@@ -190,88 +217,37 @@
 		"strict": "off",
 		"symbol-description": "error",
 		"template-curly-spacing": ["error", "never"],
-
 		"@typescript-eslint/ban-ts-comment": "warn",
-		"@typescript-eslint/no-empty-function": [
-			"error",
-			{
-				"allow": ["arrowFunctions"]
-			}
-		],
-		"@typescript-eslint/no-empty-object-type": [
-			"error",
-			{
-				"allowInterfaces": "always"
-			}
-		],
+		"@typescript-eslint/no-empty-function": ["error", {"allow": ["arrowFunctions"]}],
+		"@typescript-eslint/no-empty-object-type": ["error", {"allowInterfaces": "always"}],
 		"@typescript-eslint/no-explicit-any": "warn",
-		"@typescript-eslint/no-floating-promises": [
-			"warn",
-			{
-				"ignoreIIFE": true
-			}
-		],
+		"@typescript-eslint/no-floating-promises": ["warn", {"ignoreIIFE": true}],
 		"@typescript-eslint/no-misused-promises": "warn",
-		"@typescript-eslint/no-this-alias": [
-			"error",
-			{
-				"allowedNames": ["self"]
-			}
-		],
+		"@typescript-eslint/no-redundant-type-constituents": "off",
+		"@typescript-eslint/no-this-alias": ["error", {"allowedNames": ["self", "udate", "thisCb", "thisProxy"]}],
 		"@typescript-eslint/no-unnecessary-template-expression": "error",
 		"@typescript-eslint/no-unsafe-argument": "warn",
 		"@typescript-eslint/no-unsafe-assignment": "warn",
 		"@typescript-eslint/no-unsafe-call": "warn",
 		"@typescript-eslint/no-unsafe-member-access": "off",
 		"@typescript-eslint/no-unsafe-return": "warn",
-		"@typescript-eslint/no-unused-vars": [
-			"warn",
-			{
-				"varsIgnorePattern": "^_"
-			}
-		],
+		"@typescript-eslint/no-unused-vars": ["warn", {"varsIgnorePattern": "^_"}],
 		"@typescript-eslint/no-use-before-define": "off",
 		"@typescript-eslint/prefer-destructuring": [
 			"error",
 			{
-				"VariableDeclarator": {
-					"array": true,
-					"object": true
-				},
-				"AssignmentExpression": {
-					"array": false,
-					"object": false
-				}
+				"VariableDeclarator": {"array": true, "object": true},
+				"AssignmentExpression": {"array": false, "object": false}
 			}
 		],
 		"@typescript-eslint/prefer-find": "error",
-
+		"@typescript-eslint/explicit-function-return-type": "off",
+		"@typescript-eslint/explicit-module-boundary-types": "off",
+		"mediawiki/class-doc": "off",
+		"mediawiki/msg-doc": "off",
 		"compat/compat": "off",
-
 		"jsdoc/check-tag-names": "off",
 		"jsdoc/no-undefined-types": "off",
-
-		"mediawiki/class-doc": "warn",
-		"mediawiki/no-nodelist-unsupported-methods": "off",
-
-		"no-jquery/no-animate": [
-			"warn",
-			{
-				"allowScroll": true
-			}
-		],
-		"no-jquery/no-class-state": "off",
-		"no-jquery/no-done-fail": "off",
-		"no-jquery/no-fade": "off",
-		"no-jquery/no-global-selector": [
-			"warn",
-			{
-				"allowBody": true
-			}
-		],
-		"no-jquery/no-sizzle": "off",
-		"no-jquery/no-slide": "off",
-		"no-jquery/variable-pattern": "off",
 
 		"unicorn/better-regex": "off",
 		"unicorn/consistent-destructuring": "off",
@@ -293,6 +269,7 @@
 		"unicorn/no-unsafe-regex": "off",
 		"unicorn/no-unused-properties": "off",
 		"unicorn/prefer-array-find": "off",
+		"unicorn/prefer-dom-node-append": "off",
 		"unicorn/prefer-global-this": "off",
 		"unicorn/prefer-regexp-test": "off",
 		"unicorn/prefer-set-has": "off",
@@ -303,25 +280,13 @@
 		"unicorn/require-post-message-target-origin": "off",
 		"unicorn/string-content": "off",
 		"unicorn/switch-case-braces": ["error", "avoid"],
-
-		"getter-return": [
-			"error",
-			{
-				"allowImplicit": true
-			}
-		],
+		"getter-return": ["error", {"allowImplicit": true}],
 		"no-control-regex": "off",
-		"quotes": [
-			"error",
-			"single",
-			{
-				"avoidEscape": true
-			}
-		]
+		"quotes": ["error", "single", {"avoidEscape": true}]
 	},
 	"settings": {
 		"react": {
-			"version": "detect"
+			"version": "17.0"
 		}
 	}
 }

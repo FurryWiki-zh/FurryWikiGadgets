@@ -14,6 +14,7 @@
 * VariantAllyDialog[ResourceLoader|dependencies=ext.gadget.VariantAlly,vue|hidden|requiresES6]|VariantAllyDialog.js|VariantAllyDialog.css
 
 == browser ==
+* AjaxLogin[ResourceLoader|dependencies=ext.gadget.FilterAlteredClicks,ext.gadget.i18n,ext.gadget.JSX,ext.gadget.Toastify,ext.gadget.Util,mediawiki.api,mediawiki.util,oojs-ui-core,oojs-ui-windows,oojs-ui.styles.icons-interactions,oojs-ui.styles.icons-user|hidden|requiresES6]|AjaxLogin.js
 * CodeLinks[ResourceLoader|default|dependencies=ext.gadget.JSX,ext.gadget.Util,mediawiki.util|rights=edit|requiresES6]|CodeLinks.js
 * CopyCodeBlock[ResourceLoader|actions=view|default|dependencies=ext.gadget.Clipboard,ext.gadget.i18n,ext.gadget.Tippy,ext.gadget.Toastify,mediawiki.util,oojs-ui-core,oojs-ui.styles.icons-editing-advanced|requiresES6]|CopyCodeBlock.js|CopyCodeBlock.css
 * LinkSpacing[ResourceLoader|default|dependencies=ext.gadget.JSX|requiresES6]|LinkSpacing.js|LinkSpacing.css
@@ -34,9 +35,11 @@
 * FilterAlteredClicks[ResourceLoader|hidden|requiresES6]|FilterAlteredClicks.js
 * i18n[ResourceLoader|dependencies=ext.gadget.Util|hidden|requiresES6]|i18n.js
 * JSX[ResourceLoader|hidden|requiresES6]|JSX.js
+* morebits[ResourceLoader|dependencies=ext.gadget.i18n,ext.gadget.select2,ext.gadget.Util,jquery.ui,mediawiki.Title,mediawiki.user,mediawiki.util|hidden|requiresES6]|morebits.js|morebits.css
 * NavFrame-pagestyles[ResourceLoader|hidden|requiresES6]|NavFrame-pagestyles.css
 * NoteTA[ResourceLoader|default|dependencies=ext.gadget.i18n,ext.gadget.JSX,ext.gadget.Util,jquery.makeCollapsible,mediawiki.api,mediawiki.util,oojs-ui-core,oojs-ui-windows|hidden|peers=NoteTA-pagestyles|requiresES6]|NoteTA.js
 * NoteTA-pagestyles[ResourceLoader|hidden|requiresES6]|NoteTA-pagestyles.css
+* select2[ResourceLoader|dependencies=jquery|hidden|requiresES6]|select2.js|select2.css
 * SiteCommon[ResourceLoader|default|hidden|requiresES6]|SiteCommon.css
 * SiteCommon_Filepage[ResourceLoader|default|hidden|requiresES6]|SiteCommon_Filepage.css
 * SiteCommon_JS[ResourceLoader|default|dependencies=ext.gadget.i18n,ext.gadget.JSX,ext.gadget.Tippy,ext.gadget.Util,mediawiki.Title,mediawiki.util|hidden|peers=SiteCommon|requiresES6]|SiteCommon_JS.js
@@ -82,6 +85,7 @@
 * OnlineAdmins[ResourceLoader|dependencies=ext.gadget.i18n,ext.gadget.JSX,ext.gadget.Util,mediawiki.api,mediawiki.util|requiresES6]|OnlineAdmins.js|OnlineAdmins.css
 * RollbackSummary[ResourceLoader|default|dependencies=ext.gadget.FilterAlteredClicks,ext.gadget.i18n,mediawiki.util|rights=rollback|requiresES6]|RollbackSummary.js
 * TranslateVariants[ResourceLoader|dependencies=ext.gadget.i18n,ext.gadget.JSX,ext.gadget.Util,mediawiki.api,mediawiki.diff.styles,mediawiki.util|rights=editinterface|requiresES6]|TranslateVariants.js|TranslateVariants.css
+* Twinkle[ResourceLoader|dependencies=ext.gadget.i18n,ext.gadget.morebits,ext.gadget.select2,ext.gadget.Util,mediawiki.api,mediawiki.language,mediawiki.storage,mediawiki.util|peers=Twinkle-pagestyles|rights=skipcaptcha|requiresES6]|Twinkle.js
 * WhoIsActive[ResourceLoader|dependencies=ext.gadget.i18n,ext.gadget.JSX,ext.gadget.Util,mediawiki.api,mediawiki.Title|peers=WhoIsActive-pagestyles|requiresES6]|WhoIsActive.js
 * WhoIsActive-pagestyles[ResourceLoader|hidden|requiresES6]|WhoIsActive-pagestyles.css
 

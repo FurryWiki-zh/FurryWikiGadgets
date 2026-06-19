@@ -2,3 +2,5 @@ dist/
 *.json
 *.yml
 *.yaml
+**/select2/**
+**/morebits/**

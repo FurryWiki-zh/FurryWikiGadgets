@@ -22,11 +22,11 @@ export const {content, localize, vary} = i18nMethods;
 				ja: 'キャンセル',
 				zh: '取消',
 			}),
-			QiuWen: localize({
-				en: 'QiuWen',
-				ja: 'ちゅううん',
-				'zh-cn': '求闻',
-				'zh-hk': '求聞',
+			FurryWiki: localize({
+				en: 'FurryWiki',
+				ja: 'ファーリーウィキ',
+				'zh-cn': '福瑞百科',
+				'zh-hk': '福瑞百科',
 			}),
 			LongText: vary({
 				en: 'This is a very long text',
@@ -42,7 +42,7 @@ export const {content, localize, vary} = i18nMethods;
 	};
 	// 调用
 	getMessage('Cancel'); // en: Cancel, ja: キャンセル, zh: 取消, zh-hans: 取消, zh-hant: 取消, zh-cn: 取消, zh-hk: 取消, zh-tw: 取消
-	getMessage('QiuWen'); // en: QiuWen, ja: ちゅううん, zh: 求闻, zh-hans: 求闻, zh-hant: 求聞, zh-cn: 求闻, zh-hk: 求聞, zh-tw: 求聞
+	getMessage('FurryWiki'); // en: FurryWiki, ja: ファーリーウィキ, zh: 福瑞百科, zh-hans: 福瑞百科, zh-hant: 福瑞百科, zh-cn: 福瑞百科, zh-hk: 福瑞百科, zh-tw: 福瑞百科
 	getMessage('LongText');
 		// en: This is a very long text
 		// ja: これは非常に長いテキストです
@@ -55,9 +55,9 @@ export const {content, localize, vary} = i18nMethods;
 
 	// 直接转换单条消息（不推荐，仅为兼容性保留）
 	// 仅支持传递中文和英语。在非中文环境且未传递英语文本时，最终返回zh的值
-	wgUCS('求闻', '求聞'); // en: 求闻, ja: 求闻, zh: 求闻, zh-hans: 求闻, zh-hant: 求聞, zh-cn: 求闻, zh-hk: 求聞, zh-tw: 求聞
-	wgULS('求闻', '求聞'); // en: 求闻, ja: 求闻, zh: 求闻, zh-hans: 求闻, zh-hant: 求聞, zh-cn: 求闻, zh-hk: 求聞, zh-tw: 求聞
-	wgUVS('求闻', '求聞'); // en: 求闻, ja: 求闻, zh: 求闻, zh-hans: 求闻, zh-hant: 求聞, zh-cn: 求闻, zh-hk: 求聞, zh-tw: 求聞
+	wgUCS('福瑞百科', '福瑞百科'); // en: 福瑞百科, ja: 福瑞百科, zh: 福瑞百科, zh-hans: 福瑞百科, zh-hant: 福瑞百科, zh-cn: 福瑞百科, zh-hk: 福瑞百科, zh-tw: 福瑞百科
+	wgULS('福瑞百科', '福瑞百科'); // en: 福瑞百科, ja: 福瑞百科, zh: 福瑞百科, zh-hans: 福瑞百科, zh-hant: 福瑞百科, zh-cn: 福瑞百科, zh-hk: 福瑞百科, zh-tw: 福瑞百科
+	wgUVS('福瑞百科', '福瑞百科'); // en: 福瑞百科, ja: 福瑞百科, zh: 福瑞百科, zh-hans: 福瑞百科, zh-hant: 福瑞百科, zh-cn: 福瑞百科, zh-hk: 福瑞百科, zh-tw: 福瑞百科
 
 	// 非MediaWiki命名空间的脚本可以通过mw.loader.using加载ext.gadget.i18n模块
 	mw.loader.using('ext.gadget.i18n').then((require) => {
