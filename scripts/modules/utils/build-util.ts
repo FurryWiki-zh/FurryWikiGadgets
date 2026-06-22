@@ -15,11 +15,37 @@ import {
 } from './general-util';
 import {existsSync, mkdirSync} from 'node:fs';
 import chalk from 'chalk';
+import {createHash} from 'node:crypto';
 import {esbuildOptions} from '../build-esbuild_options';
 import {exit} from 'node:process';
 import {globSync} from 'glob';
 import path from 'node:path';
 import {rimraf} from 'rimraf';
+
+/** Babel transform cache directory */
+const babelCacheDir = path.join(__rootDir, 'node_modules', '.cache', 'babel');
+
+/** Cached serialization of transform options (computed once at module load) */
+let _cachedOptionsHash: string | undefined;
+
+/** Cache statistics */
+let _cacheHits = 0;
+let _cacheMisses = 0;
+
+/**
+ * Generate a stable hash of the Babel transform options.
+ * When options change (e.g. dependency updates), the cache auto-invalidates.
+ */
+const getOptionsHash = () => {
+	if (_cachedOptionsHash) {
+		return _cachedOptionsHash;
+	}
+	const hash = createHash('sha256');
+	hash.update(JSON.stringify(transformOptions));
+	hash.update(PACKAGE.version);
+	_cachedOptionsHash = hash.digest('hex');
+	return _cachedOptionsHash;
+};
 
 /**
  * @private
@@ -151,6 +177,7 @@ const generateTransformOptions = () => {
 						'web.url-search-params.delete',
 						'web.url-search-params.has',
 						'web.url-search-params.size',
+						'es.array.includes',
 						'es.array.push',
 						'es.array.unshift',
 						'es.iterator.constructor',
@@ -197,7 +224,6 @@ const generateTransformOptions = () => {
 		],
 		compact: false,
 		plugins: [
-			'@mrhenry/core-web',
 			path.join(__rootDir, 'scripts/modules/plugins/babel-plugin-convert-comments.ts'),
 			path.join(__rootDir, 'scripts/modules/plugins/babel-plugin-import-polyfills.ts'),
 		],
@@ -252,14 +278,32 @@ const transformOptions = generateTransformOptions();
  * @return {Promise<string>}
  */
 const transform = async (inputFilePath: string, sourceCode: string) => {
+	// Generate cache key from source content + Babel config
+	const contentHash = createHash('sha256').update(sourceCode).digest('hex');
+	const cacheKey = `${contentHash}_${getOptionsHash()}`;
+	const cacheFile = path.join(babelCacheDir, `${cacheKey}.js`);
+
+	// Hit cache: return cached result directly
+	if (existsSync(cacheFile)) {
+		_cacheHits++;
+		return readFileContent(cacheFile);
+	}
+
+	// Miss: run Babel transform
+	_cacheMisses++;
 	const babelFileResult = (await transformAsync(sourceCode, {
 		...transformOptions,
 		cwd: __rootDir,
 		filename: inputFilePath,
 	})) as BabelFileResult;
 	const {code: transformOutput} = babelFileResult;
+	const result = transformOutput as string;
 
-	return transformOutput as string;
+	// Write to cache
+	mkdirSync(babelCacheDir, {recursive: true});
+	writeFileContent(cacheFile, result);
+
+	return result;
 };
 
 /**
