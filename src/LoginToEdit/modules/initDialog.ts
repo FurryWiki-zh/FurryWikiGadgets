@@ -58,11 +58,19 @@ const initDialog = ($body: JQuery<HTMLBodyElement>): void => {
 			.attr('id', 'ca-edit')
 			.find('a')
 			.attr('aria-label', getMessage('DialogMessage'))
-			.html(editIcon + getMessage('Edit'))
+			.html(editIcon + (isCitizen ? `<span>${getMessage('Edit')}</span>` : getMessage('Edit')))
 			.on('click', (event: JQuery.ClickEvent): void => {
 				event.preventDefault();
 				openDialog();
 			});
+
+		if (isCitizen) {
+			$caViewsource
+				.find('a')
+				.addClass(
+					'citizen-cdx-button--size-large cdx-button cdx-button--fake-button cdx-button--fake-button--enabled cdx-button--weight-primary cdx-button--action-progressive'
+				);
+		}
 	}
 
 	if (['edit', 'submit'].includes(wgAction)) {
