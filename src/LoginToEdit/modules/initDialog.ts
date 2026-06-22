@@ -67,9 +67,8 @@ const initDialog = ($body: JQuery<HTMLBodyElement>): void => {
 		if (isCitizen) {
 			$caViewsource
 				.find('a')
-				.addClass(
-					'citizen-cdx-button--size-large cdx-button cdx-button--fake-button cdx-button--fake-button--enabled cdx-button--weight-primary cdx-button--action-progressive'
-				);
+				.removeClass('cdx-button--weight-quiet')
+				.addClass('cdx-button--weight-primary cdx-button--action-progressive');
 		}
 	}
 
