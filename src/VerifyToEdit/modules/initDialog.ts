@@ -62,7 +62,7 @@ const initDialog = ($body: JQuery<HTMLBodyElement>): void => {
 		}
 	}
 
-	if (['edit', 'submit'].includes(wgAction)) {
+	if (['edit', 'submit'].includes(wgAction) && !mw.config.get('wgUserEmailConfirmed')) {
 		openDialog();
 	}
 };
