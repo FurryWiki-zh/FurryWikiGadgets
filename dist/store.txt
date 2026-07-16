@@ -635,6 +635,7 @@
 		"MediaWiki:Gadget-QuickImport/zh-hans",
 		"MediaWiki:Gadget-QuickImport/zh-hant",
 		"MediaWiki:Gadget-QuickImport/zh-hk",
+		"MediaWiki:Gadget-QuickImport/zh-mo",
 		"MediaWiki:Gadget-QuickImport/zh-my",
 		"MediaWiki:Gadget-QuickImport/zh-sg",
 		"MediaWiki:Gadget-QuickImport/zh-tw",
