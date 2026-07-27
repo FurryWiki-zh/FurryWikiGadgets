@@ -2,9 +2,6 @@
 	"enable": true,
 	"description": "<span id=\"Gadget-RenameRandomName\"></span> 为用户重命名表单填入随机生成的匿名用户名",
 	"section": "sysop",
-	"dependencies": [
-		"mediawiki.api",
-		"mediawiki.util"
-	],
+	"dependencies": ["mediawiki.api", "mediawiki.util"],
 	"rights": ["renameuser"]
 }
