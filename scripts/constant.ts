@@ -70,6 +70,8 @@ const DEFINITION_SECTION_MAP = {
 	compatibility: '基础类小工具',
 	edit: '编辑类小工具',
 	sysop: '管理类小工具',
+	usergroup: '用户组类小工具',
+	skin: '皮肤类小工具',
 } as const satisfies DefaultSectionMap;
 
 /**
