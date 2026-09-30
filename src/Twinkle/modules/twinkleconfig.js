@@ -1,4 +1,7 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
+import {createApp, h} from 'vue';
+import TwConfigPanel from './ui/TwConfigPanel.vue';
 
 /*! Twinkle.js - twinkleconfig.js */
 (function twinkleconfig() {
@@ -1124,315 +1127,47 @@
 			}
 			const contentdiv = document.querySelector('#twinkle-config-content');
 			contentdiv.textContent = ''; // clear children
-			// start a table of contents
-			const toctable = document.createElement('div');
-			toctable.className = 'toc';
-			toctable.style.marginLeft = '0.4em';
-			// create TOC title
-			const toctitle = document.createElement('div');
-			toctitle.id = 'toctitle';
-			const toch2 = document.createElement('h2');
-			toch2.textContent = window.wgULS('目录 ', '目錄 ');
-			toctitle.append(toch2);
-			// add TOC show/hide link
-			const toctoggle = document.createElement('span');
-			toctoggle.className = 'toctoggle';
-			toctoggle.append(document.createTextNode('['));
-			const toctogglelink = document.createElement('a');
-			toctogglelink.className = 'internal';
-			toctogglelink.setAttribute('href', '#tw-tocshowhide');
-			toctogglelink.textContent = window.wgULS('隐藏', '隱藏');
-			toctoggle.append(toctogglelink);
-			toctoggle.append(document.createTextNode(']'));
-			toctitle.append(toctoggle);
-			toctable.append(toctitle);
-			// create item container: this is what we add stuff to
-			const tocul = document.createElement('ul');
-			toctogglelink.addEventListener(
-				'click',
-				() => {
-					const $tocul = $(tocul);
-					$tocul.toggle();
-					if ($tocul.find(':visible').length) {
-						toctogglelink.textContent = window.wgULS('隐藏', '隱藏');
-					} else {
-						toctogglelink.textContent = window.wgULS('显示', '顯示');
-					}
-				},
-				false
-			);
-			toctable.append(tocul);
-			contentdiv.append(toctable);
-			const contentform = document.createElement('form');
-			contentform.setAttribute('action', 'javascript:void(0)'); // was #tw-save - changed to void(0) to work around Chrome issue
-			contentform.addEventListener('submit', Twinkle.config.save, true);
-			contentdiv.append(contentform);
-			const container = document.createElement('table');
-			container.style.width = '100%';
-			contentform.append(container);
-			$(Twinkle.config.sections).each((sectionkey, section) => {
+			// Collect the visible sections and preferences for the Codex panel
+			const visibleSections = [];
+			for (const section of Twinkle.config.sections) {
 				if (section.hidden || (section.adminOnly && !Morebits.userIsSysop)) {
-					return true; // i.e. "continue" in this context
+					continue;
 				}
-				// add to TOC
-				const tocli = document.createElement('li');
-				tocli.className = 'toclevel-1';
-				const toca = document.createElement('a');
-				toca.setAttribute('href', `#${section.module}`);
-				toca.append(document.createTextNode(section.title));
-				tocli.append(toca);
-				tocul.append(tocli);
-				let row = document.createElement('tr');
-				let cell = document.createElement('td');
-				cell.setAttribute('colspan', '3');
-				const heading = document.createElement('h4');
-				heading.style.borderBottom = '1px solid #808080';
-				heading.style.marginTop = '0.2em';
-				heading.id = section.module;
-				heading.append(document.createTextNode(section.title));
-				cell.append(heading);
-				row.append(cell);
-				container.append(row);
-				let rowcount = 1; // for row banding
-				// add each of the preferences to the form
-				$(section.preferences).each((prefkey, pref) => {
-					if (pref.adminOnly && !Morebits.userIsSysop) {
-						return true; // i.e. "continue" in this context
-					}
-
-					row = document.createElement('tr');
-					row.style.marginBottom = '0.2em';
-					// create odd row banding
-					if (rowcount++ % 2 === 0) {
-						row.style.backgroundColor = 'rgb(128 128 128/.1)';
-					}
-					cell = document.createElement('td');
-					let label;
-					let input;
-					const gotPref = Twinkle.getPref(pref.name);
-					switch (pref.type) {
-						case 'boolean':
-							// create a checkbox
-							cell.setAttribute('colspan', '2');
-							label = document.createElement('label');
-							input = document.createElement('input');
-							input.setAttribute('type', 'checkbox');
-							input.setAttribute('id', pref.name);
-							input.setAttribute('name', pref.name);
-							if (gotPref === true) {
-								input.checked = true;
-							}
-							label.append(input);
-							label.append(document.createTextNode(pref.label));
-							cell.append(label);
-							break;
-						case 'string': // create an input box
-						case 'integer':
-							// add label to first column
-							cell.style.textAlign = 'right';
-							cell.style.paddingRight = '0.5em';
-							label = document.createElement('label');
-							label.setAttribute('for', pref.name);
-							label.append(document.createTextNode(`${pref.label}：`));
-							cell.append(label);
-							row.append(cell);
-							// add input box to second column
-							cell = document.createElement('td');
-							cell.style.paddingRight = '1em';
-							input = document.createElement('input');
-							input.setAttribute('type', 'text');
-							input.setAttribute('id', pref.name);
-							input.setAttribute('name', pref.name);
-							if (pref.type === 'integer') {
-								input.setAttribute('size', 6);
-								input.setAttribute('type', 'number');
-								input.setAttribute('step', '1'); // integers only
-							}
-
-							if (gotPref) {
-								input.setAttribute('value', gotPref);
-							}
-							cell.append(input);
-							break;
-						case 'enum': {
-							// create a combo box
-							// add label to first column
-							// note: duplicates the code above, under string/integer
-							cell.style.textAlign = 'right';
-							cell.style.paddingRight = '0.5em';
-							label = document.createElement('label');
-							label.setAttribute('for', pref.name);
-							label.append(document.createTextNode(`${pref.label}：`));
-							cell.append(label);
-							row.append(cell);
-							// add input box to second column
-							cell = document.createElement('td');
-							cell.style.paddingRight = '1em';
-							input = document.createElement('select');
-							input.setAttribute('id', pref.name);
-							input.setAttribute('name', pref.name);
-							let optionExists = false;
-							for (const [enumvalue, enumdisplay] of Object.entries(pref.enumValues)) {
-								const option = document.createElement('option');
-								option.setAttribute('value', enumvalue);
-								if (
-									gotPref === enumvalue ||
-									// Hack to convert old boolean watchlist prefs
-									// to corresponding enums (added in v2.1)
-									(typeof gotPref === 'boolean' &&
-										((gotPref && enumvalue === 'yes') || (!gotPref && enumvalue === 'no')))
-								) {
-									option.setAttribute('selected', 'selected');
-									optionExists = true;
-								}
-								option.append(document.createTextNode(enumdisplay));
-								input.append(option);
-							}
-							// Append user-defined value to options
-							if (!optionExists) {
-								const option = document.createElement('option');
-								option.setAttribute('value', gotPref);
-								option.setAttribute('selected', 'selected');
-								option.append(document.createTextNode(gotPref));
-								input.append(option);
-							}
-							cell.append(input);
-							break;
-						}
-						case 'set': {
-							// create a set of check boxes
-							// add label first of all
-							cell.setAttribute('colspan', '2');
-							label = document.createElement('label'); // not really necessary to use a label element here, but we do it for consistency of styling
-							label.append(document.createTextNode(`${pref.label}：`));
-							cell.append(label);
-							const checkdiv = document.createElement('div');
-							checkdiv.style.paddingLeft = '1em';
-							const worker = (itemkey, itemvalue) => {
-								const checklabel = document.createElement('label');
-								checklabel.style.marginRight = '0.7em';
-								checklabel.style.display = 'inline-block';
-								const check = document.createElement('input');
-								check.setAttribute('type', 'checkbox');
-								check.setAttribute('id', `${pref.name}_${itemkey}`);
-								check.setAttribute('name', `${pref.name}_${itemkey}`);
-								if (gotPref && gotPref.includes(itemkey)) {
-									check.checked = true;
-								}
-								// cater for legacy integer array values for unlinkNamespaces (this can be removed a few years down the track...)
-								if (
-									pref.name === 'unlinkNamespaces' &&
-									gotPref &&
-									gotPref.includes(Number.parseInt(itemkey, 10))
-								) {
-									check.checked = true;
-								}
-								checklabel.append(check);
-								checklabel.append(document.createTextNode(itemvalue));
-								checkdiv.append(checklabel);
-							};
-							if (pref.setDisplayOrder) {
-								// add check boxes according to the given display order
-								for (const item of pref.setDisplayOrder) {
-									worker(item, pref.setValues[item]);
-								}
-							} else {
-								// add check boxes according to the order it gets fed to us (probably strict alphabetical)
-								for (const [itemkey, itemvalue] of Object.entries(pref.setValues)) {
-									worker(itemkey, itemvalue);
-								}
-							}
-							cell.append(checkdiv);
-							break;
-						}
-						case 'customList': {
-							// add label to first column
-							cell.style.textAlign = 'right';
-							cell.style.paddingRight = '0.5em';
-							label = document.createElement('label');
-							label.setAttribute('for', pref.name);
-							label.append(document.createTextNode(`${pref.label}：`));
-							cell.append(label);
-							row.append(cell);
-							// add button to second column
-							cell = document.createElement('td');
-							cell.style.paddingRight = '1em';
-							const customListButton = document.createElement('button');
-							customListButton.setAttribute('id', pref.name);
-							customListButton.setAttribute('name', pref.name);
-							customListButton.setAttribute('type', 'button');
-							customListButton.addEventListener('click', Twinkle.config.listDialog.display, false);
-							// use jQuery data on the button to store the current config value
-							$(customListButton).data({
-								value: gotPref,
-								pref,
-							});
-							customListButton.append(document.createTextNode(window.wgULS('编辑项目', '編輯項目')));
-							cell.append(customListButton);
-							break;
-						}
-						default:
-							void mw.notify(`twinkleconfig: 未知类型的属性 ${pref.name}`, {
-								type: 'warn',
-								tag: 'twinkleconfig',
-							});
-							break;
-					}
-					row.append(cell);
-					// add help tip
-					cell = document.createElement('td');
-					cell.style.fontSize = '90%';
-					cell.style.color = 'gray';
-					if (pref.helptip) {
-						// convert mentions of templates in the helptip to clickable links
-						cell.innerHTML = pref.helptip
-							.replace(
-								/{{(.+?)}}/g,
-								`{{<a href="${mw.util.getUrl('Template:')}$1" rel="noopener" target="_blank">$1</a>}}`
-							)
-							.replace(
-								/\[\[(.+?)]]/g,
-								`<a href="${mw.util.getUrl('')}$1" rel="noopener" target="_blank">$1</a>`
-							);
-					}
-					// add reset link (custom lists don't need this, as their config value isn't displayed on the form)
-					if (pref.type !== 'customList') {
-						const resetlink = document.createElement('a');
-						resetlink.setAttribute('href', '#tw-reset');
-						resetlink.setAttribute('id', `twinkle-config-reset-${pref.name}`);
-						resetlink.addEventListener('click', Twinkle.config.resetPrefLink, false);
-						resetlink.style.cssFloat = 'right';
-						resetlink.style.margin = '0 0.6em';
-						resetlink.append(document.createTextNode(window.wgULS('复位', '復位')));
-						cell.append(resetlink);
-					}
-					row.append(cell);
-					container.append(row);
-					return true;
+				visibleSections.push({
+					title: section.title,
+					module: section.module,
+					preferences: section.preferences.filter((pref) => {
+						return !pref.adminOnly || Morebits.userIsSysop;
+					}),
 				});
-				return true;
+			}
+			const initialValues = {};
+			for (const section of visibleSections) {
+				for (const pref of section.preferences) {
+					const gotPref = Twinkle.getPref(pref.name);
+					if (pref.type === 'enum' && typeof gotPref === 'boolean') {
+						// Legacy boolean watchlist preferences map to yes/no enums
+						initialValues[pref.name] = gotPref ? 'yes' : 'no';
+					} else {
+						initialValues[pref.name] = gotPref;
+					}
+				}
+			}
+			const root = document.createElement('div');
+			contentdiv.appendChild(root);
+			const app = createApp({
+				render: () => {
+					return h(TwConfigPanel, {
+						sections: visibleSections,
+						defaults: Twinkle.defaultConfig,
+						initialValues,
+						onSubmit: (values, statusContainer, restore) => {
+							Twinkle.config.save(values, statusContainer, restore);
+						},
+					});
+				},
 			});
-			const footerbox = document.createElement('div');
-			footerbox.setAttribute('id', 'twinkle-config-buttonpane');
-			footerbox.style.backgroundColor = '#BCCADF';
-			footerbox.style.padding = '0.5em';
-			const submitButton = document.createElement('button');
-			submitButton.setAttribute('id', 'twinkle-config-submit');
-			submitButton.setAttribute('type', 'submit');
-			submitButton.append(document.createTextNode(window.wgULS('保存修改', '儲存修改')));
-			footerbox.append(submitButton);
-			const footerspan = document.createElement('span');
-			footerspan.className = 'plainlinks';
-			footerspan.style.marginLeft = '2.4em';
-			footerspan.style.fontSize = '90%';
-			const footera = document.createElement('a');
-			footera.setAttribute('href', '#tw-reset-all');
-			footera.setAttribute('id', 'twinkle-config-resetall');
-			footera.addEventListener('click', Twinkle.config.resetAllPrefs, false);
-			footera.append(document.createTextNode(window.wgULS('恢复默认', '恢復預設')));
-			footerspan.append(footera);
-			footerbox.append(footerspan);
-			contentform.append(footerbox);
+			app.mount(root);
 			// since all the section headers exist now, we can try going to the requested anchor
 			if (window.location.hash) {
 				const loc = window.location.hash;
@@ -1459,7 +1194,7 @@
 				box.setAttribute('class', 'config-twopt-box');
 				if (mw.config.get('wgArticleId') > 0) {
 					// page exists
-					box.append(
+					box.appendChild(
 						document.createTextNode(
 							window.wgULS(
 								'这页包含您的Twinkle参数设置，您可使用',
@@ -1469,7 +1204,7 @@
 					);
 				} else {
 					// page does not exist
-					box.append(
+					box.appendChild(
 						document.createTextNode(
 							window.wgULS('您可配置您的Twinkle，通过使用', '您可配置您的Twinkle，通過使用')
 						)
@@ -1477,294 +1212,39 @@
 				}
 				link = document.createElement('a');
 				link.setAttribute('href', mw.util.getUrl(Twinkle.getPref('configPage')));
-				link.append(document.createTextNode(window.wgULS('Twinkle参数设置面板', 'Twinkle偏好設定面板')));
-				box.append(link);
-				box.append(document.createTextNode(window.wgULS('，或直接编辑本页。', '，或直接編輯本頁。')));
+				link.appendChild(document.createTextNode(window.wgULS('Twinkle参数设置面板', 'Twinkle偏好設定面板')));
+				box.appendChild(link);
+				box.appendChild(document.createTextNode(window.wgULS('，或直接编辑本页。', '，或直接編輯本頁。')));
 				$(box).insertAfter($body.find('#contentSub'));
 			} else if (['vector', 'vector-2022', 'gongbi', 'citizen', 'common'].includes(scriptPageName)) {
 				// place "Looking for Twinkle options?" notice
 				box.setAttribute('class', 'config-userskin-box');
-				box.append(
+				box.appendChild(
 					document.createTextNode(
 						window.wgULS('若您想配置您的Twinkle，请使用', '若您想配置您的Twinkle，請使用')
 					)
 				);
 				link = document.createElement('a');
 				link.setAttribute('href', mw.util.getUrl(Twinkle.getPref('configPage')));
-				link.append(document.createTextNode(window.wgULS('Twinkle参数设置面板', 'Twinkle偏好設定面板')));
-				box.append(link);
-				box.append(document.createTextNode('。'));
+				link.appendChild(document.createTextNode(window.wgULS('Twinkle参数设置面板', 'Twinkle偏好設定面板')));
+				box.appendChild(link);
+				box.appendChild(document.createTextNode('。'));
 				$(box).insertAfter($body.find('#contentSub'));
 			}
 		}
 	};
-	// custom list-related stuff
-	Twinkle.config.listDialog = {};
-	Twinkle.config.listDialog.addRow = (dlgtable, value, label) => {
-		const contenttr = document.createElement('tr');
-		// "remove" button
-		let contenttd = document.createElement('td');
-		const removeButton = document.createElement('button');
-		removeButton.setAttribute('type', 'button');
-		removeButton.addEventListener(
-			'click',
-			() => {
-				$(contenttr).remove();
-			},
-			false
-		);
-		removeButton.textContent = '移除';
-		contenttd.append(removeButton);
-		contenttr.append(contenttd);
-		// value input box
-		contenttd = document.createElement('td');
-		let input = document.createElement('input');
-		input.setAttribute('type', 'text');
-		input.className = 'twinkle-config-customlist-value';
-		input.style.width = '97%';
-		if (value) {
-			input.setAttribute('value', value);
-		}
-		contenttd.append(input);
-		contenttr.append(contenttd);
-		// label input box
-		contenttd = document.createElement('td');
-		input = document.createElement('input');
-		input.setAttribute('type', 'text');
-		input.className = 'twinkle-config-customlist-label';
-		input.style.width = '98%';
-		if (label) {
-			input.setAttribute('value', label);
-		}
-		contenttd.append(input);
-		contenttr.append(contenttd);
-		dlgtable.append(contenttr);
-	};
-	Twinkle.config.listDialog.display = (e) => {
-		const $prefbutton = $(e.target);
-		const curvalue = $prefbutton.data('value');
-		const curpref = $prefbutton.data('pref');
-		const dialog = new Morebits.simpleWindow(720, 400);
-		dialog.setTitle(curpref.label);
-		dialog.setScriptName(window.wgULS('Twinkle参数设置', 'Twinkle偏好設定'));
-		const dialogcontent = document.createElement('div');
-		const dlgtable = document.createElement('table');
-		dlgtable.className = 'wikitable';
-		dlgtable.style.margin = '1.4em 1em';
-		dlgtable.style.width = '97%';
-		const dlgtbody = document.createElement('tbody');
-		// header row
-		let dlgtr = document.createElement('tr');
-		// top-left cell
-		let dlgth = document.createElement('th');
-		dlgth.style.width = '5%';
-		dlgtr.append(dlgth);
-		// value column header
-		dlgth = document.createElement('th');
-		dlgth.style.width = '35%';
-		dlgth.textContent = curpref.customListValueTitle ?? window.wgULS('数值', '數值');
-		dlgtr.append(dlgth);
-		// label column header
-		dlgth = document.createElement('th');
-		dlgth.style.width = '60%';
-		dlgth.textContent = curpref.customListLabelTitle ?? window.wgULS('标签', '標籤');
-		dlgtr.append(dlgth);
-		dlgtbody.append(dlgtr);
-		// content rows
-		let gotRow = false;
-		for (const v of curvalue) {
-			gotRow = true;
-			Twinkle.config.listDialog.addRow(dlgtbody, v.value, v.label);
-		}
-		// if there are no values present, add a blank row to start the user off
-		if (!gotRow) {
-			Twinkle.config.listDialog.addRow(dlgtbody);
-		}
-		// final "add" button
-		const dlgtfoot = document.createElement('tfoot');
-		dlgtr = document.createElement('tr');
-		const dlgtd = document.createElement('td');
-		dlgtd.setAttribute('colspan', '3');
-		const addButton = document.createElement('button');
-		addButton.style.minWidth = '8em';
-		addButton.setAttribute('type', 'button');
-		addButton.addEventListener(
-			'click',
-			() => {
-				Twinkle.config.listDialog.addRow(dlgtbody);
-			},
-			false
-		);
-		addButton.textContent = '添加';
-		dlgtd.append(addButton);
-		dlgtr.append(dlgtd);
-		dlgtfoot.append(dlgtr);
-		dlgtable.append(dlgtbody);
-		dlgtable.append(dlgtfoot);
-		dialogcontent.append(dlgtable);
-		// buttonpane buttons: [Save changes] [Reset] [Cancel]
-		let button = document.createElement('button');
-		button.setAttribute('type', 'submit'); // so Morebits.simpleWindow puts the button in the button pane
-		button.addEventListener(
-			'click',
-			() => {
-				Twinkle.config.listDialog.save($prefbutton, dlgtbody);
-				dialog.close();
-			},
-			false
-		);
-		button.textContent = window.wgULS('保存修改', '儲存修改');
-		dialogcontent.append(button);
-		button = document.createElement('button');
-		button.setAttribute('type', 'submit'); // so Morebits.simpleWindow puts the button in the button pane
-		button.addEventListener(
-			'click',
-			() => {
-				Twinkle.config.listDialog.reset($prefbutton, dlgtbody);
-			},
-			false
-		);
-		button.textContent = window.wgULS('复位', '復位');
-		dialogcontent.append(button);
-		button = document.createElement('button');
-		button.setAttribute('type', 'submit'); // so Morebits.simpleWindow puts the button in the button pane
-		button.addEventListener(
-			'click',
-			() => {
-				dialog.close(); // the event parameter on this function seems to be broken
-			},
-			false
-		);
-		button.textContent = '取消';
-		dialogcontent.append(button);
-		dialog.setContent(dialogcontent);
-		dialog.display();
-	};
-	// Resets the data value, re-populates based on the new (default) value, then saves the
-	// old data value again (less surprising behaviour)
-	Twinkle.config.listDialog.reset = (button, tbody) => {
-		// reset value on button
-		const $button = $(button);
-		const curpref = $button.data('pref');
-		const oldvalue = $button.data('value');
-		Twinkle.config.resetPref(curpref);
-		// reset form
-		const $tbody = $(tbody);
-		$tbody.find('tr').slice(1).remove(); // all rows except the first (header) row
-		// add the new values
-		const curvalue = $button.data('value');
-		for (const v of curvalue) {
-			Twinkle.config.listDialog.addRow(tbody, v.value, v.label);
-		}
-		// save the old value
-		$button.data('value', oldvalue);
-	};
-	Twinkle.config.listDialog.save = (button, tbody) => {
-		const result = [];
-		let current = {};
-		$(tbody)
-			.find('input[type="text"]')
-			.each((inputkey, input) => {
-				if ($(input).hasClass('twinkle-config-customlist-value')) {
-					current = {
-						value: input.value,
-					};
-				} else {
-					current.label = input.value;
-					// exclude totally empty rows
-					if (current.value || current.label) {
-						result[result.length] = current;
-					}
-				}
-			});
-		$(button).data('value', result);
-	};
-	// reset/restore defaults
-	Twinkle.config.resetPrefLink = (e) => {
-		const wantedpref = e.target.id.slice(21); // "twinkle-config-reset-" prefix is stripped
-		// search tactics
-		$(Twinkle.config.sections).each((sectionkey, section) => {
-			if (section.hidden || (section.adminOnly && !Morebits.userIsSysop)) {
-				return true; // continue: skip impossibilities
-			}
 
-			let foundit = false;
-			$(section.preferences).each((prefkey, pref) => {
-				if (pref.name !== wantedpref) {
-					return true; // continue
-				}
-
-				Twinkle.config.resetPref(pref);
-				foundit = true;
-				return false; // break
-			});
-
-			if (foundit) {
-				return false; // break
-			}
-		});
-
-		return false; // stop link from scrolling page
-	};
-
-	Twinkle.config.resetPref = (pref) => {
-		switch (pref.type) {
-			case 'boolean':
-				document.querySelector(`#${pref.name}`).checked = Twinkle.defaultConfig[pref.name];
-				break;
-			case 'string':
-			case 'integer':
-			case 'enum':
-				document.querySelector(`#${pref.name}`).value = Twinkle.defaultConfig[pref.name];
-				break;
-			case 'set':
-				for (const [itemkey] of Object.entries(pref.setValues)) {
-					if (document.querySelector(`#${pref.name}_${itemkey}`)) {
-						document.querySelector(`#${pref.name}_${itemkey}`).checked =
-							Twinkle.defaultConfig[pref.name].includes(itemkey);
-					}
-				}
-				break;
-			case 'customList':
-				$(document.querySelector(`#${pref.name}`)).data('value', Twinkle.defaultConfig[pref.name]);
-				break;
-			default:
-				void mw.notify(`twinkleconfig: unknown data type for preference ${pref.name}`, {
-					type: 'warn',
-					tag: 'twinkleconfig',
-				});
-				break;
-		}
-	};
-	Twinkle.config.resetAllPrefs = () => {
-		// no confirmation message - the user can just refresh/close the page to abort
-		$(Twinkle.config.sections).each((sectionkey, section) => {
-			if (section.hidden || (section.adminOnly && !Morebits.userIsSysop)) {
-				return true; // continue: skip impossibilities
-			}
-
-			$(section.preferences).each((prefkey, pref) => {
-				if (!pref.adminOnly || Morebits.userIsSysop) {
-					Twinkle.config.resetPref(pref);
-				}
-			});
-			return true;
-		});
-		return false; // stop link from scrolling page
-	};
-
-	Twinkle.config.save = (e) => {
-		Morebits.status.init(document.querySelector('#twinkle-config-content'));
+	Twinkle.config.save = (values, statusContainer, restore) => {
+		Morebits.status.init(statusContainer);
 		const userjs = `${mw.config.get('wgFormattedNamespaces')[mw.config.get('wgNamespaceIds').user]}:${mw.config.get(
 			'wgUserName'
 		)}/twinkleoptions.js`;
 		const wikiPage = new Morebits.wiki.page(userjs, window.wgULS('保存参数设置到 ', '儲存偏好設定到 ') + userjs);
-		wikiPage.setCallbackParameters(e.target);
+		wikiPage.setCallbackParameters({values, restore});
 		wikiPage.load(Twinkle.config.writePrefs);
-		return false;
 	};
 	Twinkle.config.writePrefs = (pageobj) => {
-		const form = pageobj.getCallbackParameters();
+		const {values, restore} = pageobj.getCallbackParameters();
 		// this is the object which gets serialized into JSON; only
 		// preferences that this script knows about are kept
 		const newConfig = {
@@ -1806,20 +1286,21 @@
 					if (!section.hidden) {
 						switch (pref.type) {
 							case 'boolean':
-								// read from the checkbox
-								userValue = form[pref.name].checked;
+								userValue = values[pref.name] === true;
 								break;
 							case 'string': // read from the input box or combo box
 							case 'enum':
-								userValue = form[pref.name].value;
+								userValue = String(values[pref.name] ?? '');
 								break;
 							case 'integer':
 								// read from the input box
-								userValue = Number.parseInt(form[pref.name].value, 10);
+								userValue = Number.parseInt(values[pref.name], 10);
 								if (Number.isNaN(userValue)) {
 									Morebits.status.warn(
 										window.wgULS('保存', '儲存'),
-										`${window.wgULS('您为 ', '您為 ') + pref.name} 指定的值（${pref.value}${window.wgULS(
+										`${window.wgULS('您为 ', '您為 ') + pref.name} 指定的值（${String(
+											values[pref.name] ?? ''
+										)}${window.wgULS(
 											'）不合法，会继续保存操作，但此值将会跳过。',
 											'）不合法，會繼續儲存操作，但此值將會跳過。'
 										)}`
@@ -1829,26 +1310,10 @@
 								break;
 							case 'set':
 								// read from the set of check boxes
-								userValue = [];
-								if (pref.setDisplayOrder) {
-									// read only those keys specified in the display order
-									for (const item of pref.setDisplayOrder) {
-										if (form[`${pref.name}_${item}`].checked) {
-											userValue[userValue.length] = item;
-										}
-									}
-								} else {
-									// read all the keys in the list of values
-									for (const [itemkey] of Object.entries(pref.setValues)) {
-										if (form[`${pref.name}_${itemkey}`].checked) {
-											userValue[userValue.length] = itemkey;
-										}
-									}
-								}
+								userValue = Array.isArray(values[pref.name]) ? [...values[pref.name]] : [];
 								break;
 							case 'customList':
-								// read from the jQuery data stored on the button object
-								userValue = $(form[pref.name]).data('value');
+								userValue = values[pref.name];
 								break;
 							default:
 								void mw.notify(`twinkleconfig: 未知数据类型，属性 ${pref.name}`, {
@@ -1886,7 +1351,19 @@
 		);
 		pageobj.setChangeTags(Twinkle.changeTags);
 		pageobj.setCreateOption('recreate');
-		pageobj.save(Twinkle.config.saveSuccess);
+		pageobj.save(
+			() => {
+				Twinkle.config.saveSuccess(pageobj);
+				if (restore) {
+					restore();
+				}
+			},
+			() => {
+				if (restore) {
+					restore();
+				}
+			}
+		);
 	};
 	Twinkle.config.saveSuccess = (pageobj) => {
 		pageobj.getStatusElement().info('成功');
@@ -1900,10 +1377,10 @@
 		)}</b></p><p>${window.wgULS('要看到这些更改，您可能需要', '要看到這些更改，您可能需要')}<a href="${mw.util.getUrl(
 			'FWIKI:BYPASS'
 		)}" title="FWIKI:BYPASS"><b>${window.wgULS('绕过浏览器缓存', '繞過瀏覽器快取')}</b></a>。</p>`;
-		Morebits.status.root.append(noticebox);
+		Morebits.status.root.appendChild(noticebox);
 		const noticeclear = document.createElement('br');
 		noticeclear.style.clear = 'both';
-		Morebits.status.root.append(noticeclear);
+		Morebits.status.root.appendChild(noticeclear);
 	};
 	Twinkle.addInitCallback(Twinkle.config.init);
 })();

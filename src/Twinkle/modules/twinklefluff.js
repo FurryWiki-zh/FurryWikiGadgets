@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 
 /*! Twinkle.js - twinklefluff.js */
@@ -47,7 +48,7 @@
 				// structuredChangeFilters.ui.initialized is just on load
 				mw.hook('wikipage.content').add((item) => {
 					if (item.is('div')) {
-						Twinkle.fluff.addLinks.recentchanges();
+						Twinkle.fluff.addLinks.recentchanges(item);
 					}
 				});
 			}
@@ -69,14 +70,14 @@
 		spanTag: (color, content) => {
 			const span = document.createElement('span');
 			span.style.color = color;
-			span.append(document.createTextNode(content));
+			span.appendChild(document.createTextNode(content));
 			return span;
 		},
 		buildLink: (color, text) => {
 			const link = document.createElement('a');
-			link.append(Twinkle.fluff.linkBuilder.spanTag('Black', '['));
-			link.append(Twinkle.fluff.linkBuilder.spanTag(color, text));
-			link.append(Twinkle.fluff.linkBuilder.spanTag('Black', ']'));
+			link.appendChild(Twinkle.fluff.linkBuilder.spanTag('Black', '['));
+			link.appendChild(Twinkle.fluff.linkBuilder.spanTag(color, text));
+			link.appendChild(Twinkle.fluff.linkBuilder.spanTag('Black', ']'));
 			link.href = '#';
 			return link;
 		},
@@ -113,12 +114,12 @@
 				Twinkle.fluff.revert('vand', vandal, rev, page);
 				Twinkle.fluff.disableLinks(revNode);
 			});
-			vandNode.append(vandLink);
-			normNode.append(normLink);
+			vandNode.appendChild(vandLink);
+			normNode.appendChild(normLink);
 			const separator = inline ? ' ' : ' || ';
-			revNode.append(normNode);
-			revNode.append(document.createTextNode(separator));
-			revNode.append(vandNode);
+			revNode.appendChild(normNode);
+			revNode.appendChild(document.createTextNode(separator));
+			revNode.appendChild(vandNode);
 			return revNode;
 		},
 		// Build [restore this revision] links
@@ -138,9 +139,9 @@
 				Twinkle.fluff.revertToRevision(revisionRef);
 			});
 			if (inline) {
-				revertToRevisionNode.append(document.createTextNode(' '));
+				revertToRevisionNode.appendChild(document.createTextNode(' '));
 			}
-			revertToRevisionNode.append(revertToRevisionLink);
+			revertToRevisionNode.appendChild(revertToRevisionLink);
 			return revertToRevisionNode;
 		},
 	};
@@ -174,35 +175,43 @@
 						}
 						// It's unlikely, but we can't easily check for revdel'd usernames
 						// since only a strong element is provided, with no easy selector
-						current.append(
+						current.appendChild(
 							Twinkle.fluff.linkBuilder.rollbackLinks(username, true, current.dataset.mwRevid, page)
 						);
 					});
 				}
 			}
 		},
-		recentchanges: () => {
+		recentchanges: ($content) => {
 			if (
 				(mw.config.get('wgCanonicalSpecialPageName') === 'Recentchanges' &&
 					Twinkle.getPref('showRollbackLinks').includes('recentchanges')) ||
 				(mw.config.get('wgCanonicalSpecialPageName') === 'Recentchangeslinked' &&
 					Twinkle.getPref('showRollbackLinks').includes('recentchangeslinked'))
 			) {
+				const $root = $content && $content.length ? $content : $body;
 				// Latest and revertable (not page creations, logs, categorizations, etc.)
-				let $list = $body.find('.mw-changeslist .mw-changeslist-last.mw-changeslist-src-mw-edit');
+				let $list = $root.find('.mw-changeslist .mw-changeslist-last.mw-changeslist-src-mw-edit');
 				// Exclude top-level header if "group changes" preference is used
 				// and find only individual lines or nested lines
 				$list = $list
 					.not('.mw-rcfilters-ui-highlights-enhanced-toplevel')
 					.find('.mw-changeslist-line-inner, td.mw-enhanced-rc-nested');
 				$list.each((_key, current) => {
+					const href = $(current).find('.mw-changeslist-diff').attr('href');
+					const rev = mw.util.getParamValue('diff', href);
+					if (rev && current.querySelector(`#tw-revert${rev}`)) {
+						return;
+					}
+					if (!rev && current.querySelector('#tw-revert')) {
+						return;
+					}
+
 					// The :not is possibly unnecessary, as it appears that
 					// .mw-userlink is simply not present if the username is hidden
 					const vandal = $(current).find('.mw-userlink:not(.history-deleted)').text();
-					const href = $(current).find('.mw-changeslist-diff').attr('href');
-					const rev = mw.util.getParamValue('diff', href);
 					const page = current.dataset.targetPage;
-					current.append(Twinkle.fluff.linkBuilder.rollbackLinks(vandal, true, rev, page));
+					current.appendChild(Twinkle.fluff.linkBuilder.rollbackLinks(vandal, true, rev, page));
 				});
 			}
 		},
@@ -220,7 +229,7 @@
 					// for faster than every
 					for (const item of histList) {
 						if ($(item).find('.mw-userlink').text() !== vandal) {
-							first.append(Twinkle.fluff.linkBuilder.rollbackLinks(vandal, true));
+							first.appendChild(Twinkle.fluff.linkBuilder.rollbackLinks(vandal, true));
 							break;
 						}
 					}
@@ -233,7 +242,7 @@
 					const {href} = rev.querySelector('.mw-changeslist-date');
 					const oldid = Number.parseInt(mw.util.getParamValue('oldid', href), 10);
 					if (!Number.isNaN(oldid)) {
-						rev.append(Twinkle.fluff.linkBuilder.restoreThisRevisionLink(oldid, true));
+						rev.appendChild(Twinkle.fluff.linkBuilder.restoreThisRevisionLink(oldid, true));
 					}
 				}
 			}
@@ -264,24 +273,22 @@
 				const revertToRevision = Twinkle.fluff.linkBuilder.restoreThisRevisionLink('wgDiffOldId');
 				oldTitle.insertBefore(revertToRevision, oldTitle.firstChild);
 				if (Twinkle.getPref('customRevertSummary').length > 0) {
-					revertToRevision.append(document.createTextNode(' || '));
-					const revertsummary = new Morebits.quickForm.element({
-						type: 'select',
-						name: 'revertsummary',
-					});
-					revertsummary.append({
-						type: 'option',
-						label: window.wgULS('选择回退理由', '選擇回退理由'),
-						value: '',
-					});
-					$(Twinkle.getPref('customRevertSummary')).each((_, e) => {
-						revertsummary.append({
-							type: 'option',
-							label: e.label,
-							value: e.value,
-						});
-					});
-					revertToRevision.append(revertsummary.render().childNodes[0]);
+					revertToRevision.appendChild(document.createTextNode(' || '));
+					// Inline select for a custom revert summary (native element,
+					// no dialog involved)
+					const revertsummary = document.createElement('select');
+					revertsummary.setAttribute('name', 'revertsummary');
+					const defaultOption = document.createElement('option');
+					defaultOption.value = '';
+					defaultOption.textContent = window.wgULS('选择回退理由', '選擇回退理由');
+					revertsummary.appendChild(defaultOption);
+					for (const item of Twinkle.getPref('customRevertSummary')) {
+						const option = document.createElement('option');
+						option.value = item.value;
+						option.textContent = item.label;
+						revertsummary.appendChild(option);
+					}
+					revertToRevision.appendChild(revertsummary);
 				}
 			}
 			// Newer revision
