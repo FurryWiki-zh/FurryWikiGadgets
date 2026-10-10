@@ -381,7 +381,7 @@ const openUserTalkLinkLabel = uls('开启用户讨论页', '開啟使用者討�
 
 // URLs computed in script scope (template cannot access `mw` directly)
 const footerLinks = computed(() => [
-	{text: uls('快速删除方针', '快速刪除方針'), href: mw.util.getUrl('FWIKI:CSD')},
+	{text: uls('快速删除条例', '快速刪除方針'), href: mw.util.getUrl('FWIKI:CSD')},
 	{text: uls('速删设置', '速刪設定'), href: mw.util.getUrl('H:TW/PREF#speedy')},
 	{text: uls('Twinkle帮助', 'Twinkle說明'), href: mw.util.getUrl('H:TW/DOC#speedy')},
 ]);

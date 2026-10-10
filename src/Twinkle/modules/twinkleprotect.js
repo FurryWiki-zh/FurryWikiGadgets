@@ -50,7 +50,7 @@ import {api} from './api';
 						? window.wgULS('施行或请求保护页面', '施行或請求保護頁面')
 						: window.wgULS('请求保护页面', '請求保護頁面'),
 					footerLinks: [
-						{text: window.wgULS('保护方针', '保護方針'), href: mw.util.getUrl('FWIKI:PROT')},
+						{text: window.wgULS('保护条例', '保護方針'), href: mw.util.getUrl('FWIKI:PROT')},
 						{text: window.wgULS('保护设置', '保護設定'), href: mw.util.getUrl('H:TW/PREF#protect')},
 						{text: window.wgULS('Twinkle帮助', 'Twinkle說明'), href: mw.util.getUrl('H:TW/DOC#protect')},
 						{text: window.wgULS('反馈意见', '回報意見'), href: mw.util.getUrl('HT:TW')},
@@ -266,7 +266,7 @@ import {api} from './api';
 					value: 'pp-semi-vandalism',
 				},
 				{
-					label: window.wgULS('违反生者传记方针（半）', '違反生者傳記方針（半）'),
+					label: window.wgULS('违反生者传记条例（半）', '違反生者傳記方針（半）'),
 					value: 'pp-semi-blp',
 				},
 				{
@@ -383,7 +383,7 @@ import {api} from './api';
 		},
 		'pp-semi-blp': {
 			edit: 'autoconfirmed',
-			reason: window.wgULS('新用户违反生者传记方针', '新使用者違反生者傳記方針'),
+			reason: window.wgULS('新用户违反生者传记条例', '新使用者違反生者傳記方針'),
 		},
 		'pp-semi-usertalk': {
 			edit: 'autoconfirmed',
@@ -767,7 +767,7 @@ import {api} from './api';
 						typereason = window.wgULS('傀儡破坏', '傀儡破壞');
 						break;
 					case 'pp-semi-blp':
-						typereason = window.wgULS('违反生者传记方针', '違反生者傳記方針');
+						typereason = window.wgULS('违反生者传记条例', '違反生者傳記方針');
 						break;
 					case 'pp-move-dispute':
 						typereason = window.wgULS('争议、移动战', '爭議、移動戰');

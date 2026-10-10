@@ -504,7 +504,7 @@ import TwWarnDialog from './ui/TwWarnDialog.vue';
 				},
 			},
 			{
-				category: window.wgULS('非能接受且违反方针的单方面行为或操作', '非能接受且違反方針的單方面行為或操作'),
+				category: window.wgULS('非能接受且违反条例的单方面行为或操作', '非能接受且違反方針的單方面行為或操作'),
 				list: {
 					'uw-afd': {
 						level1: {

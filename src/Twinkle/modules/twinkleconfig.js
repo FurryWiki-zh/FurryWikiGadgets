@@ -986,7 +986,7 @@ import TwConfigPanel from './ui/TwConfigPanel.vue';
 					name: 'FwdCsdToXfd',
 					label: window.wgULS('提删类型增加转交自快速删除候选', '提刪類別增加轉交自快速刪除候選'),
 					helptip: window.wgULS(
-						'请确保您充分了解[[福瑞百科:快速删除方针]]才开启此功能。',
+						'请确保您充分了解[[福瑞百科:快速删除条例]]才开启此功能。',
 						'請確保您充分了解[[福瑞百科:快速刪除方針]]才開啟此功能。'
 					),
 					type: 'boolean',
@@ -1026,7 +1026,7 @@ import TwConfigPanel from './ui/TwConfigPanel.vue';
 					name: 'XfdClose',
 					label: window.wgULS('在存废讨论显示关闭讨论按钮', '在存廢討論顯示關閉討論按鈕'),
 					helptip: window.wgULS(
-						'请确保您充分了解[[福瑞百科:删除方针]]才开启此功能。',
+						'请确保您充分了解[[福瑞百科:删除条例]]才开启此功能。',
 						'請確保您充分了解[[福瑞百科:刪除方針]]才開啟此功能。'
 					),
 					type: 'enum',

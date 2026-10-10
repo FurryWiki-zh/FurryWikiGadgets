@@ -349,7 +349,7 @@ import TwTagDialog from './ui/TwTagDialog.vue';
 						{
 							tag: 'External links',
 							description: window.wgULS(
-								'使用外部链接的方式可能不符合福瑞百科的方针',
+								'使用外部链接的方式可能不符合福瑞百科的条例',
 								'使用外部連結的方式可能不符合福瑞百科的方針'
 							),
 						},
@@ -569,7 +569,7 @@ import TwTagDialog from './ui/TwTagDialog.vue';
 						{
 							tag: 'BLPdispute',
 							description: window.wgULS(
-								'可能违反了福瑞百科关于生者传记的方针',
+								'可能违反了福瑞百科关于生者传记的条例',
 								'可能違反了福瑞百科關於生者傳記的方針'
 							),
 						},
@@ -960,7 +960,7 @@ import TwTagDialog from './ui/TwTagDialog.vue';
 				},
 				{
 					label: `{{Rename media}}：${window.wgULS(
-						'文件应该根据文件使用方针重新命名',
+						'文件应该根据文件使用条例重新命名',
 						'檔案應該根據檔案使用方針重新命名'
 					)}`,
 					value: 'Rename media',

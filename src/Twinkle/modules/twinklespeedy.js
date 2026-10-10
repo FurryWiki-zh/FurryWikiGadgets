@@ -140,7 +140,7 @@ import TwSpeedyDialog from './ui/TwSpeedyDialog.vue';
 	];
 	Twinkle.speedy.fileList = [
 		{
-			label: 'F1：明显不符合本站著作权方针的文件',
+			label: 'F1：明显不符合本站著作权条例的文件',
 			value: 'f1',
 			tooltip:
 				'包括以下情况：1.上传后3天内仍然来源不明、著作权不明的文件。2.上传者宣称拥有，而在其他来源找到的文件。3.文件宣称由某作者依据某自由著作权协议发布，但找不到该自由协议的声明。4.其他明显侵权的文件，可附加侵权理由。',

@@ -235,7 +235,7 @@ import {api} from './api';
 						userIsBot: dialogData.userIsBot,
 						notices: dialogData.notices,
 						footerLinks: [
-							{text: window.wgULS('封禁方针', '封鎖方針'), href: mw.util.getUrl('FWIKI:BLOCK')},
+							{text: window.wgULS('封禁条例', '封鎖方針'), href: mw.util.getUrl('FWIKI:BLOCK')},
 							{text: window.wgULS('封禁设置', '封鎖設定'), href: mw.util.getUrl('H:TW/PREF#block')},
 							{text: window.wgULS('Twinkle帮助', 'Twinkle說明'), href: mw.util.getUrl('H:TW/DOC#block')},
 							{text: window.wgULS('反馈意见', '回報意見'), href: mw.util.getUrl('HT:TW')},
@@ -536,7 +536,7 @@ import {api} from './api';
 			forRegisteredOnly: true,
 			reason: `{{uw-ublock}}<!-- ${window.wgULS('不当用户名、软封禁', '不當使用者名稱')} -->`,
 			summary: window.wgULS(
-				'封禁通知：您的用户名违反[[FWIKI:U|用户名方针]]',
+				'封禁通知：您的用户名违反[[FWIKI:U|用户名条例]]',
 				'封鎖通知：您的使用者名稱違反[[FWIKI:U|使用者名稱方針]]'
 			),
 		},
@@ -547,7 +547,7 @@ import {api} from './api';
 			nocreate: true,
 			reason: `{{uw-ublock-illegal}}<!-- ${window.wgULS('不合规的用户名', '不合規的使用者名稱')} -->`,
 			summary: window.wgULS(
-				'封禁通知：您的用户名违反[[FWIKI:U|用户名方针]]',
+				'封禁通知：您的用户名违反[[FWIKI:U|用户名条例]]',
 				'封鎖通知：您的使用者名稱違反[[FWIKI:U|使用者名稱方針]]'
 			),
 		},
@@ -558,7 +558,7 @@ import {api} from './api';
 			nocreate: true,
 			reason: `{{uw-ublock-suggestive}}<!-- ${window.wgULS('误导、混淆性用户名', '誤導、混淆性使用者名稱')} -->`,
 			summary: window.wgULS(
-				'封禁通知：您的用户名违反[[FWIKI:U|用户名方针]]',
+				'封禁通知：您的用户名违反[[FWIKI:U|用户名条例]]',
 				'封鎖通知：您的使用者名稱違反[[FWIKI:U|使用者名稱方針]]'
 			),
 		},
@@ -569,7 +569,7 @@ import {api} from './api';
 			nocreate: true,
 			reason: `{{uw-ublock-spam}}<!-- ${window.wgULS('宣传性用户名或宣传性编辑', '宣傳性使用者名稱或宣傳性編輯')} -->`,
 			summary: window.wgULS(
-				'封禁通知：您的用户名违反[[FWIKI:U|用户名方针]]',
+				'封禁通知：您的用户名违反[[FWIKI:U|用户名条例]]',
 				'封鎖通知：您的使用者名稱違反[[FWIKI:U|使用者名稱方針]]'
 			),
 		},
@@ -629,8 +629,8 @@ import {api} from './api';
 			expiry: '1 day',
 			nocreate: true,
 			pageParam: true,
-			reason: window.wgULS('违反生者传记方针', '違反生者傳記方針'),
-			summary: window.wgULS('封禁通知：违反生者传记方针', '封鎖通知：違反生者傳記方針'),
+			reason: window.wgULS('违反生者传记条例', '違反生者傳記方針'),
+			summary: window.wgULS('封禁通知：违反生者传记条例', '封鎖通知：違反生者傳記方針'),
 			templateName: 'uw-vblock',
 		},
 		ucblock: {
@@ -790,7 +790,7 @@ import {api} from './api';
 				},
 				{label: window.wgULS('滥用多个账号', '濫用多個賬號'), value: 'uw-sockblock'},
 				// other block reasons
-				{label: window.wgULS('违反生者传记方针', '違反生者傳記方針'), value: 'bioblock'},
+				{label: window.wgULS('违反生者传记条例', '違反生者傳記方針'), value: 'bioblock'},
 				{label: window.wgULS('屡次增加没有可靠来源的资料', '屢次增加沒有可靠來源的資料'), value: 'ucblock'},
 				{label: window.wgULS('在条目中增加无意义文字', '在條目中增加無意義文字'), value: 'npblock'},
 				{label: window.wgULS('持续打制度擦边球', '持續打制度擦邊球'), value: 'point-block'},
@@ -821,7 +821,7 @@ import {api} from './api';
 		{
 			label: window.wgULS('用户名封禁', '使用者名稱封鎖'),
 			list: [
-				{label: window.wgULS('违反用户名方针', '違反使用者名稱方針'), value: 'uw-ublock'},
+				{label: window.wgULS('违反用户名条例', '違反使用者名稱方針'), value: 'uw-ublock'},
 				{label: window.wgULS('不合规的用户名', '不合規的使用者名稱'), value: 'uw-ublock-illegal'},
 				{label: window.wgULS('宣传性用户名', '宣傳性使用者名稱'), value: 'uw-ublock-spam'},
 				{label: window.wgULS('攻击性用户名', '攻擊性使用者名稱'), value: 'uw-ublock-attack'},

@@ -33,7 +33,7 @@ import TwImageDialog from './ui/TwImageDialog.vue';
 					title: window.wgULS('文件快速删除候选', '檔案快速刪除候選'),
 					initialNotify: Twinkle.getPref('notifyUserOnDeli'),
 					footerLinks: [
-						{text: window.wgULS('快速删除方针', '快速刪除方針'), href: mw.util.getUrl('FWIKI:CSD')},
+						{text: window.wgULS('快速删除条例', '快速刪除方針'), href: mw.util.getUrl('FWIKI:CSD')},
 						{text: window.wgULS('图权设置', '圖權設定'), href: mw.util.getUrl('H:TW/PREF#image')},
 						{text: window.wgULS('Twinkle帮助', 'Twinkle說明'), href: mw.util.getUrl('H:TW/DOC#image')},
 						{text: window.wgULS('反馈意见', '回報意見'), href: mw.util.getUrl('HT:TW')},

@@ -46,7 +46,7 @@ import TwBatchProtectDialog from './ui/TwBatchProtectDialog.vue';
 					lengths: Twinkle.protect.protectionLengths,
 					list: listData,
 					footerLinks: [
-						{text: '保护方针', href: mw.util.getUrl('FWIKI:PROT')},
+						{text: '保护条例', href: mw.util.getUrl('FWIKI:PROT')},
 						{text: window.wgULS('帮助文档', '幫助文檔'), href: mw.util.getUrl('H:TW/DOC#保护')},
 						{text: window.wgULS('反馈意见', '回報意見'), href: mw.util.getUrl('HT:TW')},
 					],
